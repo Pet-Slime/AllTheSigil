@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ability_beesonhit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\ability_beesonhit.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ability_bloodguzzler" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\ability_bloodguzzler.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ability_bonedigger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\ability_bonedigger.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ability_bonepicker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\ability_bonepicker.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ability_leech" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\ability_leech.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ability_nutritious" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\ability_nutritious.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ability_poisonous" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\ability_poisonous.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ability_regen_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\ability_regen_1.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ability_regen_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\ability_regen_2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ability_regen_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\ability_regen_3.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ability_regen_full" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\ability_regen_full.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ability_thickshell" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\ability_thickshell.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ability_transient" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\ability_transient.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Abundance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Abundance.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_acid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_acid.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_agile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_agile.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_alarm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_alarm.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_ambush" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_ambush.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_ambush_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_ambush_1.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_ambush_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_ambush_2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_ambush_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_ambush_3.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_blight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_blight.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_bodyguard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_bodyguard.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Bombardier" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Bombardier.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Boneless" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Boneless.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_broken" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_broken.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Coward" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Coward.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_deathburst" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_deathburst.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_deathburst_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_deathburst_1.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_deathburst_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_deathburst_2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_deathburst_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_deathburst_3.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_double_attack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_double_attack.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_double_attack_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_double_attack_1.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_double_attack_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_double_attack_2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_double_attack_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_double_attack_3.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_dying" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_dying.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_eletric" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_eletric.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_familair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_familair.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_fisher" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_fisher.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_fish_hook" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_fish_hook.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_haste" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_haste.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Heard_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Heard_0.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Heard_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Heard_1.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Heard_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Heard_2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Heard_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Heard_3.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_ignit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_ignit.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_insectKiller" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_insectKiller.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Medic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Medic.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Medic_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Medic_1.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Medic_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Medic_2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Medic_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Medic_3.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Midas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Midas.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Opportunist" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Opportunist.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_pathetic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_pathetic.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_pierce" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_pierce.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_possessor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_possessor.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Predator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Predator.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Prideful" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Prideful.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_protector" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_protector.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_repellant" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_repellant.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Resistant" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Resistant.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_scissors" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_scissors.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_shove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_shove.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_sick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_sick.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_thief" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_thief.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_tooth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_tooth.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_toxin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_toxin.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_toxin_deadly" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_toxin_deadly.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_toxin_health" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_toxin_health.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_toxin_sickness" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_toxin_sickness.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_toxin_strength" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_toxin_strength.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_trample" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_trample.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_tribeAlly" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_tribeAlly.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_tribeAlly_bird" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_tribeAlly_bird.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_tribeAlly_canine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_tribeAlly_canine.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_tribeAlly_hooved" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_tribeAlly_hooved.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_tribeAlly_insect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_tribeAlly_insect.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_tribeAlly_none" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_tribeAlly_none.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_tribeAlly_reptile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_tribeAlly_reptile.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_TribeTutor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_TribeTutor.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_TribeTutor_bird" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_TribeTutor_bird.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_TribeTutor_canine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_TribeTutor_canine.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_TribeTutor_hooved" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_TribeTutor_hooved.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_TribeTutor_insect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_TribeTutor_insect.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_TribeTutor_none" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_TribeTutor_none.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_TribeTutor_reptile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_TribeTutor_reptile.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_vicious" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_vicious.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_zapper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_zapper.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

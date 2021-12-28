@@ -1,13 +1,6 @@
 using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
-using DiskCardGame;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using APIPlugin;
-using System.Linq;
-using Resources = voidSigils.Resources.Resources;
 
 namespace voidSigils
 {
@@ -19,7 +12,7 @@ namespace voidSigils
 		public const string APIGUID = "cyantist.inscryption.api";
 		public const string PluginGuid = "extraVoid.inscryption.voidSigils";
 		private const string PluginName = "Extra Sigils";
-		private const string PluginVersion = "1.8.0";
+		private const string PluginVersion = "2.0.0";
 
 		public static string Directory;
 		internal static ManualLogSource Log;
@@ -40,6 +33,8 @@ namespace voidSigils
 			AddInsectKiller();
 			AddFamiliar();
 			AddDoubleAttack();
+			AddHaste();
+			AddIgnite();
 			AddPierce();
 			AddTrample();
 
@@ -50,6 +45,7 @@ namespace voidSigils
 			//Defensive sigils
 			AddAgile();
 			AddBodyguard();
+			AddMedic();
 			AddRegenFull();
 			AddRegen1();
 			AddRegen2();
@@ -67,7 +63,7 @@ namespace voidSigils
 			AddToxinSickly();
 
 			//Negative Sigils
-
+			AddAppetizing();
 			AddBlight();
 			AddBroken();
 			AddBombardier();
@@ -78,12 +74,16 @@ namespace voidSigils
 			AddTransient();
 
 			//Utility Sigils
+			AddAbundance();
 			AddBloodGuzzler();
 			AddBonePicker();
 			AddFishHook();
 			AddLeech();
 			AddFisher();
+			AddHerd();
+			AddMidas();
 			AddNutritious();
+			AddPossessor();
 			AddShove();
 			AddRepellant();
 			AddScissors();
