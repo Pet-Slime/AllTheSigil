@@ -77,14 +77,17 @@ namespace voidSigils
 						targets.Add(allSlots[index].Card);
 					}
 				}
-
-				// pick a random target from the target list
-				PlayableCard target = targets[Random.Range(0, (targets.Count))];
-				base.Card.Anim.LightNegationEffect();
-				yield return base.PreSuccessfulTriggerSequence();
-				target.Anim.StrongNegationEffect();
-				target.temporaryMods.Add(this.mod);
-				yield return base.LearnAbility(0.25f);
+				if (targets.Count > 0)
+                {
+					// pick a random target from the target list
+					PlayableCard target = targets[Random.Range(0, (targets.Count))];
+					base.Card.Anim.LightNegationEffect();
+					yield return base.PreSuccessfulTriggerSequence();
+					target.Anim.StrongNegationEffect();
+					target.temporaryMods.Add(this.mod);
+					yield return base.LearnAbility(0.25f);
+				}
+				
 			} else
             {
 				// Get all slots
@@ -101,14 +104,16 @@ namespace voidSigils
 						targets.Add(allSlots[index].Card);
 					}
 				}
-
-				// pick a random target from the target list
-				PlayableCard target = targets[Random.Range(0, (targets.Count))];
-				base.Card.Anim.LightNegationEffect();
-				yield return base.PreSuccessfulTriggerSequence();
-				target.Anim.StrongNegationEffect();
-				target.temporaryMods.Add(this.mod);
-				yield return base.LearnAbility(0.25f);
+				if (targets.Count > 0)
+				{
+					// pick a random target from the target list
+					PlayableCard target = targets[Random.Range(0, (targets.Count))];
+					base.Card.Anim.LightNegationEffect();
+					yield return base.PreSuccessfulTriggerSequence();
+					target.Anim.StrongNegationEffect();
+					target.temporaryMods.Add(this.mod);
+					yield return base.LearnAbility(0.25f);
+				}
 			}
 			yield break;
 		}
