@@ -20,7 +20,7 @@ namespace voidSigils
             const string LearnDialogue = "So fast, so many strikes";
             // const string TextureFile = "Artwork/void_double_attack.png";
 
-            AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 0, true);
+            AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 0, Plugin.configMultiStrike.Value);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_double_attack);
 

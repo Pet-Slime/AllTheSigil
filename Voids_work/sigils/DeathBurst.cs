@@ -21,7 +21,7 @@ namespace voidSigils
 			const string LearnDialogue = "Boom";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 8, true);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 8, Plugin.configDeathburst.Value);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_deathburst);
 

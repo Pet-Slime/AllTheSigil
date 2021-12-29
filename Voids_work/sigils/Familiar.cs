@@ -16,11 +16,11 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Familiar";
-			const string rulebookDescription = "A familiar will help with attacking when it's adjacent allies attack.";
+			const string rulebookDescription = "A familiar will help with attacking when it's adjacent allies attack a card.";
 			const string LearnDialogue = "A familiar helps those in need.";
 			// const string TextureFile = "Artwork/void_vicious.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3, true);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3, Plugin.configFamiliar.Value);
 			info.canStack = false;
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_familair);
@@ -83,42 +83,28 @@ namespace voidSigils
 		{
 			CardSlot slotSaved = base.Card.slot;
 			yield return new WaitForSeconds(0.1f);
-			List<CardSlot> nextTo = Singleton<BoardManager>.Instance.GetAdjacentSlots(slotSaved);
-			List<CardSlot> adjacentSlots = Singleton<BoardManager>.Instance.GetAdjacentSlots(slotSaved.opposingSlot);
+			List<CardSlot> adjacentSlots = Singleton<BoardManager>.Instance.GetAdjacentSlots(slotSaved);
 			if (adjacentSlots.Count > 0 && adjacentSlots[0].Index < slotSaved.Index)
 			{
-				if (adjacentSlots[0].Card != null && !adjacentSlots[0].Card.Dead && adjacentSlots[0].Card == target)
+				if (adjacentSlots[0].Card != null && !adjacentSlots[0].Card.Dead && adjacentSlots[0].Card == attacker)
 				{
-					if (nextTo.Count > 0 && nextTo[0].Index < slotSaved.Index)
-					{
-						if (nextTo[0].Card != null && !nextTo[0].Card.Dead && nextTo[0].Card == attacker)
-						{
 							LeftSlot = target;
 							RightSlot = attacker;
 							yield return new WaitForSeconds(0.1f);
 							yield return Singleton<CombatPhaseManager>.Instance.SlotAttackSlot(slotSaved, target.slot);
 							yield return new WaitForSeconds(0.1f);
-						}
-						
-					}
+
 				}
 				adjacentSlots.RemoveAt(0);
-				nextTo.RemoveAt(0);
 			}
-			if (adjacentSlots.Count > 0 && adjacentSlots[0].Card != null && !adjacentSlots[0].Card.Dead && adjacentSlots[0].Card == target)
+			if (adjacentSlots.Count > 0 && adjacentSlots[0].Card != null && !adjacentSlots[0].Card.Dead && adjacentSlots[0].Card == attacker)
 			{
-				if (nextTo.Count > 0 && nextTo[0].Card != null && !nextTo[0].Card.Dead && nextTo[0].Card == attacker)
-				{
 					LeftSlot = target;
 					RightSlot = attacker;
 					yield return new WaitForSeconds(0.1f);
 					yield return Singleton<CombatPhaseManager>.Instance.SlotAttackSlot(slotSaved, target.slot);
 					yield return new WaitForSeconds(0.1f);
-				}
 			}
-
-			Plugin.Log.LogMessage("Familiar attacker data: " + RightSlot);
-			Plugin.Log.LogMessage("Familiar target data: " + RightSlot);
 			yield return new WaitForSeconds(0.1f);
 			Previous_target = target;
 			LeftSlot = null;

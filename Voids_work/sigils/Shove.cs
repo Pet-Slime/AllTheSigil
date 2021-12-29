@@ -209,7 +209,5 @@ namespace voidSigils
 			}
 			yield break;
 		}
-
-
 	}
 }

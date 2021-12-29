@@ -17,7 +17,7 @@ namespace voidSigils
 			const string LearnDialogue = "The thick shell on that creature protected it from one damage!";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2, true);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2, Plugin.configThickShell.Value);
 			info.canStack = false;
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.ability_thickshell);

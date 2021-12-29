@@ -18,7 +18,7 @@ namespace voidSigils
 			const string LearnDialogue = "A hit just makes it angry.";
 			// const string TextureFile = "Artwork/void_vicious.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 1, true);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 1, Plugin.configVicious.Value);
 			info.canStack = false;
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_vicious);

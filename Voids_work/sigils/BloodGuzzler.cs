@@ -17,7 +17,7 @@ namespace voidSigils
 			const string LearnDialogue = "Life, thru death";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 4, true);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 4, Plugin.configBloodGuzzler.Value);
 			info.canStack = false;
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.ability_bloodguzzler);

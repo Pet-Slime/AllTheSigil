@@ -17,7 +17,7 @@ namespace voidSigils
 			const string LearnDialogue = "Vigor from blood!";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 3, true);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 3, Plugin.configLeech.Value);
 			info.canStack = true;
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.ability_leech);

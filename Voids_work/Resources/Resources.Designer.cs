@@ -323,6 +323,16 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] void_burning {
+            get {
+                object obj = ResourceManager.GetObject("void_burning", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] void_Coward {
             get {
                 object obj = ResourceManager.GetObject("void_Coward", resourceCulture);

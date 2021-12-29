@@ -16,11 +16,11 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Cowardly";
-			const string rulebookDescription = "[creature] will not attack a card if it's strength is much greter than it's own.";
-			const string LearnDialogue = "A protector, till the very end.";
+			const string rulebookDescription = "A card bearing this sigil will not attack a card with a strength 2 higher than its own.";
+			const string LearnDialogue = "It would rather flee than fight";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, -1, true);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, -1, Plugin.configCowardly.Value);
 			info.canStack = false;
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Coward);
@@ -55,11 +55,11 @@ namespace voidSigils
 			if (__instance.OnBoard && opposingSlot.Card != null && __instance.HasAbility(void_Coward.ability))
             {
 				int cardAttack = __instance.Attack;
-				int opposingAttack = opposingSlot.Card.Attack;
+				int opposingAttack = opposingSlot.Card.Attack - 2;
 
-				if (cardAttack < opposingAttack - 2)
+				if (cardAttack < opposingAttack)
                 {
-					__result = false;
+					__result = true;
 
 				}
 			}

@@ -17,7 +17,7 @@ namespace voidSigils
 			const string LearnDialogue = "Even once combat is over, it leaves sickness spreads in what it fights.";
 			// const string TextureFile = "Artwork/void_weaken.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2, true);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2, Plugin.configToxin.Value);
 			info.canStack = false;
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_toxin_sickness);

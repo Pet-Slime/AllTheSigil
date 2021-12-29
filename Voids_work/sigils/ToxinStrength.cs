@@ -17,7 +17,7 @@ namespace voidSigils
 			const string LearnDialogue = "Even once combat is over, strength leaves it's target";
 			// const string TextureFile = "Artwork/void_weaken.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 1,true);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 1, Plugin.configToxin.Value);
 			info.canStack = false;
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_toxin_strength);

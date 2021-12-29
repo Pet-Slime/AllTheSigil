@@ -196,6 +196,9 @@
   <data name="void_broken" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_broken.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="void_burning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_burning.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="void_Coward" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_Coward.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

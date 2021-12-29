@@ -3,7 +3,7 @@ using APIPlugin;
 using DiskCardGame;
 using UnityEngine;
 using Artwork = voidSigils.Voids_work.Resources.Resources;
-using System;
+using HarmonyLib;
 using System.Collections.Generic;
 using Pixelplacement;
 
@@ -42,6 +42,9 @@ namespace voidSigils
 
 		public static Ability ability;
 
+		public static bool isCombatPhase = false;
+
+
 		public int DamageDealtThisPhase { get; private set; }
 
 		public override bool RespondsToResolveOnBoard()
@@ -52,24 +55,24 @@ namespace voidSigils
 
 		public override IEnumerator OnResolveOnBoard()
 		{
+
 			yield return new WaitForSeconds(0.1f);
-			yield return this.FakeCombat(base.Card.slot.IsPlayerSlot, null, base.Card.slot);
+			yield return this.FakeCombat(base.Card.slot, null, base.Card.slot);
+			yield return new WaitForSeconds(0.1f);
 			yield return base.LearnAbility(0.25f);
 			yield return new WaitForSeconds(0.1f);
-			Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;
 			yield break;
 
 		}
 
 		public IEnumerator FakeCombat(bool playerIsAttacker, SpecialBattleSequencer specialSequencer, CardSlot attacker)
-        {
+		{
 			this.DamageDealtThisPhase = 0;
 			yield return this.SlotAttackSequence(attacker);
-			bool flag6 = this.DamageDealtThisPhase > 0;
+			bool flag6 = this.DamageDealtThisPhase > 0 && isCombatPhase == false;
 			if (flag6)
 			{
 				yield return new WaitForSeconds(0.4f);
-				yield return Singleton<CombatPhaseManager>.Instance.VisualizeDamageMovingToScales(playerIsAttacker);
 				int excessDamage = 0;
 				if (playerIsAttacker)
 				{
@@ -97,10 +100,10 @@ namespace voidSigils
 				{
 					yield return Singleton<TurnManager>.Instance.Opponent.TryRevokeSurrender();
 					RunState.Run.currency += excessDamage;
-					yield return Singleton<CombatPhaseManager>.Instance.VisualizeExcessLethalDamage(excessDamage, specialSequencer);
 				}
+				Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;
+				this.DamageDealtThisPhase = 0;
 			}
-			Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;
 		}
 
 		public IEnumerator SlotAttackSlot(CardSlot attackingSlot, CardSlot opposingSlot, float waitAfter = 0f)
@@ -132,7 +135,7 @@ namespace voidSigils
 					if (flag3)
 					{
 						this.DamageDealtThisPhase += attackingSlot.Card.Attack;
-						yield return Singleton<CombatPhaseManager>.Instance.VisualizeCardAttackingDirectly(attackingSlot, opposingSlot, attackingSlot.Card.Attack);
+						yield return Singleton<CombatPhaseManager>.Instance.VisualizeCardAttackingDirectly(attackingSlot, opposingSlot, 0);
 						bool flag4 = attackingSlot.Card.TriggerHandler.RespondsToTrigger(Trigger.DealDamageDirectly, new object[]
 						{
 							attackingSlot.Card.Attack
@@ -201,7 +204,6 @@ namespace voidSigils
 				Singleton<ViewManager>.Instance.SwitchToView(Singleton<BoardManager>.Instance.CombatView, false, false);
 				yield return this.SlotAttackSlot(slot, opposingSlot, (opposingSlots.Count > 1) ? 0.1f : 0f);
 			}
-			List<CardSlot>.Enumerator enumerator = default(List<CardSlot>.Enumerator);
 			Singleton<CombatPhaseManager>.Instance.VisualizeClearSniperAbility();
 			yield break;
 		}
@@ -225,7 +227,6 @@ namespace voidSigils
 					}
 					else
 					{
-
 						yield return Singleton<CombatPhaseManager>.Instance.PreOverkillDamage(queuedCard);
 						yield return queuedCard.TakeDamage(damage, attackingSlot.Card);
 						yield return Singleton<CombatPhaseManager>.Instance.PostOverkillDamage(queuedCard);

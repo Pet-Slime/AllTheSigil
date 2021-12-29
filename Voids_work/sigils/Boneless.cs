@@ -14,11 +14,11 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Boneless";
-			const string rulebookDescription = "[creature] leaves no bones on death!";
+			const string rulebookDescription = "[creature] gives no bones! Not thru bone digger, picker, or death.";
 			const string LearnDialogue = "That creature has no bones!";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, -2);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, -1);
 			info.canStack = false;
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Boneless);
@@ -41,24 +41,22 @@ namespace voidSigils
 		public static Ability ability;
 
 
-
-		[HarmonyPatch(typeof(ResourcesManager), "AddBones")]
-		[HarmonyPostfix]
-		public static IEnumerator StopBones(IEnumerator sequenceResult, CardSlot slot)
+		[HarmonyPatch(typeof(ResourcesManager), nameof(ResourcesManager.AddBones))]
+		public class Boneless_Patch
 		{
-			if (slot != null
+			[HarmonyPrefix]
+			public static bool Prefix(int amount, CardSlot slot)
+			{
+				if (slot != null
 				&& slot.Card != null
-				&& slot.Card.gameObject != null
-				&& slot.Card.gameObject.GetComponent<void_Boneless>() != null)
-			{
-				yield break;
+				&& slot.Card.HasAbility(void_Boneless.ability))
+				{
+					return false;
+				} else
+				{
+					return true;
+                }
 			}
-			else
-			{
-				while (sequenceResult.MoveNext())
-					yield return sequenceResult.Current;
-			}
-
 		}
 	}
 

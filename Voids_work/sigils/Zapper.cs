@@ -14,7 +14,7 @@ namespace voidSigils
 		private NewAbility AddZapper()
 		{
 			// setup ability
-			const string rulebookName = "Bloodlust";
+			const string rulebookName = "Enrage";
 			const string rulebookDescription = "[creature] will empower adjacent allies, increasing their strenght by 2. However, if they perish, while empowered, they are permamently removed from your deck.";
 			const string LearnDialogue = "A boost of strength, but at what cost...";
 
