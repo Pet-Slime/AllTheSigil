@@ -22,6 +22,7 @@ namespace voidSigils
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 8, Plugin.configDeathburst.Value);
+			info.canStack = true;
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_deathburst);
 
@@ -43,7 +44,7 @@ namespace voidSigils
 		[HarmonyPostfix]
 		public static void Postfix(ref Texture __result, ref CardInfo info, ref AbilityInfo ability)
 		{
-			if (ability.ability == void_Ambush.ability)
+			if (ability.ability == void_Deathburst.ability)
 			{
 				if (info != null)
 				{
@@ -53,24 +54,25 @@ namespace voidSigils
 
 					Texture2D tex3 = SigilUtils.LoadTextureFromResource(Artwork.void_deathburst_3);
 
-					List<Ability> baseAbilities = info.Abilities;
+					int count = Mathf.Max(info.Abilities.FindAll((Ability x) => x == void_Deathburst.ability).Count, 1);
 
-					int count = baseAbilities.Where(a => a == void_Ambush.ability).Count();
-
-					if (count == 1)
-					{
-						__result = tex1;
-
+					switch (count)
+                    {
+						case 1: __result = tex1;
+							break;
+						case 2:
+							__result = tex2;
+							break;
+						case 3:
+							__result = tex3;
+							break;
+						case 4:
+							__result = tex3;
+							break;
+						case 5:
+							__result = tex3;
+							break;
 					}
-					else if (count == 2)
-					{
-						__result = tex2;
-					}
-					else if (count >= 3)
-					{
-						__result = tex3;
-					}
-
 				}
 			}
 		}
@@ -127,18 +129,15 @@ namespace voidSigils
 		private IEnumerator BombCard(PlayableCard target, PlayableCard attacker)
 		{
 
-			List<Ability> baseAbilities = base.Card.Info.Abilities;
-			int count1 = baseAbilities.Where(a => a == void_Deathburst.ability).Count();
-			List<Ability> modAbilities = base.Card.Info.ModAbilities;
-			int count2 = modAbilities.Where(a => a == void_Deathburst.ability).Count();
-			int countFinal = count1 + count2;
+
+			int count = SigilUtils.getAbilityCount(base.Card, void_Deathburst.ability);
 			GameObject bomb = UnityEngine.Object.Instantiate<GameObject>(this.bombPrefab);
 			bomb.transform.position = attacker.transform.position + Vector3.up * 0.1f;
 			Tween.Position(bomb.transform, target.transform.position + Vector3.up * 0.1f, 0.5f, 0f, Tween.EaseLinear, Tween.LoopType.None, null, null, true);
 			yield return new WaitForSeconds(0.5f);
 			target.Anim.PlayHitAnimation();
 			UnityEngine.Object.Destroy(bomb);
-			yield return target.TakeDamage(countFinal, attacker);
+			yield return target.TakeDamage(count, attacker);
 			yield break;
 		}
 

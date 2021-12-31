@@ -45,30 +45,27 @@ namespace voidSigils
             {
                 if (info != null)
                 {
-                    Texture2D tex1 = SigilUtils.LoadTextureFromResource(Artwork.void_double_attack_1);
-
-                    Texture2D tex2 = SigilUtils.LoadTextureFromResource(Artwork.void_double_attack_2);
-
-                    Texture2D tex3 = SigilUtils.LoadTextureFromResource(Artwork.void_double_attack_3);
-
-                    List<Ability> baseAbilities = info.Abilities;
-
-                    int count = baseAbilities.Where(a => a == void_DoubleAttack.ability).Count();
-
-                    if (count == 1)
+                    //Get count of how many instances of the ability the card has
+                    int count = Mathf.Max(info.Abilities.FindAll((Ability x) => x == void_DoubleAttack.ability).Count, 1);
+                    //Switch statement to the right texture
+                    switch (count)
                     {
-                        __result = tex1;
-
+                        case 1:
+                            __result = SigilUtils.LoadTextureFromResource(Artwork.void_double_attack_1);
+                            break;
+                        case 2:
+                            __result = SigilUtils.LoadTextureFromResource(Artwork.void_double_attack_2);
+                            break;
+                        case 3:
+                            __result = SigilUtils.LoadTextureFromResource(Artwork.void_double_attack_3);
+                            break;
+                        case 4:
+                            __result = SigilUtils.LoadTextureFromResource(Artwork.void_double_attack_4);
+                            break;
+                        case 5:
+                            __result = SigilUtils.LoadTextureFromResource(Artwork.void_double_attack_5);
+                            break;
                     }
-                    else if (count == 2)
-                    {
-                        __result = tex2;
-                    }
-                    else if (count >= 3)
-                    {
-                        __result = tex3;
-                    }
-
                 }
             }
         }
@@ -105,8 +102,7 @@ namespace voidSigils
         {
 
             CardSlot theSlot = SigilUtils.GetSlot(target);
-            List<Ability> baseAbilities = base.Card.Info.Abilities;
-            int count = baseAbilities.Where(a => a == void_DoubleAttack.ability).Count();
+            int count = SigilUtils.getAbilityCount(base.Card, void_DoubleAttack.ability);
 
             Plugin.Log.LogMessage("multi-strike count: " + count);
             yield return base.PreSuccessfulTriggerSequence();

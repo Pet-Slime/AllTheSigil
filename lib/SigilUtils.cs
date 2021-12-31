@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Reflection;
+using System.Linq;
 using APIPlugin;
 using BepInEx;
 using DiskCardGame;
@@ -61,6 +61,18 @@ namespace voidSigils
 			texture.LoadImage(resourceFile);
 			texture.filterMode = FilterMode.Point;
 			return texture;
+		}
+
+		public static int getAbilityCount(PlayableCard card, Ability ability)
+		{
+			if  (!card.temporaryMods.Exists((CardModificationInfo x) => x.negateAbilities.Contains(ability)))
+            {
+				var positiveCount = Mathf.Max(card.Info.Abilities.FindAll((Ability x) => x == ability).Count, 1);
+				return positiveCount;
+			} else
+            {
+				return 0;
+            }
 		}
 
 		public static AbilityIdentifier GetAbilityId(string rulebookName)

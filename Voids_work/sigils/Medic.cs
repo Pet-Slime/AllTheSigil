@@ -44,34 +44,31 @@ namespace voidSigils
 		[HarmonyPostfix]
 		public static void Postfix(ref Texture __result, ref CardInfo info, ref AbilityInfo ability)
 		{
-			if (ability.ability == void_Ambush.ability)
+			if (ability.ability == void_Medic.ability)
 			{
 				if (info != null)
 				{
-					Texture2D tex1 = SigilUtils.LoadTextureFromResource(Artwork.void_Medic_1);
-
-					Texture2D tex2 = SigilUtils.LoadTextureFromResource(Artwork.void_Medic_2);
-
-					Texture2D tex3 = SigilUtils.LoadTextureFromResource(Artwork.void_Medic_3);
-
-					List<Ability> baseAbilities = info.Abilities;
-
-					int count = baseAbilities.Where(a => a == void_Ambush.ability).Count();
-
-					if (count == 1)
+					//Get count of how many instances of the ability the card has
+					int count = Mathf.Max(info.Abilities.FindAll((Ability x) => x == void_Medic.ability).Count, 1);
+					//Switch statement to the right texture
+					switch (count)
 					{
-						__result = tex1;
-
+						case 1:
+							__result = SigilUtils.LoadTextureFromResource(Artwork.void_Medic_1);
+							break;
+						case 2:
+							__result = SigilUtils.LoadTextureFromResource(Artwork.void_Medic_2);
+							break;
+						case 3:
+							__result = SigilUtils.LoadTextureFromResource(Artwork.void_Medic_3);
+							break;
+						case 4:
+							__result = SigilUtils.LoadTextureFromResource(Artwork.void_Medic_4);
+							break;
+						case 5:
+							__result = SigilUtils.LoadTextureFromResource(Artwork.void_Medic_5);
+							break;
 					}
-					else if (count == 2)
-					{
-						__result = tex2;
-					}
-					else if (count >= 3)
-					{
-						__result = tex3;
-					}
-
 				}
 			}
 		}
@@ -96,11 +93,8 @@ namespace voidSigils
 			// Get the base card
 			PlayableCard card = base.Card;
 			// Get the Medic count
-			List<Ability> baseAbilities = base.Card.Info.Abilities;
-			int count1 = baseAbilities.Where(a => a == void_Medic.ability).Count();
-			List<Ability> modAbilities = base.Card.Info.ModAbilities;
-			int count2 = modAbilities.Where(a => a == void_Medic.ability).Count();
-			int finalCount = count1 + count2;
+
+			int finalCount = SigilUtils.getAbilityCount(card, void_Medic.ability);
 
 
 

@@ -47,29 +47,27 @@ namespace voidSigils
 			{
 				if (info != null)
                 {
-					Texture2D tex1 = SigilUtils.LoadTextureFromResource(Artwork.void_ambush_1);
-
-					Texture2D tex2 = SigilUtils.LoadTextureFromResource(Artwork.void_ambush_2);
-
-					Texture2D tex3 = SigilUtils.LoadTextureFromResource(Artwork.void_ambush_3);
-
-					List<Ability> baseAbilities = info.Abilities;
-
-					int count = baseAbilities.Where(a => a == void_Ambush.ability).Count();
-
-					if (count == 1)
-                    {
-						__result = tex1;
-
-					} else if (count == 2)
+					//Get count of how many instances of the ability the card has
+					int count = Mathf.Max(info.Abilities.FindAll((Ability x) => x == void_Ambush.ability).Count, 1);
+					//Switch statement to the right texture
+					switch (count)
 					{
-						__result = tex2;
+						case 1:
+							__result = SigilUtils.LoadTextureFromResource(Artwork.void_ambush_1); ;
+							break;
+						case 2:
+							__result = SigilUtils.LoadTextureFromResource(Artwork.void_ambush_2);
+							break;
+						case 3:
+							__result = SigilUtils.LoadTextureFromResource(Artwork.void_ambush_3);
+							break;
+						case 4:
+							__result = SigilUtils.LoadTextureFromResource(Artwork.void_ambush_4);
+							break;
+						case 5:
+							__result = SigilUtils.LoadTextureFromResource(Artwork.void_ambush_5);
+							break;
 					}
-					else if (count >= 3)
-					{
-						__result = tex3;
-					}
-
 				}
 			}
 		}

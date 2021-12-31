@@ -86,7 +86,7 @@ namespace voidSigils
 			List<CardSlot> adjacentSlots = Singleton<BoardManager>.Instance.GetAdjacentSlots(slotSaved);
 			if (adjacentSlots.Count > 0 && adjacentSlots[0].Index < slotSaved.Index)
 			{
-				if (adjacentSlots[0].Card != null && !adjacentSlots[0].Card.Dead && adjacentSlots[0].Card == attacker)
+				if (adjacentSlots[0].Card != null && !adjacentSlots[0].Card.Dead && adjacentSlots[0].Card == attacker && !target.Dead)
 				{
 							LeftSlot = target;
 							RightSlot = attacker;
@@ -97,7 +97,7 @@ namespace voidSigils
 				}
 				adjacentSlots.RemoveAt(0);
 			}
-			if (adjacentSlots.Count > 0 && adjacentSlots[0].Card != null && !adjacentSlots[0].Card.Dead && adjacentSlots[0].Card == attacker)
+			if (adjacentSlots.Count > 0 && adjacentSlots[0].Card != null && !adjacentSlots[0].Card.Dead && adjacentSlots[0].Card == attacker && !target.Dead)
 			{
 					LeftSlot = target;
 					RightSlot = attacker;

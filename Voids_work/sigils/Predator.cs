@@ -36,6 +36,44 @@ namespace voidSigils
 		}
 	}
 
+	[HarmonyPatch(typeof(AbilityIconInteractable), "LoadIcon")]
+	public class PrediatorIcon
+	{
+		[HarmonyPostfix]
+		public static void Postfix(ref Texture __result, ref CardInfo info, ref AbilityInfo ability)
+		{
+			if (ability.ability == void_Predator.ability)
+			{
+				if (info != null)
+				{
+					//Get count of how many instances of the ability the card has
+					int count = Mathf.Max(info.Abilities.FindAll((Ability x) => x == void_Predator.ability).Count, 1);
+					//Switch statement to the right texture
+					switch (count)
+					{
+						case 1:
+							__result = SigilUtils.LoadTextureFromResource(Artwork.void_Predator_1);
+							break;
+						case 2:
+							__result = SigilUtils.LoadTextureFromResource(Artwork.void_Predator_2);
+							break;
+						case 3:
+							__result = SigilUtils.LoadTextureFromResource(Artwork.void_Predator_3);
+							break;
+						case 4:
+							__result = SigilUtils.LoadTextureFromResource(Artwork.void_Predator_4);
+							break;
+						case 5:
+							__result = SigilUtils.LoadTextureFromResource(Artwork.void_Predator_5);
+							break;
+					}
+				}
+			}
+		}
+	}
+
+
+
 	public class void_Predator : AbilityBehaviour
 	{
 		public override Ability Ability => ability;
@@ -54,10 +92,8 @@ namespace voidSigils
 			{
 				if (__instance.slot.opposingSlot.Card != null && __instance.Info.HasAbility(void_Predator.ability))
 				{
-					List<Ability> baseAbilities = __instance.Info.Abilities;
-					List<Ability> modAbilities = __instance.Info.ModAbilities;
-					int finalBuff = baseAbilities.Where(a => a == void_Predator.ability).Count() + modAbilities.Where(a => a == void_Predator.ability).Count() + __result;
-					__result = finalBuff;
+					int count = SigilUtils.getAbilityCount(__instance, void_Predator.ability);
+					__result = count + __result;
 				}
 			}
 		}

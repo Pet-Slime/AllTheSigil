@@ -49,20 +49,15 @@ namespace voidSigils
 
 		public override IEnumerator OnDie(bool wasSacrifice, PlayableCard killer)
 		{
-			List<Ability> baseAbilities = base.Card.Info.Abilities;
 
-			int count1 = baseAbilities.Where(a => a == void_Abundance.ability).Count();
-
-			List<Ability> modAbilities = base.Card.Info.ModAbilities;
-
-			int count2 = modAbilities.Where(a => a == void_Abundance.ability).Count();
+			int count = SigilUtils.getAbilityCount(base.Card, void_Abundance.ability);
 
 			yield return base.PreSuccessfulTriggerSequence();
 			yield return new WaitForSeconds(0.15f);
 			Singleton<ViewManager>.Instance.SwitchToView(View.Scales, false, true);
 			yield return new WaitForSeconds(0.25f);
-			RunState.Run.currency += (count1 + count2);
-			yield return Singleton<CurrencyBowl>.Instance.ShowGain(count1 + count2, true, false);
+			RunState.Run.currency += (count);
+			yield return Singleton<CurrencyBowl>.Instance.ShowGain(count, true, false);
 			yield return new WaitForSeconds(0.25f);
 			yield return base.LearnAbility(0.25f);
 			yield return new WaitForSeconds(0.1f);
