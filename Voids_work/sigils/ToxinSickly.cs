@@ -58,8 +58,6 @@ namespace voidSigils
 				yield return base.PreSuccessfulTriggerSequence();
 				//make the card mondification info
 				CardModificationInfo cardModificationInfo = new CardModificationInfo(void_sickness.ability);
-				//set the modifincation so it is a "sticker" 
-				cardModificationInfo.fromCardMerge = true;
 				//Clone the main card info so we don't touch the main card set
 				CardInfo targetCardInfo = target.Info.Clone() as CardInfo;
 				//Add the modifincations to the cloned info
@@ -71,8 +69,8 @@ namespace voidSigils
 				yield return new WaitForSeconds(0.1f);
 				yield return base.LearnAbility(0.1f);
 				Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;
-				
-            }
+
+			}
 			yield break;
 		}
 	}

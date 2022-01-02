@@ -50,6 +50,10 @@ namespace voidSigils
 			{
 				damage = 1;
 			}
+			if (__instance.HasAbility(void_ThickShell.ability))
+			{
+				damage--;
+			}
 		}
 	}
 }

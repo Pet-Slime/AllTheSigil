@@ -13,7 +13,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Leech";
-			const string rulebookDescription = "[creature] deals damage, it heals 1 Health for each damage dealt.";
+			const string rulebookDescription = "[creature] deals damage, it heals 1 Health for each damage dealt to a card.";
 			const string LearnDialogue = "Vigor from blood!";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 

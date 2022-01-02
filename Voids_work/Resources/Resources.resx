@@ -202,6 +202,9 @@
   <data name="void_blight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_blight.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="void_Blind" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Blind.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="void_bodyguard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_bodyguard.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -265,11 +268,17 @@
   <data name="void_dying" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_dying.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="void_dying_decal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_dying_decal.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="void_eletric" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_eletric.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="void_familair" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_familair.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Firestarter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Firestarter.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="void_fisher" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_fisher.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -420,6 +429,9 @@
   </data>
   <data name="void_sick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_sick.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_sickness_decal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_sickness_decal.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="void_thief" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_thief.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

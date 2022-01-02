@@ -9,31 +9,31 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Original
-		private NewAbility AddToxinDeadly()
+		private NewAbility AddFireStarter()
 		{
 			// setup ability
-			const string rulebookName = "Toxin (Deadly)";
-			const string rulebookDescription = "[creature] will inject toxin to what it attacks, that causes the target be affected with the Dying Sigil. The Dying Sigil is defined as: When ever a creature bearing this sigil declares an attack, they will loose one health.";
+			const string rulebookName = "Firestarter";
+			const string rulebookDescription = "[creature] will light what it strikes on fire, causing it to gain the Burning Sigil. The Burning Sigil is define as: Each upkeep, this creature gains 1 strength but looses 1 health.";
 			const string LearnDialogue = "Even once combat is over, it leaves a deadly mark";
 			// const string TextureFile = "Artwork/void_weaken.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2, Plugin.configToxin.Value);
 			info.canStack = false;
 
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_toxin_deadly);
+			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Firestarter);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
 			
-			NewAbility newAbility = new NewAbility(info, typeof(void_ToxinDeadly), tex, abIds);
+			NewAbility newAbility = new NewAbility(info, typeof(void_Firestarter), tex, abIds);
 
 			// set ability to behaviour class
-			void_ToxinDeadly.ability = newAbility.ability;
+			void_Firestarter.ability = newAbility.ability;
 
 			return newAbility;
 		}
 	}
 
-	public class void_ToxinDeadly : AbilityBehaviour
+	public class void_Firestarter : AbilityBehaviour
 	{
 		public override Ability Ability => ability;
 
@@ -45,7 +45,7 @@ namespace voidSigils
 			{
 				return false;
 			}
-			return base.Card.HasAbility(void_ToxinDeadly.ability);
+			return base.Card.HasAbility(void_Firestarter.ability);
 		}
 
 		public override IEnumerator OnDealDamage(int amount, PlayableCard target)
@@ -57,7 +57,7 @@ namespace voidSigils
 				base.Card.Anim.LightNegationEffect();
 				yield return base.PreSuccessfulTriggerSequence();
 				//make the card mondification info
-				CardModificationInfo cardModificationInfo = new CardModificationInfo(void_dying.ability);
+				CardModificationInfo cardModificationInfo = new CardModificationInfo(void_Burning.ability);
 				//Clone the main card info so we don't touch the main card set
 				CardInfo targetCardInfo = target.Info.Clone() as CardInfo;
 				//Add the modifincations to the cloned info
@@ -65,7 +65,7 @@ namespace voidSigils
 				//Set the target's info to the clone'd info
 				target.SetInfo(targetCardInfo);
 				target.Anim.PlayTransformAnimation();
-				Plugin.Log.LogWarning("toxin debug " + target + " should have dying");
+				Plugin.Log.LogWarning("firestarter debug " + target + " should have burning");
 				yield return new WaitForSeconds(0.1f);
 				yield return base.LearnAbility(0.1f);
 				Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;

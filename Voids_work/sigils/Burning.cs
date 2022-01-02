@@ -50,7 +50,7 @@ namespace voidSigils
 
 		public override bool RespondsToUpkeep(bool playerUpkeep)
 		{
-			return true;
+			return base.Card.OpponentCard != playerUpkeep;
 		}
 
 		public override IEnumerator OnUpkeep(bool playerUpkeep)
