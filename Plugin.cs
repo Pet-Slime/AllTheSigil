@@ -114,6 +114,7 @@ namespace voidSigils
 			AddThickShell();
 
 			//Debuff sigils
+			AddFireStarter();
 			AddToxin();
 			AddToxinStrength();
 			AddToxinVigor();
@@ -123,6 +124,7 @@ namespace voidSigils
 			//Negative Sigils
 			AddAppetizing();
 			AddBlight();
+			AddBlind();
 			AddBroken();
 			AddBombardier();
 			AddBoneless();
