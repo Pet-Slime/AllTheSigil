@@ -19,6 +19,7 @@ namespace voidSigils
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2, Plugin.configToxin.Value);
 			info.canStack = false;
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.toxin_sigil_a2_S);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_toxin_sickness);
 

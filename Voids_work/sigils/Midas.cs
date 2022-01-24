@@ -20,8 +20,9 @@ namespace voidSigils
 			const string LearnDialogue = "A bounty, paid in full.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3, false);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2, false);
 			info.canStack = true;
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.midas_sigil_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Midas);
 

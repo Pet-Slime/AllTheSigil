@@ -19,6 +19,7 @@ namespace voidSigils
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, -1);
 			info.canStack = false;
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.blight_sigil_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_blight);
 
@@ -42,8 +43,6 @@ namespace voidSigils
 		private void Start()
 		{
 			this.mod = new CardModificationInfo();
-			this.mod.healthAdjustment = -1;
-			this.mod.attackAdjustment = -1;
 		}
 
 		public override bool RespondsToSacrifice()
@@ -54,8 +53,21 @@ namespace voidSigils
 		public override IEnumerator OnSacrifice()
 		{
 			yield return base.PreSuccessfulTriggerSequence();
-			Singleton<BoardManager>.Instance.currentSacrificeDemandingCard.AddTemporaryMod(this.mod);
-			Singleton<BoardManager>.Instance.currentSacrificeDemandingCard.OnStatsChanged();
+
+			if (Singleton<BoardManager>.Instance.currentSacrificeDemandingCard.MaxHealth > base.Card.MaxHealth)
+            {
+				this.mod.healthAdjustment = base.Card.MaxHealth * -1;
+				this.mod.attackAdjustment = base.Card.Attack * -1;
+				Singleton<BoardManager>.Instance.currentSacrificeDemandingCard.AddTemporaryMod(this.mod);
+				Singleton<BoardManager>.Instance.currentSacrificeDemandingCard.OnStatsChanged();
+			} else
+			{
+				this.mod.healthAdjustment = (Singleton<BoardManager>.Instance.currentSacrificeDemandingCard.MaxHealth -1) * -1;
+				this.mod.attackAdjustment = base.Card.Attack * -1;
+				Singleton<BoardManager>.Instance.currentSacrificeDemandingCard.AddTemporaryMod(this.mod);
+				Singleton<BoardManager>.Instance.currentSacrificeDemandingCard.OnStatsChanged();
+			}
+			
 			yield return new WaitForSeconds(0.25f);
 			yield return base.LearnAbility(0.25f);
 			yield break;

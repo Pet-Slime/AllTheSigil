@@ -20,6 +20,7 @@ namespace voidSigils
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 1, Plugin.configVicious.Value);
 			info.canStack = false;
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.vicious_sigil_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_vicious);
 
@@ -67,11 +68,9 @@ namespace voidSigils
 				yield return new WaitForSeconds(0.1f);
 				yield return base.LearnAbility(0.1f);
 				Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;
-
 				
 			}
 			yield break;
 		}
-
 	}
 }

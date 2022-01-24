@@ -21,6 +21,7 @@ namespace voidSigils
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3, Plugin.configThief.Value);
 			info.canStack = false;
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.sigilthief_sigil_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_thief);
 
@@ -46,33 +47,7 @@ namespace voidSigils
 
 		public override bool RespondsToResolveOnBoard()
 		{
-			if (base.Card.slot.opposingSlot.Card != null
-				&& base.Card.HasAbility(void_Thief.ability))
-			{
-				PlayableCard card = base.Card.Slot.opposingSlot.Card;
-
-				if (card.Info.HasTrait(Trait.Uncuttable))
-				{
-					CustomCoroutine.Instance.StartCoroutine(Singleton<TextDisplayer>.Instance.ShowThenClear(
-						"You can't steal the moon!", 2.5f, 0f, Emotion.Anger, TextDisplayer.LetterAnimation.Jitter, DialogueEvent.Speaker.Single, null));
-					return false;
-
-				}
-				else if (card.Info.HasTrait(Trait.Giant))
-				{
-
-					CustomCoroutine.Instance.StartCoroutine(Singleton<TextDisplayer>.Instance.ShowThenClear(
-						"You can't steal the moon!", 2.5f, 0f, Emotion.Anger, TextDisplayer.LetterAnimation.Jitter, DialogueEvent.Speaker.Single, null));
-					return false;
-
-				}
-				else
-				{
-					return base.Card.OnBoard && hasStolen == false;
-				}
-			}
-
-			return false;
+			return base.Card.OnBoard && hasStolen == false;
 		}
 
 
@@ -209,6 +184,5 @@ namespace voidSigils
 			}
 			yield break;
 		}
-
 	}
 }

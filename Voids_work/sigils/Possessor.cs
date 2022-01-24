@@ -20,6 +20,7 @@ namespace voidSigils
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 0, true);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.possessor_sigil_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_possessor);
 

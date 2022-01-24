@@ -22,6 +22,7 @@ namespace voidSigils
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, -1);
 			info.canStack = false;
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.zapper_sigil_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_zapper);
 
@@ -46,7 +47,7 @@ namespace voidSigils
 
 		public override bool RespondsToOtherCardDie(PlayableCard card, CardSlot deathSlot, bool fromCombat, PlayableCard killer)
 		{
-			return deathSlot.IsPlayerSlot;
+			return base.Card.OnBoard && deathSlot.IsPlayerSlot && card != base.Card;
 		}
 
 		public override IEnumerator OnOtherCardDie(PlayableCard card, CardSlot deathSlot, bool fromCombat, PlayableCard killer)
@@ -64,7 +65,7 @@ namespace voidSigils
 			List<CardSlot> adjacentSlots = Singleton<BoardManager>.Instance.GetAdjacentSlots(zapper.slot);
 
 			//if ci is null, then skip the rest
-			if (ci = null)
+			if (ci == null)
             {
 				yield break;
             }

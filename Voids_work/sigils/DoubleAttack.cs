@@ -21,8 +21,9 @@ namespace voidSigils
             // const string TextureFile = "Artwork/void_double_attack.png";
 
             AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 0, Plugin.configMultiStrike.Value);
+            info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.doubleattack_sigil_a2);
 
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_double_attack);
+            Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_double_attack);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
 			
@@ -129,6 +130,5 @@ namespace voidSigils
             yield return new WaitForSeconds(0.25f);
             yield return base.LearnAbility(0.0f);
         }
-
     }
 }

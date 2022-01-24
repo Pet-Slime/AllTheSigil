@@ -23,6 +23,7 @@ namespace voidSigils
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 4);
 			info.canStack = true;
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.medic_sigil_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Medic);
 

@@ -19,6 +19,7 @@ namespace voidSigils
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2, Plugin.configAcidTrail.Value);
 			info.canStack = false;
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.acidtrail_sigil_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_acid);
 
@@ -83,16 +84,6 @@ namespace voidSigils
 			if (destination != null && destinationValid)
 			{
 				CardSlot oldSlot = base.Card.Slot;
-				if (oldSlot.opposingSlot.Card != null)
-				{
-					if (base.Card.Anim is CardAnimationController)
-					{
-						(base.Card.Anim as CardAnimationController).PlayAttackAnimation(false, oldSlot);
-
-					}
-					yield return base.Card.slot.opposingSlot.Card.TakeDamage(1, base.Card);
-					yield return new WaitForSeconds(0.5f);
-				}
 				yield return Singleton<BoardManager>.Instance.AssignCardToSlot(base.Card, destination, 0.1f, null, true);
 				yield return this.PostSuccessfulMoveSequence(oldSlot);
 				yield return new WaitForSeconds(0.25f);
@@ -108,6 +99,16 @@ namespace voidSigils
 
 		protected virtual IEnumerator PostSuccessfulMoveSequence(CardSlot oldSlot)
 		{
+			if (oldSlot.opposingSlot.Card != null)
+			{
+				if (base.Card.Anim is CardAnimationController)
+				{
+					(base.Card.Anim as CardAnimationController).PlayAttackAnimation(false, oldSlot);
+
+				}
+				yield return base.Card.slot.opposingSlot.Card.TakeDamage(1, base.Card);
+				yield return new WaitForSeconds(0.5f);
+			}
 			yield break;
 		}
 

@@ -3,6 +3,7 @@ using APIPlugin;
 using DiskCardGame;
 using UnityEngine;
 using Artwork = voidSigils.Voids_work.Resources.Resources;
+using HarmonyLib;
 
 namespace voidSigils
 {
@@ -19,6 +20,7 @@ namespace voidSigils
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, -1, Plugin.configDying.Value);
 			info.canStack = false;
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.dying_sigil_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_dying);
 
@@ -43,12 +45,11 @@ namespace voidSigils
 
 		public override bool RespondsToSlotTargetedForAttack(CardSlot slot, PlayableCard attacker)
 		{
-			return attacker.HasAbility(void_dying.ability) && slot != lastSlot;
+			return attacker.HasAbility(void_dying.ability);
 		}
 
 		public override IEnumerator OnSlotTargetedForAttack(CardSlot slot, PlayableCard attacker)
 		{
-
 			yield return base.PreSuccessfulTriggerSequence();
 			yield return new WaitForSeconds(0.55f);
 			attacker.Anim.LightNegationEffect();
@@ -59,6 +60,5 @@ namespace voidSigils
 			lastSlot = slot;
 			yield break;
 		}
-
 	}
 }

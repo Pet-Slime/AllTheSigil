@@ -43,6 +43,9 @@ namespace voidSigils
 		internal static ConfigEntry<bool> configVicious;
 
 
+		internal static ConfigEntry<bool> configHammerBlock;
+
+
 		private void Awake()
 		{
 			Log = base.Logger;
@@ -74,6 +77,9 @@ namespace voidSigils
 			configBombardier = Config.Bind("Chaos Sigil", "Bombardier", true, "Should Leshy have this?");
 
 
+			configHammerBlock = Config.Bind("Hammer Block", "Pathetic Sacrifice", true, "Should the sigil pathetic sacrifice be invalid for hammering? Due to the intent being it is stuck on your board. default is true.");
+
+
 			Harmony harmony = new(PluginGuid);
 			harmony.PatchAll();
 
@@ -89,10 +95,6 @@ namespace voidSigils
 			AddStampede();
 			AddPierce();
 			AddTrample();
-			AddZapper();
-			AddPredator();
-			AddOpportunist();
-			AddVicious();
 
 			//Buff Attack Sigils
 			AddZapper();

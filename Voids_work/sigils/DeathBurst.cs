@@ -23,6 +23,7 @@ namespace voidSigils
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 8, Plugin.configDeathburst.Value);
 			info.canStack = true;
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.deathburst1_sigil_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_deathburst);
 

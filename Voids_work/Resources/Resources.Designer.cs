@@ -193,6 +193,556 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] abundance_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("abundance_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] acidtrail_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("acidtrail_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] agile_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("agile_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] blight_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("blight_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] blindness_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("blindness_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] bloodguzzler_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("bloodguzzler_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] bloodless_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("bloodless_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] bodyguard_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("bodyguard_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] bombardiercool_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("bombardiercool_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] boneless_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("boneless_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] BonelessAct2 {
+            get {
+                object obj = ResourceManager.GetObject("BonelessAct2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] bonepicker_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("bonepicker_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] broken_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("broken_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] coward_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("coward_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] deathburst1_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("deathburst1_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] doubleattack_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("doubleattack_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] dying_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("dying_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] electric_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("electric_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] familiar_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("familiar_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] firestarter_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("firestarter_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] fisher_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("fisher_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] fishhook_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("fishhook_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] haste_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("haste_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] herd0_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("herd0_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] herd1_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("herd1_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] herd2_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("herd2_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] herd3_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("herd3_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] leech_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("leech_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] medic_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("medic_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] midas_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("midas_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] opportunist_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("opportunist_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] PatheticSacrificeAct2 {
+            get {
+                object obj = ResourceManager.GetObject("PatheticSacrificeAct2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] piercing_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("piercing_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] poisonous_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("poisonous_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] possessor_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("possessor_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] predator_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("predator_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] prideful_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("prideful_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] protected_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("protected_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] rammer_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("rammer_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] regeneration_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("regeneration_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] repellant_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("repellant_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] resistant_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("resistant_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] scissors_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("scissors_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] sickly_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("sickly_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] sigilthief_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("sigilthief_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] stampede_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("stampede_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] thickshell_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("thickshell_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] tooth_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("tooth_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] toxin_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("toxin_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] toxin_sigil_a2_A {
+            get {
+                object obj = ResourceManager.GetObject("toxin_sigil_a2_A", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] toxin_sigil_a2_D {
+            get {
+                object obj = ResourceManager.GetObject("toxin_sigil_a2_D", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] toxin_sigil_a2_H {
+            get {
+                object obj = ResourceManager.GetObject("toxin_sigil_a2_H", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] toxin_sigil_a2_S {
+            get {
+                object obj = ResourceManager.GetObject("toxin_sigil_a2_S", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] transient_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("transient_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] vicious_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("vicious_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] void_Abundance {
             get {
                 object obj = ResourceManager.GetObject("void_Abundance", resourceCulture);
@@ -556,16 +1106,6 @@ namespace voidSigils.Voids_work.Resources {
         internal static byte[] void_dying {
             get {
                 object obj = ResourceManager.GetObject("void_dying", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] void_dying_decal {
-            get {
-                object obj = ResourceManager.GetObject("void_dying_decal", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1346,6 +1886,16 @@ namespace voidSigils.Voids_work.Resources {
         internal static byte[] void_zapper {
             get {
                 object obj = ResourceManager.GetObject("void_zapper", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] zapper_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("zapper_sigil_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }

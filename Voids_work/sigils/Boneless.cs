@@ -20,6 +20,7 @@ namespace voidSigils
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, -1);
 			info.canStack = false;
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.BonelessAct2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Boneless);
 
@@ -59,5 +60,4 @@ namespace voidSigils
 			}
 		}
 	}
-
 }

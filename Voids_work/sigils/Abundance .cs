@@ -21,12 +21,14 @@ namespace voidSigils
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3, false);
 			info.canStack = true;
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.abundance_sigil_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Abundance);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
 			
 			NewAbility newAbility = new NewAbility(info, typeof(void_Abundance), tex, abIds);
+			
 
 			// set ability to behaviour class
 			void_Abundance.ability = newAbility.ability;
