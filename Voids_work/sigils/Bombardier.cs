@@ -52,7 +52,7 @@ namespace voidSigils
 
 		public override bool RespondsToTurnEnd(bool playerTurnEnd)
 		{
-			return base.Card.HasAbility(void_Bombardier.ability);
+			return base.Card != null && base.Card.OpponentCard != playerTurnEnd;
 		}
 
 		public override IEnumerator OnTurnEnd(bool playerTurnEnd)

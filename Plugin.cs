@@ -24,6 +24,7 @@ namespace voidSigils
 		internal static ConfigEntry<bool> configBloodGuzzler;
 		internal static ConfigEntry<bool> configBombardier;
 		internal static ConfigEntry<bool> configBurning;
+		internal static ConfigEntry<bool> configConsumer;
 		internal static ConfigEntry<bool> configCowardly;
 		internal static ConfigEntry<bool> configDeathburst;
 		internal static ConfigEntry<bool> configMultiStrike;
@@ -49,10 +50,12 @@ namespace voidSigils
 		private void Awake()
 		{
 			Log = base.Logger;
+			Directory = this.Info.Location.Replace("voidSigils.dll", "");
 
 			configAcidTrail = Config.Bind("Good Sigil", "Acid Trail", true, "Should Leshy have this?");
 			configAgile = Config.Bind("Good Sigil", "Agile", true, "Should Leshy have this?");
 			configBloodGuzzler = Config.Bind("Good Sigil", "BloodGuzzler", true, "Should Leshy have this?");
+			configConsumer = Config.Bind("Good Sigil", "Consumer", true, "Should Leshy have this?");
 			configDeathburst = Config.Bind("Good Sigil", "Deathburst", true, "Should Leshy have this?");
 			configElectric = Config.Bind("Good Sigil", "Electric", true, "Should Leshy have this?");
 			configMultiStrike = Config.Bind("Good Sigil", "MultiStrike", true, "Should Leshy have this?");
@@ -83,6 +86,10 @@ namespace voidSigils
 			Harmony harmony = new(PluginGuid);
 			harmony.PatchAll();
 
+			//Add Card
+			Voids_work.Cards.Acid_Puddle.AddCard();
+			Voids_work.Cards.Jackalope.AddCard();
+
 			//Attack sigils
 			AddAcidTrail();
 			AddAmbush();
@@ -97,7 +104,9 @@ namespace voidSigils
 			AddTrample();
 
 			//Buff Attack Sigils
+			AddDesperation();
 			AddZapper();
+			AddGiant();
 			AddPredator();
 			AddOpportunist();
 			AddVicious();
@@ -105,6 +114,8 @@ namespace voidSigils
 			//Defensive sigils
 			AddAgile();
 			AddBodyguard();
+			AddCaustic();
+			AddGrazing();
 			AddMedic();
 			AddRegenFull();
 			AddRegen1();
@@ -116,6 +127,7 @@ namespace voidSigils
 			AddThickShell();
 
 			//Debuff sigils
+			AddDwarf();
 			AddFireStarter();
 			AddToxin();
 			AddToxinStrength();
@@ -140,9 +152,13 @@ namespace voidSigils
 			AddTransient();
 
 			//Utility Sigils
+			AddAntler();
 			AddAbundance();
 			AddBloodGuzzler();
 			AddBonePicker();
+			AddConsumer();
+			AddDrawIce();
+			AddDrawJack();
 			AddFishHook();
 			AddLeech();
 			AddFisher();
@@ -154,6 +170,7 @@ namespace voidSigils
 			AddRepellant();
 			AddScissors();
 			AddThief();
+			AddTooth();
 			AddTribalAlly();
 			AddTribalTutor();
 			AddPatchedBoneDigger();
