@@ -34,7 +34,7 @@ namespace voidSigils
 		}
 	}
 
-	public class void_AcidTrail : AbilityBehaviour
+	public class void_AcidTrail : Strafe
 	{
 		public override Ability Ability => ability;
 
@@ -42,77 +42,20 @@ namespace voidSigils
 
 		//Copied Strafe's code and just added damage
 
-		public override bool RespondsToTurnEnd(bool playerTurnEnd)
-		{
-			return base.Card != null && base.Card.OpponentCard != playerTurnEnd;
-		}
-
-		public override IEnumerator OnTurnEnd(bool playerTurnEnd)
-		{
-			CardSlot toLeft = Singleton<BoardManager>.Instance.GetAdjacent(base.Card.Slot, true);
-			CardSlot toRight = Singleton<BoardManager>.Instance.GetAdjacent(base.Card.Slot, false);
-			Singleton<ViewManager>.Instance.SwitchToView(View.Board, false, false);
-			yield return new WaitForSeconds(0.25f);
-			yield return base.StartCoroutine(this.DoStrafe(toLeft, toRight));
-			yield break;
-		}
-
-		protected virtual IEnumerator DoStrafe(CardSlot toLeft, CardSlot toRight)
-		{
-			bool flag = toLeft != null && toLeft.Card == null;
-			bool flag2 = toRight != null && toRight.Card == null;
-			if (this.movingLeft && !flag)
-			{
-				this.movingLeft = false;
-			}
-			if (!this.movingLeft && !flag2)
-			{
-				this.movingLeft = true;
-			}
-			CardSlot destination = this.movingLeft ? toLeft : toRight;
-			bool destinationValid = this.movingLeft ? flag : flag2;
-			yield return base.StartCoroutine(this.MoveToSlot(destination, destinationValid));
-			if (destination != null && destinationValid)
-			yield break;
-		}
-
-		protected IEnumerator MoveToSlot(CardSlot destination, bool destinationValid)
-		{
-			base.Card.RenderInfo.SetAbilityFlipped(this.Ability, this.movingLeft);
-			base.Card.RenderInfo.flippedPortrait = (this.movingLeft && base.Card.Info.flipPortraitForStrafe);
-			base.Card.RenderCard();
-			if (destination != null && destinationValid)
-			{
-				CardSlot oldSlot = base.Card.Slot;
-				yield return Singleton<BoardManager>.Instance.AssignCardToSlot(base.Card, destination, 0.1f, null, true);
-				yield return this.PostSuccessfulMoveSequence(oldSlot);
-				yield return new WaitForSeconds(0.25f);
-				oldSlot = null;
-			}
-			else
-			{
-				base.Card.Anim.StrongNegationEffect();
-				yield return new WaitForSeconds(0.15f);
-			}
-			yield break;
-		}
-
-		protected virtual IEnumerator PostSuccessfulMoveSequence(CardSlot oldSlot)
+		public override IEnumerator PostSuccessfulMoveSequence(CardSlot oldSlot)
 		{
 			if (oldSlot.opposingSlot.Card != null)
-			{
-				if (base.Card.Anim is CardAnimationController)
+            {
+				bool impactFrameReached = false;
+				base.Card.Anim.PlayAttackAnimation(false, oldSlot.opposingSlot, delegate ()
 				{
-					(base.Card.Anim as CardAnimationController).PlayAttackAnimation(false, oldSlot);
-
-				}
-				yield return base.Card.slot.opposingSlot.Card.TakeDamage(1, base.Card);
-				yield return new WaitForSeconds(0.5f);
+					impactFrameReached = true;
+				});
+				yield return new WaitUntil(() => impactFrameReached);
+				yield return oldSlot.opposingSlot.Card.TakeDamage(1, base.Card);
+				yield return new WaitForSeconds(0.25f);
 			}
 			yield break;
 		}
-
-		protected bool movingLeft;
-
 	}
 }

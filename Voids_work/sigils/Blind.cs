@@ -16,12 +16,12 @@ namespace voidSigils
 		private NewAbility AddBlind()
 		{
 			// setup ability
-			const string rulebookName = "Blind";
-			const string rulebookDescription = "[creature] is blind, and will attack randomly.";
-			const string LearnDialogue = "The Blind strikes widly...";
+			const string rulebookName = "Random Strike";
+			const string rulebookDescription = "[creature] will attack randomly.";
+			const string LearnDialogue = "They strike widly...";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 0);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, -1);
 			info.canStack = false;
 			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.blindness_sigil_a2);
 

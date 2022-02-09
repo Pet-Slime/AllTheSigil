@@ -45,20 +45,19 @@ namespace voidSigils
 
 		public bool hasShoved = false;
 
-		public static bool combatPhase = false;
 
 		public override bool RespondsToResolveOnBoard()
 		{
-			if (hasShoved || combatPhase)
+			if (hasShoved || Plugin.voidCombatPhase)
 			{
 				return false;
 			}
-			return base.Card.OnBoard && combatPhase == false;
+			return base.Card.OnBoard && Plugin.voidCombatPhase == false;
 		}
 
 		public override bool RespondsToUpkeep(bool playerUpkeep)
 		{
-			combatPhase = false;
+			Plugin.voidCombatPhase = false;
 			return base.Card.OpponentCard != playerUpkeep && this.hasShoved == false;
 		}
 
@@ -143,16 +142,6 @@ namespace voidSigils
 				}
 			}
 			yield break;
-		}
-
-		[HarmonyPatch(typeof(CombatPhaseManager), "DoCombatPhase", MethodType.Normal)]
-		public class Shove_Combatphase_patch
-		{
-			[HarmonyPrefix]
-			public static void DoCombatPhase()
-			{
-				combatPhase = true;
-			}
 		}
 	}
 }

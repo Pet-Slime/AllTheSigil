@@ -5,7 +5,7 @@ using DiskCardGame;
 using UnityEngine;
 using HarmonyLib;
 using Artwork = voidSigils.Voids_work.Resources.Resources;
-using System.Linq;
+using GBC;
 
 namespace voidSigils
 {
@@ -53,21 +53,26 @@ namespace voidSigils
 		{
 			if (fromCombat == true && killer.HasAbility(void_Midas.ability))
 			{
-				int count = SigilUtils.getAbilityCount(base.Card, void_Midas.ability);
 
 				yield return base.PreSuccessfulTriggerSequence();
 				yield return new WaitForSeconds(0.15f);
-				Singleton<ViewManager>.Instance.SwitchToView(View.Scales, false, true);
-				yield return new WaitForSeconds(0.25f);
-				RunState.Run.currency += (count);
-				yield return Singleton<CurrencyBowl>.Instance.ShowGain(count, true, false);
-				yield return new WaitForSeconds(0.25f);
+				bool flag2 = !SaveManager.SaveFile.IsPart2;
+				if (flag2)
+				{
+					Singleton<ViewManager>.Instance.SwitchToView(View.Scales, false, true);
+					yield return new WaitForSeconds(0.25f); RunState.Run.currency += (1);
+					yield return Singleton<CurrencyBowl>.Instance.ShowGain(1, true, false);
+					yield return new WaitForSeconds(0.25f);
+					Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;
+				}
+				else
+				{
+					SaveData.Data.currency += 1;
+				}
 				yield return base.LearnAbility(0.25f);
 				yield return new WaitForSeconds(0.1f);
-				Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;
 			}
 			yield break;
 		}
-
 	}
 }

@@ -53,7 +53,15 @@ namespace voidSigils
 			yield return base.PreSuccessfulTriggerSequence();
 
 			yield return new WaitForSeconds(0.25f);
-			yield return ShowDamageSequence(1, 1, false, 0.25f, ResourceBank.Get<GameObject>("Prefabs/Environment/ScaleWeights/Weight_RealTooth"), 0f, true);
+			if (base.Card.slot.IsPlayerSlot)
+            {
+				yield return ShowDamageSequence(1, 1, false, 0.25f, null, 0f, true);
+			}
+			else
+			{
+				yield return ShowDamageSequence(1, 1, true, 0.25f, null, 0f, true);
+			}
+
 			yield return new WaitForSeconds(0.25f);
 			yield return base.LearnAbility(0.25f);
 			yield return new WaitForSeconds(0.25f);
@@ -70,7 +78,13 @@ namespace voidSigils
 			base.Card.Anim.LightNegationEffect();
 			yield return base.PreSuccessfulTriggerSequence();
 			yield return new WaitForSeconds(0.25f);
-			yield return ShowDamageSequence(2, 2, true, 0.25f, null, 0f, true);
+			if (base.Card.slot.IsPlayerSlot)
+			{
+				yield return ShowDamageSequence(2, 2, true, 0.25f, null, 0f, true);
+			} else
+            {
+				yield return ShowDamageSequence(2, 2, false, 0.25f, null, 0f, true);
+			}
 			yield return new WaitForSeconds(0.25f);
 			yield return base.LearnAbility(0.25f);
 			yield return new WaitForSeconds(0.25f);

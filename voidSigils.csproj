@@ -21,15 +21,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="API, version=1.12.1.0">
-      <HintPath>lib\API.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <CopyLocal>False</CopyLocal>
+    <Reference Include="API">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Inscryption\BepInEx\plugins\API_dev-API\API_KCM.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>lib\Assembly-CSharp.dll</HintPath>
       <CopyLocal>False</CopyLocal>
       <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Custom_Sigils">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Inscryption\BepInEx\plugins\AllTheSigils-All_The_Sigils\plugins\Custom_Sigils.dll</HintPath>
     </Reference>
     <Reference Include="Sirenix.Serialization">
       <HintPath>lib\Sirenix.Serialization.dll</HintPath>

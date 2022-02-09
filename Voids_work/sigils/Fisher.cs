@@ -16,7 +16,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Lure";
-			const string rulebookDescription = "[creature] will lure sumberged targets out of hiding when attacking.";
+			const string rulebookDescription = "[creature] will cause facedown cards to become face up when attacking.";
 			const string LearnDialogue = "The Submerge are brought back to the surface";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 

@@ -13,7 +13,7 @@ namespace voidSigils
 		public const string APIGUID = "cyantist.inscryption.api";
 		public const string PluginGuid = "extraVoid.inscryption.voidSigils";
 		private const string PluginName = "Extra Sigils";
-		private const string PluginVersion = "2.0.1";
+		private const string PluginVersion = "2.3.0";
 
 		public static string Directory;
 		internal static ManualLogSource Log;
@@ -47,10 +47,14 @@ namespace voidSigils
 		internal static ConfigEntry<bool> configHammerBlock;
 
 
+		public static bool voidCombatPhase;
+
+
 		private void Awake()
 		{
 			Log = base.Logger;
 			Directory = this.Info.Location.Replace("voidSigils.dll", "");
+			voidCombatPhase = false;
 
 			configAcidTrail = Config.Bind("Good Sigil", "Acid Trail", true, "Should Leshy have this?");
 			configAgile = Config.Bind("Good Sigil", "Agile", true, "Should Leshy have this?");
@@ -78,7 +82,6 @@ namespace voidSigils
 			configSickness = Config.Bind("Bad Sigil", "Sickness", true, "Should Leshy have this?");
 
 			configBombardier = Config.Bind("Chaos Sigil", "Bombardier", true, "Should Leshy have this?");
-
 
 			configHammerBlock = Config.Bind("Hammer Block", "Pathetic Sacrifice", true, "Should the sigil pathetic sacrifice be invalid for hammering? Due to the intent being it is stuck on your board. default is true.");
 
@@ -150,22 +153,29 @@ namespace voidSigils
 			AddSickness();
 			AddToothpicker();
 			AddTransient();
+			AddWithering();
 
 			//Utility Sigils
 			AddAntler();
 			AddAbundance();
+			AddBloodGrowth();
 			AddBloodGuzzler();
 			AddBonePicker();
+			AddBox();
 			AddConsumer();
+			AddDrawBlood();
+			AddDrawBone();
 			AddDrawIce();
 			AddDrawJack();
 			AddFishHook();
 			AddLeech();
 			AddFisher();
 			AddHerd();
+			AddHourglass();
 			AddMidas();
 			AddNutritious();
 			AddPossessor();
+			AddRandomStrafe();
 			AddShove();
 			AddRepellant();
 			AddScissors();
