@@ -24,6 +24,10 @@ namespace voidSigils
 				{
 					info.metaCategories.Add(AbilityMetaCategory.Part1Rulebook);
 				}
+				if (info.ability == Ability.Brittle)
+				{
+					info.metaCategories.Add(AbilityMetaCategory.Part1Rulebook);
+				}
 			}
 
 		}

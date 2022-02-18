@@ -33,7 +33,7 @@ namespace voidSigils
 			[HarmonyPostfix]
 			public static void RespondsToDie(bool wasSacrifice, PlayableCard killer, AbilityBehaviour __instance, ref bool __result)
 			{
-				__result = __instance.Card.Slot.IsPlayerSlot;
+				__result = !__instance.Card.OpponentCard;
 			}
 		}
 

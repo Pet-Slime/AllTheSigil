@@ -24,6 +24,7 @@ namespace voidSigils
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 8, Plugin.configDeathburst.Value);
 			info.canStack = true;
 			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.deathburst1_sigil_a2);
+			info.flipYIfOpponent = true;
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_deathburst);
 
@@ -47,7 +48,7 @@ namespace voidSigils
 		{
 			if (ability.ability == void_Deathburst.ability)
 			{
-				if (info != null)
+				if (info != null && !SaveManager.SaveFile.IsPart2)
 				{
 					Texture2D tex1 = SigilUtils.LoadTextureFromResource(Artwork.void_deathburst_1);
 

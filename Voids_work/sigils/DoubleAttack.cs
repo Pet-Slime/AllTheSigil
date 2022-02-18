@@ -22,6 +22,7 @@ namespace voidSigils
 
             AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 0, Plugin.configMultiStrike.Value);
             info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.doubleattack_sigil_a2);
+            info.flipYIfOpponent = true;
 
             Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_double_attack);
 
@@ -44,7 +45,7 @@ namespace voidSigils
         {
             if (ability.ability == void_DoubleAttack.ability)
             {
-                if (info != null)
+                if (info != null && !SaveManager.SaveFile.IsPart2)
                 {
                     //Get count of how many instances of the ability the card has
                     int count = Mathf.Max(info.Abilities.FindAll((Ability x) => x == void_DoubleAttack.ability).Count, 1);

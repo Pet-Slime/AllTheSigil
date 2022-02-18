@@ -22,7 +22,7 @@ namespace voidSigils
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 7);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.PatheticSacrificeAct2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.toothgiver_sigil_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_toothGiver);
 
@@ -51,11 +51,11 @@ namespace voidSigils
 		public override IEnumerator OnTurnEnd(bool playerTurnEnd)
 		{
 			yield return base.PreSuccessfulTriggerSequence();
-			yield return new WaitForSeconds(0.25f);
+			yield return new WaitForSeconds(0.1f);
 			yield return ShowDamageSequence(1, 1, false, 0.25f, ResourceBank.Get<GameObject>("Prefabs/Environment/ScaleWeights/Weight_RealTooth"), 0f, true);
-			yield return new WaitForSeconds(0.25f);
-			yield return base.LearnAbility(0.25f);
-			yield return new WaitForSeconds(0.25f);
+			yield return new WaitForSeconds(0.1f);
+			yield return base.LearnAbility(0.1f);
+			yield return new WaitForSeconds(0.1f);
 			yield break;
 		}
 
@@ -119,8 +119,5 @@ namespace voidSigils
 			}
 			yield break;
 		}
-
-
 	}
-
 }

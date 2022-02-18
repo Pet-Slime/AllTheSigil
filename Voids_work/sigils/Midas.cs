@@ -56,14 +56,26 @@ namespace voidSigils
 
 				yield return base.PreSuccessfulTriggerSequence();
 				yield return new WaitForSeconds(0.15f);
-				bool flag2 = !SaveManager.SaveFile.IsPart2;
-				if (flag2)
+				bool flag1 = !SaveManager.SaveFile.IsPart2;
+				if (flag1)
 				{
-					Singleton<ViewManager>.Instance.SwitchToView(View.Scales, false, true);
-					yield return new WaitForSeconds(0.25f); RunState.Run.currency += (1);
-					yield return Singleton<CurrencyBowl>.Instance.ShowGain(1, true, false);
-					yield return new WaitForSeconds(0.25f);
-					Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;
+					if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("extraVoid.inscryption.LifeCost"))
+					{
+						Singleton<ViewManager>.Instance.SwitchToView(View.Scales, false, true);
+						yield return new WaitForSeconds(0.25f); RunState.Run.currency += (1);
+						yield return Singleton<CurrencyBowl>.Instance.DropWeightsIn(1);
+						yield return new WaitForSeconds(0.75f);
+						Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;
+
+
+					} else
+                    {
+						Singleton<ViewManager>.Instance.SwitchToView(View.Scales, false, true);
+						yield return new WaitForSeconds(0.25f); RunState.Run.currency += (1);
+						yield return Singleton<CurrencyBowl>.Instance.ShowGain(1, true, false);
+						yield return new WaitForSeconds(0.25f);
+						Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;
+					}
 				}
 				else
 				{

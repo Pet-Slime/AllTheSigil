@@ -185,6 +185,8 @@ namespace voidSigils
 			AddTribalTutor();
 			AddPatchedBoneDigger();
 			AddPatchedBeesOnHit();
+			AddStrafePowerUp();
+			AddMovingPowerUp();
 		}
 
 		private void Start()

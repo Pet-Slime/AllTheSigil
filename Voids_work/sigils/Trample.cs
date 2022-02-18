@@ -14,12 +14,14 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Trample";
-			const string rulebookDescription = "[creature] will deal overkill damage to the owner of the creature.";
+			const string rulebookDescription = "[creature] will deal overkill damage to the owner of the creature and not those in queue.";
 			const string LearnDialogue = "A stampede can not be stopped.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 7, Plugin.configTrample.Value);
 			info.canStack = false;
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.trample_sigil_a2);
+			info.flipYIfOpponent = true;
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_trample);
 
@@ -99,6 +101,19 @@ namespace voidSigils
 			}
 			this.willDealDamageToOpponent = slot.Card && !Singleton<BoardManager>.Instance.GetCardQueuedForSlot(slot);
 			yield break;
+		}
+
+		[HarmonyPatch(typeof(CombatPhaseManager), nameof(CombatPhaseManager.DealOverkillDamage))]
+		public class TramplePatch
+		{
+			[HarmonyPrefix]
+			public static void Prefix(ref int damage, ref CardSlot attackingSlot, ref CardSlot opposingSlot)
+			{
+				if (attackingSlot.Card != null && damage > 0 && attackingSlot.Card.HasAbility(void_trample.ability))
+                {
+					damage = 0;
+				}
+			}
 		}
 
 		//Port KCM damage formula to fix sigils that deal damage to leshy

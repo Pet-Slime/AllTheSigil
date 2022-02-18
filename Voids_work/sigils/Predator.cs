@@ -45,7 +45,7 @@ namespace voidSigils
 		{
 			if (ability.ability == void_Predator.ability)
 			{
-				if (info != null)
+				if (info != null && !SaveManager.SaveFile.IsPart2)
 				{
 					//Get count of how many instances of the ability the card has
 					int count = Mathf.Max(info.Abilities.FindAll((Ability x) => x == void_Predator.ability).Count, 1);

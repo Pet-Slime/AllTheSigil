@@ -21,6 +21,7 @@ namespace voidSigils
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3, true);
+			info.canStack = false;
 
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_ambush);
@@ -156,6 +157,7 @@ namespace voidSigils
 				yield return base.LearnAbility(0.5f);
 				Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;
 			}
+			yield return new WaitForSeconds(0.5f);
 			yield break;
 		}
 
