@@ -29,8 +29,6 @@ namespace voidSigils
 					info.metaCategories.Add(AbilityMetaCategory.Part1Rulebook);
 				}
 			}
-
 		}
 	}
-
 }
