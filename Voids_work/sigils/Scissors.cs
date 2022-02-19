@@ -46,11 +46,13 @@ namespace voidSigils
 
 		public override bool RespondsToResolveOnBoard()
 		{
-			return SigilUtils.GetSlot(Card).IsPlayerSlot;
+			return base.Card.slot.IsPlayerSlot;
 		}
 
 		public override IEnumerator OnResolveOnBoard()
 		{
+			yield return base.PreSuccessfulTriggerSequence();
+			yield return new WaitForSeconds(0.5f);
 			if (GetValidTargets().Count == 0)
 			{
 				Card.Anim.StrongNegationEffect();
@@ -59,7 +61,6 @@ namespace voidSigils
 			}
 
 			yield return ActivateSequence();
-
 			Singleton<ViewManager>.Instance.SwitchToView(View.Default, false, false);
 			yield return new WaitForSeconds(0.1f);
 			Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;
@@ -72,9 +73,9 @@ namespace voidSigils
 			Singleton<UIManager>.Instance.Effects.GetEffect<EyelidMaskEffect>().SetIntensity(0.6f, 0.2f);
 			Singleton<ViewManager>.Instance.SwitchToView(View.OpponentQueue, false, false);
 			yield return new WaitForSeconds(0.25f);
-			Transform firstPersonItem = Singleton<FirstPersonController>.Instance.AnimController.SpawnFirstPersonAnimation("FirstPersonScissors", null).transform;
-			firstPersonItem.localPosition = new Vector3(0f, -1.25f, 4f) + Vector3.right * 3f;
-			firstPersonItem.localEulerAngles = new Vector3(0f, 0f, 0f);
+///			Transform firstPersonItem = Singleton<FirstPersonController>.Instance.AnimController.SpawnFirstPersonAnimation("FirstPersonScissors", null).transform;
+///			firstPersonItem.localPosition = new Vector3(0f, -1.25f, 4f) + Vector3.right * 3f;
+///			firstPersonItem.localEulerAngles = new Vector3(0f, 0f, 0f);
 			Singleton<InteractionCursor>.Instance.InteractionDisabled = false;
 			CardSlot target = null;
 			List<CardSlot> validTargets = this.GetValidTargets();
@@ -84,26 +85,26 @@ namespace voidSigils
 				target = slot;
 			}, new Action<CardSlot>(this.OnInvalidTargetSelected), delegate (CardSlot slot)
 			{
-			}, () => Singleton<ViewManager>.Instance.CurrentView != View.OpponentQueue || !Singleton<TurnManager>.Instance.IsPlayerMainPhase, CursorType.Scissors);
+			}, () => Singleton<ViewManager>.Instance.CurrentView != View.OpponentQueue, CursorType.Scissors);
 			if (target != null)
 			{
 				Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Locked;
 				Singleton<InteractionCursor>.Instance.InteractionDisabled = true;
-				yield return this.OnValidTargetSelected(target, firstPersonItem.gameObject);
+				yield return this.OnValidTargetSelected(target);
 			}
 
-			Object.Destroy(firstPersonItem.gameObject);
+///			Object.Destroy(firstPersonItem.gameObject);
 			Singleton<UIManager>.Instance.Effects.GetEffect<EyelidMaskEffect>().SetIntensity(0f, 0.2f);
 			Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;
 			yield break;
 		}
 
-		private IEnumerator OnValidTargetSelected(CardSlot target, GameObject firstPersonItem)
+		private IEnumerator OnValidTargetSelected(CardSlot target)
 		{
 			PlayableCard targetCard = target.Card;
 			Tween.LocalPosition(targetCard.transform, new Vector3(0f, 1.25f, -0.5f), 0.1f, 0f, Tween.EaseInOut, Tween.LoopType.None, null, null, true);
 			Tween.LocalRotation(targetCard.transform, this.CARD_ROT, 0.1f, 0f, Tween.EaseInOut, Tween.LoopType.None, null, null, true);
-			firstPersonItem.GetComponentInChildren<Animator>().SetTrigger("cut");
+///			firstPersonItem.GetComponentInChildren<Animator>().SetTrigger("cut");
 			yield return new WaitForSeconds(0.65f);
 			AudioController.Instance.PlaySound2D("consumable_scissors_use", MixerGroup.TableObjectsSFX, 1f, 0f, null, null, null, null, false);
 			GameObject gameObject = Singleton<FirstPersonController>.Instance.AnimController.PlayOneShotAnimation("SplitCard", null);
@@ -117,7 +118,7 @@ namespace voidSigils
 			{
 				yield return base.StartCoroutine(Singleton<BoardManager>.Instance.CreateCardInSlot(CardLoader.GetCardByName("SkinkTail"), target, 0.1f, true));
 			}
-			Tween.Position(firstPersonItem.transform, firstPersonItem.transform.position + Vector3.back * 4f, 0.2f, 0f, Tween.EaseOut, Tween.LoopType.None, null, null, true);
+///			Tween.Position(firstPersonItem.transform, firstPersonItem.transform.position + Vector3.back * 4f, 0.2f, 0f, Tween.EaseOut, Tween.LoopType.None, null, null, true);
 			yield return new WaitForSeconds(0.15f);
 			yield break;
 		}

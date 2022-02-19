@@ -57,7 +57,6 @@ namespace voidSigils
 
 		public override IEnumerator OnResolveOnBoard()
 		{
-
 			CardSlot slot = base.Card.slot;
 			List<CardSlot> adjacentSlots = Singleton<BoardManager>.Instance.GetAdjacentSlots(slot);
 			List<CardSlot> attackingSlots = new List<CardSlot>();
@@ -86,8 +85,18 @@ namespace voidSigils
 				yield return new WaitForSeconds(0.1f);
 			}
 			if (attackingSlots.Count > 0)
-            {
-				yield return this.FakeCombat(base.Card.slot, null, attackingSlots);
+			{
+				if (base.Card.Attack > 0 && Plugin.voidCombatPhase == false)
+				{
+					yield return this.FakeCombat(base.Card.slot.IsPlayerSlot, null, attackingSlots);
+				}
+				else
+				{
+					foreach (CardSlot attacker in attackingSlots)
+                    {
+						yield return Singleton<CombatPhaseManager>.Instance.SlotAttackSequence(attacker);
+					}
+				}
 			}
 			yield return base.LearnAbility(0.25f);
 			yield return new WaitForSeconds(0.1f);
@@ -97,51 +106,124 @@ namespace voidSigils
 
 		public IEnumerator FakeCombat(bool playerIsAttacker, SpecialBattleSequencer specialSequencer, List<CardSlot> attacker)
 		{
+			var holder = Singleton<CombatPhaseManager>.Instance;
 			this.DamageDealtThisPhase = 0;
-			for (int index = 0; index < attacker.Count; index++)
+			List<CardSlot> attackingSlots = attacker;
+			attackingSlots.RemoveAll((CardSlot x) => x.Card == null || x.Card.Attack == 0);
+			bool atLeastOneAttacker = attackingSlots.Count > 0;
+			yield return holder.InitializePhase(attackingSlots, playerIsAttacker);
+			bool flag = specialSequencer != null;
+			if (flag)
 			{
-				yield return new WaitForSeconds(0.2f);
-				yield return this.SlotAttackSequence(attacker[index]);
-			}
-			bool flag6 = this.DamageDealtThisPhase > 0;
-			if (flag6)
-			{
-				yield return new WaitForSeconds(0.4f);
-				int excessDamage = 0;
 				if (playerIsAttacker)
 				{
-					excessDamage = Singleton<LifeManager>.Instance.Balance + this.DamageDealtThisPhase - 5;
-					excessDamage = Mathf.Max(0, excessDamage);
+					yield return specialSequencer.PlayerCombatStart();
 				}
-				int damage = this.DamageDealtThisPhase - excessDamage;
-				bool flag8 = this.DamageDealtThisPhase >= 666;
-				if (flag8)
+				else
 				{
-					AchievementManager.Unlock(Achievement.PART2_SPECIAL2);
+					yield return specialSequencer.OpponentCombatStart();
 				}
-				bool flag9 = !(specialSequencer != null) || !specialSequencer.PreventDamageAddedToScales;
-				if (flag9)
-				{
-					yield return ShowDamageSequence(damage, damage, !playerIsAttacker, 0f, null, 0f, true);
-				}
-				bool flag10 = specialSequencer != null;
-				if (flag10)
-				{
-					yield return specialSequencer.DamageAddedToScale(damage + excessDamage, playerIsAttacker);
-				}
-				bool flag11 = (!(specialSequencer != null) || !specialSequencer.PreventDamageAddedToScales) && excessDamage > 0 && Singleton<TurnManager>.Instance.Opponent.NumLives == 1 && Singleton<TurnManager>.Instance.Opponent.GiveCurrencyOnDefeat;
-				if (flag11)
-				{
-					yield return Singleton<TurnManager>.Instance.Opponent.TryRevokeSurrender();
-					RunState.Run.currency += excessDamage;
-				}
-				Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;
-				this.DamageDealtThisPhase = 0;
 			}
+			bool flag2 = atLeastOneAttacker;
+			if (flag2)
+			{
+				bool attackedWithSquirrel = false;
+				foreach (CardSlot slot in attackingSlots)
+				{
+					slot.Card.AttackedThisTurn = false;
+					bool flag3 = slot.Card.Info.IsOfTribe(Tribe.Squirrel);
+					if (flag3)
+					{
+						attackedWithSquirrel = true;
+					}
+				}
+#pragma warning disable CS0219 // Variable is assigned but its value is never used
+				List<CardSlot>.Enumerator enumerator = default(List<CardSlot>.Enumerator);
+#pragma warning restore CS0219 // Variable is assigned but its value is never used
+				foreach (CardSlot slot2 in attackingSlots)
+				{
+					bool flag4 = slot2.Card != null && !slot2.Card.AttackedThisTurn;
+					if (flag4)
+					{
+						slot2.Card.AttackedThisTurn = true;
+						yield return this.SlotAttackSequence(slot2);
+					}
+				}
+#pragma warning disable CS0219 // Variable is assigned but its value is never used
+				List<CardSlot>.Enumerator enumerator2 = default(List<CardSlot>.Enumerator);
+#pragma warning restore CS0219 // Variable is assigned but its value is never used
+				bool flag5 = specialSequencer != null && playerIsAttacker;
+				if (flag5)
+				{
+					yield return specialSequencer.PlayerCombatPostAttacks();
+				}
+				bool flag6 = this.DamageDealtThisPhase > 0;
+				if (flag6)
+				{
+					yield return new WaitForSeconds(0.4f);
+					yield return holder.VisualizeDamageMovingToScales(playerIsAttacker);
+					int excessDamage = 0;
+					if (playerIsAttacker)
+					{
+						excessDamage = Singleton<LifeManager>.Instance.Balance + this.DamageDealtThisPhase - 5;
+						bool flag7 = attackedWithSquirrel && excessDamage >= 0;
+						if (flag7)
+						{
+							AchievementManager.Unlock(Achievement.PART1_SPECIAL1);
+						}
+						excessDamage = Mathf.Max(0, excessDamage);
+					}
+					int damage = this.DamageDealtThisPhase - excessDamage;
+					bool flag8 = this.DamageDealtThisPhase >= 666;
+					if (flag8)
+					{
+						AchievementManager.Unlock(Achievement.PART2_SPECIAL2);
+					}
+					bool flag9 = !(specialSequencer != null) || !specialSequencer.PreventDamageAddedToScales;
+					if (flag9)
+					{
+						yield return ShowDamageSequence(damage, damage, !playerIsAttacker, 0f, null, 0f, true);
+					}
+					bool flag10 = specialSequencer != null;
+					if (flag10)
+					{
+						yield return specialSequencer.DamageAddedToScale(damage + excessDamage, playerIsAttacker);
+					}
+					bool flag11 = (!(specialSequencer != null) || !specialSequencer.PreventDamageAddedToScales) && excessDamage > 0 && Singleton<TurnManager>.Instance.Opponent.NumLives == 1 && Singleton<TurnManager>.Instance.Opponent.GiveCurrencyOnDefeat;
+					if (flag11)
+					{
+						yield return Singleton<TurnManager>.Instance.Opponent.TryRevokeSurrender();
+						RunState.Run.currency += excessDamage;
+						yield return holder.VisualizeExcessLethalDamage(excessDamage, specialSequencer);
+					}
+				}
+				yield return new WaitForSeconds(0.15f);
+			}
+			bool flag13 = specialSequencer != null;
+			if (flag13)
+			{
+				if (playerIsAttacker)
+				{
+					yield return specialSequencer.PlayerCombatEnd();
+				}
+				else
+				{
+					yield return specialSequencer.OpponentCombatEnd();
+				}
+			}
+			Singleton<ViewManager>.Instance.SwitchToView(Singleton<BoardManager>.Instance.defaultView, false, false);
+			Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;
+			bool flag14 = atLeastOneAttacker;
+			if (flag14)
+			{
+				yield return new WaitForSeconds(0.15f);
+			}
+			yield break;
 		}
 
 		public IEnumerator SlotAttackSlot(CardSlot attackingSlot, CardSlot opposingSlot, float waitAfter = 0f)
 		{
+			var holder = Singleton<CombatPhaseManager>.Instance;
 			yield return Singleton<GlobalTriggerHandler>.Instance.TriggerCardsOnBoard(Trigger.SlotTargetedForAttack, false, new object[]
 			{
 				opposingSlot,
@@ -161,7 +243,7 @@ namespace voidSigils
 				if (flag2)
 				{
 					ProgressionData.SetAbilityLearned(Ability.PreventAttack);
-					yield return Singleton<CombatPhaseManager>.Instance.ShowCardBlocked(attackingSlot.Card);
+					yield return holder.ShowCardBlocked(attackingSlot.Card);
 				}
 				else
 				{
@@ -169,7 +251,7 @@ namespace voidSigils
 					if (flag3)
 					{
 						this.DamageDealtThisPhase += attackingSlot.Card.Attack;
-						yield return Singleton<CombatPhaseManager>.Instance.VisualizeCardAttackingDirectly(attackingSlot, opposingSlot, 0);
+						yield return holder.VisualizeCardAttackingDirectly(attackingSlot, opposingSlot, attackingSlot.Card.Attack);
 						bool flag4 = attackingSlot.Card.TriggerHandler.RespondsToTrigger(Trigger.DealDamageDirectly, new object[]
 						{
 							attackingSlot.Card.Attack
@@ -244,6 +326,7 @@ namespace voidSigils
 
 		protected virtual IEnumerator DealOverkillDamage(int damage, CardSlot attackingSlot, CardSlot opposingSlot)
 		{
+			var holder = Singleton<CombatPhaseManager>.Instance;
 			bool flag = attackingSlot.Card != null && attackingSlot.IsPlayerSlot && damage > 0;
 			if (flag)
 			{
@@ -257,13 +340,11 @@ namespace voidSigils
 					bool flag3 = queuedCard.HasAbility(Ability.PreventAttack);
 					if (flag3)
 					{
-						yield return Singleton<CombatPhaseManager>.Instance.ShowCardBlocked(attackingSlot.Card);
+						yield return holder.ShowCardBlocked(attackingSlot.Card);
 					}
 					else
 					{
-						yield return Singleton<CombatPhaseManager>.Instance.PreOverkillDamage(queuedCard);
 						yield return queuedCard.TakeDamage(damage, attackingSlot.Card);
-						yield return Singleton<CombatPhaseManager>.Instance.PostOverkillDamage(queuedCard);
 					}
 				}
 				queuedCard = null;

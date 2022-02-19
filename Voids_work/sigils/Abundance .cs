@@ -85,6 +85,5 @@ namespace voidSigils
 			Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;
 			yield break;
 		}
-
 	}
 }

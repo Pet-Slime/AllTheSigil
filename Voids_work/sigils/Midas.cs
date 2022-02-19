@@ -46,7 +46,7 @@ namespace voidSigils
 
 		public override bool RespondsToOtherCardDie(PlayableCard card, CardSlot deathSlot, bool fromCombat, PlayableCard killer)
 		{
-			return fromCombat == true && killer.HasAbility(void_Midas.ability) && base.Card.OnBoard;
+			return fromCombat == true && base.Card.OnBoard && killer.HasAbility(void_Midas.ability);
 		}
 
 		public override IEnumerator OnOtherCardDie(PlayableCard card, CardSlot deathSlot, bool fromCombat, PlayableCard killer)

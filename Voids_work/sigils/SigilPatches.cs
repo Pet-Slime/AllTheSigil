@@ -58,11 +58,11 @@ namespace voidSigils
 			}
 		}
 
-		[HarmonyPatch(typeof(CombatPhaseManager), "DoCombatPhase", MethodType.Normal)]
+		[HarmonyPatch(typeof(TurnManager), "DoUpkeepPhase", MethodType.Normal)]
 		public class Shove_Combatphase_Endpatch
 		{
-			[HarmonyPostfix]
-			public static void DoCombatPhase()
+			[HarmonyPrefix]
+			public static void DoUpkeepPhase()
 			{
 				Plugin.voidCombatPhase = false;
 			}
