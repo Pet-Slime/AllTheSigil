@@ -343,6 +343,16 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] coinFinder_sigil_a2 {
+            get {
+                object obj = ResourceManager.GetObject("coinFinder_sigil_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] coward_sigil_a2 {
             get {
                 object obj = ResourceManager.GetObject("coward_sigil_a2", resourceCulture);
@@ -1126,6 +1136,16 @@ namespace voidSigils.Voids_work.Resources {
         internal static byte[] void_caustic {
             get {
                 object obj = ResourceManager.GetObject("void_caustic", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_coinFinder {
+            get {
+                object obj = ResourceManager.GetObject("void_coinFinder", resourceCulture);
                 return ((byte[])(obj));
             }
         }

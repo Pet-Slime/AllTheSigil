@@ -9,7 +9,7 @@ namespace voidSigils
 {
 	public partial class Plugin
 	{
-		//Original
+		//Request by Blind
 		private NewAbility AddBoneless()
 		{
 			// setup ability

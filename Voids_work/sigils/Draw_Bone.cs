@@ -10,7 +10,7 @@ namespace voidSigils
 {
 	public partial class Plugin
 	{
-		//Request by Sire
+		//Original
 		private NewAbility AddDrawBone()
 		{
 			// setup ability

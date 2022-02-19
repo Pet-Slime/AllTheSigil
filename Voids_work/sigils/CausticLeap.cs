@@ -11,13 +11,13 @@ namespace voidSigils
 {
 	public partial class Plugin
 	{
-		//Original
+		//Request by Tilted hat
 		private NewAbility AddCaustic()
 		{
 			// setup ability
 			const string rulebookName = "Caustic";
 			const string rulebookDescription = "[creature] will leave an acid puddle behind when it strafes.";
-			const string LearnDialogue = "That is not a noble, or worthy sacrifice";
+			const string LearnDialogue = "What it leaves behind is deadly.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 2);

@@ -12,7 +12,7 @@ namespace voidSigils
 {
 	public partial class Plugin
 	{
-		//Original
+		//Request by Blind
 		private NewAbility AddBombardier()
 		{
 			// setup ability

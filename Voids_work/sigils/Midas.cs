@@ -65,6 +65,7 @@ namespace voidSigils
 						yield return new WaitForSeconds(0.25f); RunState.Run.currency += (1);
 						yield return Singleton<CurrencyBowl>.Instance.DropWeightsIn(1);
 						yield return new WaitForSeconds(0.75f);
+						Singleton<ViewManager>.Instance.SwitchToView(View.Default, false, true);
 						Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;
 
 
@@ -74,6 +75,7 @@ namespace voidSigils
 						yield return new WaitForSeconds(0.25f); RunState.Run.currency += (1);
 						yield return Singleton<CurrencyBowl>.Instance.ShowGain(1, true, false);
 						yield return new WaitForSeconds(0.25f);
+						Singleton<ViewManager>.Instance.SwitchToView(View.Default, false, true);
 						Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;
 					}
 				}

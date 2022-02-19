@@ -202,6 +202,9 @@
   <data name="burning_sigil_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\burning-sigil-a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="coinFinder_sigil_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\coinFinder-sigil-a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="coward_sigil_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\coward-sigil-a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -438,6 +441,9 @@
   </data>
   <data name="void_caustic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_caustic.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_coinFinder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_coinFinder.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="void_consumer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_consumer.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
