@@ -16,7 +16,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Paralysis";
-			const string rulebookDescription = "A card bearing this sigil only attack every other turn.";
+			const string rulebookDescription = "[creature] will only attack every other turn. Some effects from sigils may bypass this.";
 			const string LearnDialogue = "A shocking event.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
@@ -74,7 +74,7 @@ namespace voidSigils
 				cardModificationInfo = new CardModificationInfo();
 				cardModificationInfo.singletonId = "void_CantAttack";
 				base.Card.AddTemporaryMod(cardModificationInfo);
-				attackingSlot.Card.Anim.StrongNegationEffect();
+				base.Card.Anim.StrongNegationEffect();
 			} else
 			{
 				base.Card.RemoveTemporaryMod(cardModificationInfo);

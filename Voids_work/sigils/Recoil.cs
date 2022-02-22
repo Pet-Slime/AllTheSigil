@@ -44,7 +44,7 @@ namespace voidSigils
 
 		public override bool RespondsToAttackEnded()
 		{
-			return base.Card.HasAbility(void_dying.ability);
+			return base.Card.HasAbility(void_Recoil.ability);
 		}
 
 		public override IEnumerator OnAttackEnded()

@@ -13,7 +13,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Zapper";
-			const string rulebookDescription = "[creature] will cause what it strikes to gain the Paralysis sigil.";
+			const string rulebookDescription = "[creature] will cause what it strikes to gain the Paralysis sigil. The Paralysis sigil is defined as: A card bearing this sigil only attack every other turn.";
 			const string LearnDialogue = "Shocking";
 			// const string TextureFile = "Artwork/void_weaken.png";
 
