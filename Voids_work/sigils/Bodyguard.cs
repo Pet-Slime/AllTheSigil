@@ -60,15 +60,15 @@ namespace voidSigils
 
 				if (opposingSlot.Card != null)
 				{
-					Plugin.Log.LogMessage("bodyguard test succesfully patched");
+					Plugin.Log.LogDebug("bodyguard test succesfully patched");
 					List<CardSlot> adjacentSlots = Singleton<BoardManager>.Instance.GetAdjacentSlots(opposingSlot);
 
 					if (adjacentSlots.Count > 0 && adjacentSlots[0].Index < opposingSlot.Index)
 					{
 						if (adjacentSlots[0].Card != null && !adjacentSlots[0].Card.Dead)
 						{
-							Plugin.Log.LogMessage("Bodyguard test: card: " + adjacentSlots[0].Card);
-							Plugin.Log.LogMessage("Bodyguard test: ability: " + adjacentSlots[0].Card.HasAbility(void_bodyguard.ability));
+							Plugin.Log.LogDebug("Bodyguard test: card: " + adjacentSlots[0].Card);
+							Plugin.Log.LogDebug("Bodyguard test: ability: " + adjacentSlots[0].Card.HasAbility(void_bodyguard.ability));
 							if (adjacentSlots[0].Card.Info.HasAbility(void_bodyguard.ability))
 							{
 								opposingSlot = adjacentSlots[0];
@@ -78,8 +78,8 @@ namespace voidSigils
 					}
 					if (adjacentSlots.Count > 0 && adjacentSlots[0].Card != null && !adjacentSlots[0].Card.Dead)
 					{
-						Plugin.Log.LogMessage("bodyguard test: card: " + adjacentSlots[0].Card);
-						Plugin.Log.LogMessage("bodyguard test: ability: " + adjacentSlots[0].Card.HasAbility(void_bodyguard.ability));
+						Plugin.Log.LogDebug("bodyguard test: card: " + adjacentSlots[0].Card);
+						Plugin.Log.LogDebug("bodyguard test: ability: " + adjacentSlots[0].Card.HasAbility(void_bodyguard.ability));
 						if (adjacentSlots[0].Card.Info.HasAbility(void_bodyguard.ability))
 						{
 							opposingSlot = adjacentSlots[0];

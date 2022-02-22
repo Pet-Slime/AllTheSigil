@@ -105,15 +105,15 @@ namespace voidSigils
 			
 			if (opposingSlot.Card != null)
             {
-				Plugin.Log.LogMessage("protector test succesfully patched");
+				Plugin.Log.LogDebug("protector test succesfully patched");
 				List<CardSlot> adjacentSlots = Singleton<BoardManager>.Instance.GetAdjacentSlots(opposingSlot);
 
 				if (adjacentSlots.Count > 0 && adjacentSlots[0].Index < opposingSlot.Index)
 				{
 					if (adjacentSlots[0].Card != null && !adjacentSlots[0].Card.Dead)
 					{
-						Plugin.Log.LogMessage("protector test: card: " + adjacentSlots[0].Card);
-						Plugin.Log.LogMessage("protector test: ability: " + adjacentSlots[0].Card.HasAbility(void_Protector.ability));
+						Plugin.Log.LogDebug("protector test: card: " + adjacentSlots[0].Card);
+						Plugin.Log.LogDebug("protector test: ability: " + adjacentSlots[0].Card.HasAbility(void_Protector.ability));
 						if (adjacentSlots[0].Card.HasAbility(void_Protector.ability))
                         {
 							__result = true;
@@ -123,14 +123,14 @@ namespace voidSigils
 				}
 				if (adjacentSlots.Count > 0 && adjacentSlots[0].Card != null && !adjacentSlots[0].Card.Dead)
 				{
-					Plugin.Log.LogMessage("protector test: card: " + adjacentSlots[0].Card);
-					Plugin.Log.LogMessage("protector test: ability: " + adjacentSlots[0].Card.HasAbility(void_Protector.ability));
+					Plugin.Log.LogDebug("protector test: card: " + adjacentSlots[0].Card);
+					Plugin.Log.LogDebug("protector test: ability: " + adjacentSlots[0].Card.HasAbility(void_Protector.ability));
 					if (adjacentSlots[0].Card.HasAbility(void_Protector.ability))
 					{
 						__result = true;
 					}
 				}
-				Plugin.Log.LogMessage(__result);
+				Plugin.Log.LogDebug(__result);
 			}
 		}
 	}

@@ -102,7 +102,6 @@ namespace voidSigils
 
         public override IEnumerator OnDealDamage(int amount, PlayableCard target)
         {
-
             CardSlot theSlot = SigilUtils.GetSlot(target);
             int count = SigilUtils.getAbilityCount(base.Card, void_DoubleAttack.ability);
 
@@ -112,7 +111,6 @@ namespace voidSigils
                 yield return new WaitForSeconds(0.35f);
                 if (base.Card.Anim is CardAnimationController)
                 {
-                    
                     if (theSlot.Card != null)
                     {
                         PlayableCard theTarget = theSlot.Card;
@@ -124,7 +122,6 @@ namespace voidSigils
                         yield return new WaitUntil(() => impactFrameReached);
                         yield return theTarget.TakeDamage(base.Card.Info.Attack, null);
                     }
-
                 }
                 if (target.Dead)
                 {

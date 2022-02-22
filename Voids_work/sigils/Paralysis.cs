@@ -16,8 +16,8 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Paralysis";
-			const string rulebookDescription = "A card bearing this sigil will not attack every other turn";
-			const string LearnDialogue = "A creature's pride will be it's downfall.";
+			const string rulebookDescription = "A card bearing this sigil only attack every other turn.";
+			const string LearnDialogue = "A shocking event.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, -1, Plugin.configPrideful.Value);
@@ -27,7 +27,7 @@ namespace voidSigils
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_paralysis);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
+
 			NewAbility newAbility = new NewAbility(info, typeof(void_Paralysis), tex, abIds);
 
 			// set ability to behaviour class
@@ -44,6 +44,21 @@ namespace voidSigils
 
 		public static Ability ability;
 
+		public override bool RespondsToResolveOnBoard()
+		{
+			return true;
+		}
+
+		public override IEnumerator OnResolveOnBoard()
+		{
+			yield return base.PreSuccessfulTriggerSequence();
+			CardModificationInfo cardModificationInfo = base.Card.TemporaryMods.Find((CardModificationInfo x) => x.singletonId == "void_CantAttack");
+			if (cardModificationInfo != null)
+			{
+				base.Card.RemoveTemporaryMod(cardModificationInfo);
+			}
+			yield break;
+		}
 
 		public override bool RespondsToTurnEnd(bool playerTurnEnd)
 		{
@@ -53,8 +68,38 @@ namespace voidSigils
 		public override IEnumerator OnTurnEnd(bool playerTurnEnd)
 		{
 			yield return base.PreSuccessfulTriggerSequence();
+			CardModificationInfo cardModificationInfo = base.Card.TemporaryMods.Find((CardModificationInfo x) => x.singletonId == "void_CantAttack");
+			if (cardModificationInfo == null)
+			{
+				cardModificationInfo = new CardModificationInfo();
+				cardModificationInfo.singletonId = "void_CantAttack";
+				base.Card.AddTemporaryMod(cardModificationInfo);
+				attackingSlot.Card.Anim.StrongNegationEffect();
+			} else
+			{
+				base.Card.RemoveTemporaryMod(cardModificationInfo);
+			}
 			yield return base.LearnAbility(0f);
 			yield break;
+		}
+	}
+
+	[HarmonyPatch(typeof(CombatPhaseManager), "SlotAttackSlot", MethodType.Normal)]
+	public class CombatPhaseManager_Paralysis_Patch
+	{
+		[HarmonyPrefix]
+		public static bool Prefix(ref CombatPhaseManager __instance, CardSlot attackingSlot, CardSlot opposingSlot, float waitAfter = 0f)
+		{
+			if (attackingSlot.Card != null && attackingSlot.Card.HasAbility(void_Paralysis.ability))
+			{
+				CardModificationInfo cardModificationInfo = attackingSlot.Card.TemporaryMods.Find((CardModificationInfo x) => x.singletonId == "void_CantAttack");
+				if (cardModificationInfo != null)
+                {
+					attackingSlot.Card.Anim.StrongNegationEffect();
+					return false;
+				}
+			}
+			return true;
 		}
 	}
 }
