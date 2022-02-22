@@ -202,6 +202,9 @@
   <data name="burning_sigil_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\burning-sigil-a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="caustic_sigil_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\caustic_sigil_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="coinFinder_sigil_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\coinFinder-sigil-a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -219,6 +222,9 @@
   </data>
   <data name="electric_sigil_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\electric-sigil-a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="enforcer_sigil_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\instigator-sigil-a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="familiar_sigil_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\familiar-sigil-a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -262,6 +268,9 @@
   <data name="opportunist_sigil_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\opportunist-sigil-a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="paralysis_sigil_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\paralysis-sigil-a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="PatheticSacrificeAct2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\PatheticSacrificeAct2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -288,6 +297,9 @@
   </data>
   <data name="randomStrafe_act2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\randomStrafe_act2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="recoil_sigil_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\recoil-sigil-a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="regeneration_1_sigil_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\regeneration_1-sigil-a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -517,6 +529,9 @@
   <data name="void_eletric" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_eletric.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="void_Enforcer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_instigator.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="void_familair" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_familair.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -631,6 +646,9 @@
   <data name="void_Opportunist_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_Opportunist_9.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="void_paralysis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_paralysis.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="void_pathetic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_pathetic.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -679,6 +697,9 @@
   <data name="void_randomStrafe" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_randomStrafe.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="void_Recoil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Recoil.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="void_repellant" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_repellant.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -687,6 +708,9 @@
   </data>
   <data name="void_scissors" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_scissors.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Shocker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Shocker.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="void_shove" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_shove.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

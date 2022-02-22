@@ -41,12 +41,12 @@ namespace voidSigils
 
 		public static Ability ability;
 
-		public override bool RespondsToDealDamage(int amount, PlayableCard target)
+		public override bool RespondsToSlotTargetedForAttack(CardSlot slot, PlayableCard attacker)
 		{
-			return amount > 0 && target != null;
+			return base.Card == attacker;
 		}
 
-		public override IEnumerator OnDealDamage(int amount, PlayableCard target)
+		public override IEnumerator OnSlotTargetedForAttack(CardSlot slot, PlayableCard attacker)
 		{
 			CardSlot baseSlot = base.Card.slot;
 			List<CardSlot> adjacentSlots = Singleton<BoardManager>.Instance.GetAdjacentSlots(baseSlot.opposingSlot);
@@ -55,14 +55,14 @@ namespace voidSigils
 			{
 				if (adjacentSlots[0].Card != null && !adjacentSlots[0].Card.Dead)
 				{
-					yield return this.ShockCard(adjacentSlots[0].Card, baseSlot.Card, amount);
+					yield return this.ShockCard(adjacentSlots[0].Card, baseSlot.Card, base.Card.Attack);
 				}
 				adjacentSlots.RemoveAt(0);
 			}
 			yield return new WaitForSeconds(0.2f);
 			if (adjacentSlots.Count > 0 && adjacentSlots[0].Card != null && !adjacentSlots[0].Card.Dead)
 			{
-				yield return this.ShockCard(adjacentSlots[0].Card, baseSlot.Card, amount);
+				yield return this.ShockCard(adjacentSlots[0].Card, baseSlot.Card, base.Card.Attack);
 			}
 			yield break;
 		}
@@ -72,8 +72,10 @@ namespace voidSigils
 			
 			double newDamage = System.Math.Floor(damage * 0.5);
 			int finalDamage = (int)newDamage;
+			target.Anim.SetOverclocked(true);
 			target.Anim.PlayHitAnimation();
 			yield return target.TakeDamage(finalDamage, attacker);
+			target.Anim.SetOverclocked(false);
 			yield return new WaitForSeconds(0.2f);
 			yield break;
 		}

@@ -106,7 +106,6 @@ namespace voidSigils
             CardSlot theSlot = SigilUtils.GetSlot(target);
             int count = SigilUtils.getAbilityCount(base.Card, void_DoubleAttack.ability);
 
-            Plugin.Log.LogMessage("multi-strike count: " + count);
             yield return base.PreSuccessfulTriggerSequence();
             for (int index = 0; index < count; index++)
             {
@@ -116,9 +115,13 @@ namespace voidSigils
                     
                     if (theSlot.Card != null)
                     {
-                        (base.Card.Anim as CardAnimationController).PlayAttackAnimation(false, theSlot);
-                        yield return new WaitForSeconds(0.1f);
                         PlayableCard theTarget = theSlot.Card;
+                        bool impactFrameReached = false;
+                        base.Card.Anim.PlayAttackAnimation(false, theSlot, delegate ()
+                        {
+                            impactFrameReached = true;
+                        });
+                        yield return new WaitUntil(() => impactFrameReached);
                         yield return theTarget.TakeDamage(base.Card.Info.Attack, null);
                     }
 

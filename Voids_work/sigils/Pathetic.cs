@@ -71,7 +71,6 @@ namespace voidSigils
 		[HarmonyPostfix]
 		public static void Postfix(ref CardInfo __instance, ref bool __result)
 		{
-
 			if (__instance.abilities.Contains(void_Pathetic.ability) || __instance.ModAbilities.Contains(void_Pathetic.ability))
 			{
 				__result = false;

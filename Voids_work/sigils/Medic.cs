@@ -115,16 +115,18 @@ namespace voidSigils
 						targets.Add(allSlots[index].Card);
 					}
 				}
-
-				// pick a random target from the target list
-				PlayableCard target = targets[Random.Range(0, (targets.Count))];
-				base.Card.Anim.LightNegationEffect();
-				yield return new WaitForSeconds(0.15f);
-				yield return base.PreSuccessfulTriggerSequence();
-				target.Anim.StrongNegationEffect();
-				if (target.Status.damageTaken > 0)
+				if (targets.Count > 0)
 				{
-					target.HealDamage(finalCount);
+					// pick a random target from the target list
+					PlayableCard target = targets[Random.Range(0, (targets.Count))];
+					base.Card.Anim.LightNegationEffect();
+					yield return new WaitForSeconds(0.15f);
+					yield return base.PreSuccessfulTriggerSequence();
+					target.Anim.StrongNegationEffect();
+					if (target.Status.damageTaken > 0)
+					{
+						target.HealDamage(finalCount);
+					}
 				}
 				yield return new WaitForSeconds(0.15f);
 				yield return base.LearnAbility(0.25f);
@@ -144,15 +146,18 @@ namespace voidSigils
 						targets.Add(allSlots[index].Card);
 					}
 				}
-				// pick a random target from the target list
-				PlayableCard target = targets[Random.Range(0, (targets.Count))];
-				base.Card.Anim.LightNegationEffect();
-				yield return new WaitForSeconds(0.15f);
-				yield return base.PreSuccessfulTriggerSequence();
-				target.Anim.StrongNegationEffect();
-				if (target.Status.damageTaken > 0)
+				if (targets.Count > 0)
 				{
-					target.HealDamage(finalCount);
+					// pick a random target from the target list
+					PlayableCard target = targets[Random.Range(0, (targets.Count))];
+					base.Card.Anim.LightNegationEffect();
+					yield return new WaitForSeconds(0.15f);
+					yield return base.PreSuccessfulTriggerSequence();
+					target.Anim.StrongNegationEffect();
+					if (target.Status.damageTaken > 0)
+					{
+						target.HealDamage(finalCount);
+					}
 				}
 				yield return new WaitForSeconds(0.15f);
 				yield return base.LearnAbility(0.25f);

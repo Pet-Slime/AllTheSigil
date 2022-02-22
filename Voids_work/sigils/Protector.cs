@@ -132,9 +132,6 @@ namespace voidSigils
 				}
 				Plugin.Log.LogMessage(__result);
 			}
-
-
-
 		}
 	}
 }

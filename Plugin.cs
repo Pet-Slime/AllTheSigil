@@ -98,6 +98,7 @@ namespace voidSigils
 			AddAmbush();
 			AddDeathburst();
 			AddEletric();
+			AddEnforcer();
 			AddInsectKiller();
 			AddFamiliar();
 			AddDoubleAttack();
@@ -132,6 +133,7 @@ namespace voidSigils
 			//Debuff sigils
 			AddDwarf();
 			AddFireStarter();
+			AddShocker();
 			AddToxin();
 			AddToxinStrength();
 			AddToxinVigor();
@@ -149,7 +151,9 @@ namespace voidSigils
 			AddCoward();
 			AddDying();
 			AddPathetic();
+			AddParalise();
 			AddPrideful();
+			AddRecoil();
 			AddSickness();
 			AddToothpicker();
 			AddTransient();
@@ -163,6 +167,7 @@ namespace voidSigils
 			AddBonePicker();
 			AddBox();
 			AddConsumer();
+			addCoinFinder();
 			AddDrawBlood();
 			AddDrawBone();
 			AddDrawIce();
