@@ -21,10 +21,11 @@ namespace voidSigils
 			const string LearnDialogue = "Boom";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 8, Plugin.configDeathburst.Value);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 4, Plugin.configDeathburst.Value);
 			info.canStack = true;
 			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.deathburst1_sigil_a2);
 			info.flipYIfOpponent = true;
+			info.metaCategories.Remove(AbilityMetaCategory.Part1Modular);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_deathburst);
 

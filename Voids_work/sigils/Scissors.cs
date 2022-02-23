@@ -21,7 +21,7 @@ namespace voidSigils
 			const string LearnDialogue = "My card!";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 0);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 5);
 			info.canStack = false;
 			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.scissors_sigil_a2);
 

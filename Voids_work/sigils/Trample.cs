@@ -18,7 +18,7 @@ namespace voidSigils
 			const string LearnDialogue = "A stampede can not be stopped.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 7, Plugin.configTrample.Value);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 6, Plugin.configTrample.Value);
 			info.canStack = false;
 			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.trample_sigil_a2);
 			info.flipYIfOpponent = true;

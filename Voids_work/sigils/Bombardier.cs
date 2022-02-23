@@ -21,7 +21,7 @@ namespace voidSigils
 			const string LearnDialogue = "Boom";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 7, Plugin.configBombardier.Value);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 0, Plugin.configBombardier.Value);
 			info.canStack = false;
 			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.bombardiercool_sigil_a2);
 

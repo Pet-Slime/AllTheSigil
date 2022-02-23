@@ -20,7 +20,7 @@ namespace voidSigils
 			const string LearnDialogue = "A splinter of bone.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 1);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 0);
 			info.canStack = false;
 			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.boneShard_sigil_a2);
 

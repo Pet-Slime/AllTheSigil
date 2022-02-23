@@ -17,7 +17,7 @@ namespace voidSigils
 			const string LearnDialogue = "My creature's bones, You thief!";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 1);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 0);
 			info.canStack = true;
 			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.bonepicker_sigil_a2);
 

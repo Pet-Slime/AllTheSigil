@@ -188,7 +188,6 @@ namespace voidSigils
 			AddTooth();
 			AddTribalAlly();
 			AddTribalTutor();
-			AddPatchedBoneDigger();
 			AddPatchedBeesOnHit();
 			AddStrafePowerUp();
 			AddMovingPowerUp();

@@ -17,7 +17,7 @@ namespace voidSigils
 			const string LearnDialogue = "A disease shouldnt spread.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, -1);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, -3);
 			info.canStack = false;
 			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.blight_sigil_a2);
 

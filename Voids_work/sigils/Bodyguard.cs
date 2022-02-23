@@ -20,9 +20,10 @@ namespace voidSigils
 			const string LearnDialogue = "A protector, till the very end.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 8);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2);
 			info.canStack = false;
 			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.bodyguard_sigil_a2);
+			info.metaCategories.Remove(AbilityMetaCategory.Part1Modular);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_bodyguard);
 
@@ -56,19 +57,16 @@ namespace voidSigils
 		{
 			if (attackingSlot.Card != null && opposingSlot.Card != null && !attackingSlot.Card.HasAbility(Ability.AllStrike))
 			{
-				PlayableCard card = attackingSlot.Card;
-
-				if (opposingSlot.Card != null)
+				if (opposingSlot.Card != null && !opposingSlot.Card.InOpponentQueue)
 				{
-					Plugin.Log.LogDebug("bodyguard test succesfully patched");
+					PlayableCard card = attackingSlot.Card;
+
 					List<CardSlot> adjacentSlots = Singleton<BoardManager>.Instance.GetAdjacentSlots(opposingSlot);
 
 					if (adjacentSlots.Count > 0 && adjacentSlots[0].Index < opposingSlot.Index)
 					{
 						if (adjacentSlots[0].Card != null && !adjacentSlots[0].Card.Dead)
 						{
-							Plugin.Log.LogDebug("Bodyguard test: card: " + adjacentSlots[0].Card);
-							Plugin.Log.LogDebug("Bodyguard test: ability: " + adjacentSlots[0].Card.HasAbility(void_bodyguard.ability));
 							if (adjacentSlots[0].Card.Info.HasAbility(void_bodyguard.ability))
 							{
 								opposingSlot = adjacentSlots[0];
@@ -78,8 +76,6 @@ namespace voidSigils
 					}
 					if (adjacentSlots.Count > 0 && adjacentSlots[0].Card != null && !adjacentSlots[0].Card.Dead)
 					{
-						Plugin.Log.LogDebug("bodyguard test: card: " + adjacentSlots[0].Card);
-						Plugin.Log.LogDebug("bodyguard test: ability: " + adjacentSlots[0].Card.HasAbility(void_bodyguard.ability));
 						if (adjacentSlots[0].Card.Info.HasAbility(void_bodyguard.ability))
 						{
 							opposingSlot = adjacentSlots[0];

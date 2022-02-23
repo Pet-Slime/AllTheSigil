@@ -20,7 +20,7 @@ namespace voidSigils
 			const string LearnDialogue = "A familiar helps those in need.";
 			// const string TextureFile = "Artwork/void_vicious.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3, Plugin.configFamiliar.Value);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 1, Plugin.configFamiliar.Value);
 			info.canStack = false;
 			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.familiar_sigil_a2);
 			info.flipYIfOpponent = true;
@@ -44,74 +44,33 @@ namespace voidSigils
 
 		public static Ability ability;
 
-		private PlayableCard LeftSlot = null;
-
-		private PlayableCard RightSlot = null;
-
-
-		private PlayableCard Previous_target = null;
-
-
-		public override bool RespondsToUpkeep(bool playerUpkeep)
-		{
-			return true;
-		}
-
-		public override IEnumerator OnUpkeep(bool playerUpkeep)
-		{
-			//On upkeep, no worry about softlocks so clear previous target
-			Previous_target = null;
-			yield break;
-		}
-
 
 
 		public override bool RespondsToOtherCardDealtDamage(PlayableCard attacker, int amount, PlayableCard target)
 		{
-			CardSlot slotSaved = base.Card.slot;
-
-			//If target is equal to previous target, we somehow entered a softlock loop. Return false to break it and clear previous target
-			if (Previous_target == target)
-            {
-				Previous_target = null;
-				return false;
-            } else
-            {
-				return true;
-            }
+			return true;
 		}
-
 		public override IEnumerator OnOtherCardDealtDamage(PlayableCard attacker, int amount, PlayableCard target)
 		{
+			yield return base.PreSuccessfulTriggerSequence();
 			CardSlot slotSaved = base.Card.slot;
-			yield return new WaitForSeconds(0.1f);
-			List<CardSlot> adjacentSlots = Singleton<BoardManager>.Instance.GetAdjacentSlots(slotSaved);
-			if (adjacentSlots.Count > 0 && adjacentSlots[0].Index < slotSaved.Index)
-			{
-				if (adjacentSlots[0].Card != null && !adjacentSlots[0].Card.Dead && adjacentSlots[0].Card == attacker && !target.Dead)
-				{
-							LeftSlot = target;
-							RightSlot = attacker;
-							yield return new WaitForSeconds(0.1f);
-							yield return Singleton<CombatPhaseManager>.Instance.SlotAttackSlot(slotSaved, target.slot);
-							yield return new WaitForSeconds(0.1f);
+			CardSlot toLeft = Singleton<BoardManager>.Instance.GetAdjacent(base.Card.Slot, true);
+			CardSlot toRight = Singleton<BoardManager>.Instance.GetAdjacent(base.Card.Slot, false);
 
-				}
-				adjacentSlots.RemoveAt(0);
+			if (toLeft != null && toLeft.Card != null && toLeft.Card == attacker && !target.Dead && !target.InOpponentQueue)
+            {
+				yield return new WaitForSeconds(0.1f);
+				yield return Singleton<CombatPhaseManager>.Instance.SlotAttackSlot(slotSaved, target.slot);
+				yield return new WaitForSeconds(0.1f);
 			}
-			if (adjacentSlots.Count > 0 && adjacentSlots[0].Card != null && !adjacentSlots[0].Card.Dead && adjacentSlots[0].Card == attacker && !target.Dead)
+
+			if (toRight != null && toRight.Card != null && toRight.Card == attacker && !target.Dead && !target.InOpponentQueue)
 			{
-					LeftSlot = target;
-					RightSlot = attacker;
-					yield return new WaitForSeconds(0.1f);
-					yield return Singleton<CombatPhaseManager>.Instance.SlotAttackSlot(slotSaved, target.slot);
-					yield return new WaitForSeconds(0.1f);
+				yield return new WaitForSeconds(0.1f);
+				yield return Singleton<CombatPhaseManager>.Instance.SlotAttackSlot(slotSaved, target.slot);
+				yield return new WaitForSeconds(0.1f);
 			}
-			yield return new WaitForSeconds(0.1f);
-			Previous_target = target;
-			LeftSlot = null;
-			RightSlot = null;
-			yield return new WaitForSeconds(0.1f);
+			yield return base.LearnAbility(0.1f);
 			yield break;
 		}
 	}

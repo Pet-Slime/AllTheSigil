@@ -19,7 +19,7 @@ namespace voidSigils
 			const string LearnDialogue = "It Calls for Kin.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 8);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 3);
 			info.canStack = false;
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_TribeTutor);
