@@ -13,13 +13,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Thick Shell";
-			const string rulebookDescription = "When attacked, [creature] takes one less damage.";
+			const string rulebookDescription = "When attacked, [creature] takes 1 less damage.";
 			const string LearnDialogue = "The thick shell on that creature protected it from one damage!";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2, Plugin.configThickShell.Value);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.thickshell_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.ability_thickshell_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.ability_thickshell);
 

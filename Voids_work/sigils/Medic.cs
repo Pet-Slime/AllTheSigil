@@ -17,13 +17,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Medic";
-			const string rulebookDescription = "[creature] will try heal a random friendly target, if there is one, during upkeep.";
+			const string rulebookDescription = "At the start of the owner's turn, [creature] will try heal 1 damage to a friendly card for each instance of Medic.";
 			const string LearnDialogue = "A good patching";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 4);
 			info.canStack = true;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.medic_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_medic_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Medic);
 

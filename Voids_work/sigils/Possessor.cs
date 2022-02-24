@@ -15,12 +15,12 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Possessor";
-			const string rulebookDescription = "[creature] will try to pass it's base health and strength onto a random ally card when killed, if it is in play.";
+			const string rulebookDescription = "When [creature] perishes, it will grant a random friendly card it's base power and health.";
 			const string LearnDialogue = "It passes it's strength onto those who remain";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 0, true);
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.possessor_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_possessor_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_possessor);
 

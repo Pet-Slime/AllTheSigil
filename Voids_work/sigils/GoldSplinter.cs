@@ -16,14 +16,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Tooth Shard";
-			const string rulebookDescription = "[creature] will grant a currency token when hit, if it lives through the attack.";
+			const string rulebookDescription = "[creature] will generate 1 foil when hit, if it lives through the attack.";
 			const string LearnDialogue = "A splinter of gold.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 1);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.goldShard_sigil_a2);
-
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_ToothShard_a2);
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_ToothShard);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
@@ -75,6 +74,8 @@ namespace voidSigils
 			else
 			{
 				SaveData.Data.currency += 1;
+				base.Card.Anim.StrongNegationEffect();
+				base.Card.Anim.StrongNegationEffect();
 			}
 			yield return new WaitForSeconds(0.1f);
 			yield return base.LearnAbility(0.1f);

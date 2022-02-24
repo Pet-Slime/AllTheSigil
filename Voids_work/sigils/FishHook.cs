@@ -17,14 +17,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Fish Hook";
-			const string rulebookDescription = "When a card bearing this sigil is played, a targeted card is moved to your side of the board.";
+			const string rulebookDescription = "When [creature], a targeted card is moved to your side of the board.";
 			const string LearnDialogue = "Go Fish";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 0);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.fishhook_sigil_a2);
-
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_fish_hook_a2);
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_fish_hook);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);

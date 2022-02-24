@@ -13,12 +13,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Appetizing Target";
-			const string rulebookDescription = "[creature] makes for a great target, causing the enemy across from it to gain one attack.";
+			const string rulebookDescription = "[creature] makes for a great target, causing the creature opposing a card bearing this sigil to gain 1 power";
 			const string LearnDialogue = "That creature makes the opponant stronger";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, -2, Plugin.configAppetizing.Value);
 			info.canStack = false;
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_alarm);
 

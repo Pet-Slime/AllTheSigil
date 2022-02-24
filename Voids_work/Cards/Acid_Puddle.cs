@@ -28,10 +28,10 @@ namespace voidSigils.Voids_work.Cards
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.TerrainBackground);
 
-			Texture2D DefaultTexture = SigilUtils.LoadTextureFromResource(Artwork.void_Acid_Puddle);
-			Texture2D pixelTexture = SigilUtils.LoadTextureFromResource(Artwork.void_Acid_Puddle_p);
+			Texture2D DefaultTexture = SigilUtils.LoadTextureFromResource(Artwork.void_Caustic_Puddle);
+			Texture2D pixelTexture = SigilUtils.LoadTextureFromResource(Artwork.void_Caustic_Puddle_p);
 
-			Texture2D eTexture = SigilUtils.LoadTextureFromResource(Artwork.void_Acid_Puddle_e);
+			Texture2D eTexture = SigilUtils.LoadTextureFromResource(Artwork.void_Caustic_Puddle_e);
 
 			IceCubeIdentifier iceCubeId = null;
 			EvolveIdentifier evolveId = null;

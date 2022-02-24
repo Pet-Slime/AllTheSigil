@@ -3,87 +3,83 @@ using APIPlugin;
 using DiskCardGame;
 using UnityEngine;
 using Artwork = voidSigils.Voids_work.Resources.Resources;
+using Random = UnityEngine.Random;
 
 namespace voidSigils
 {
 	public partial class Plugin
 	{
-		//Request by BarlogBean
-		private NewAbility AddPierce()
+		private NewAbility AddLifeStatsUp()
 		{
 			// setup ability
-			const string rulebookName = "Pierce";
-			const string rulebookDescription = "[creature] attacks the card in queue behind it's initial target first when declaring an attack.";
-			const string LearnDialogue = "My creatures!";
-			// const string TextureFile = "Artwork/void_pathetic.png";
+			const string rulebookName = "Life Gambler";
+			const string rulebookDescription = "At the end of the owner's turn, [creature] will deal 2 damage to the owner in exchange for a 0 to 6 increase in stats. Failing to pay this cost will result in death.";
+			const string LearnDialogue = "Vigor from blood!";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 4);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_pierce_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_pierce);
+			info.opponentUsable = false;
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_lifeStatsUp_a2);
+			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_lifeStatsUp);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
 			
-			NewAbility newAbility = new NewAbility(info, typeof(void_pierce), tex, abIds);
+			NewAbility newAbility = new NewAbility(info, typeof(ability_lifeStatsUp), tex, abIds);
 
 			// set ability to behaviour class
-			void_pierce.ability = newAbility.ability;
+			ability_lifeStatsUp.ability = newAbility.ability;
 
 			return newAbility;
 		}
 	}
 
-	public class void_pierce : AbilityBehaviour
+	public class ability_lifeStatsUp : AbilityBehaviour
 	{
 		public override Ability Ability => ability;
 
 		public static Ability ability;
 
-		public override bool RespondsToSlotTargetedForAttack(CardSlot slot, PlayableCard attacker)
+		public override bool RespondsToTurnEnd(bool playerTurnEnd)
 		{
-			CardSlot opposingSlot = base.Card.slot.opposingSlot;
-			PlayableCard target = slot.Card;
-			PlayableCard queuedCard = Singleton<BoardManager>.Instance.GetCardQueuedForSlot(opposingSlot);
-
-			return target != null && !target.Dead && queuedCard != null && attacker.HasAbility(void_pierce.ability);
+			return base.Card != null && base.Card.OpponentCard != playerTurnEnd;
 		}
 
-		public override IEnumerator OnSlotTargetedForAttack(CardSlot slot, PlayableCard attacker)
+		public override IEnumerator OnTurnEnd(bool playerTurnEnd)
 		{
-			CardSlot opposingSlot = base.Card.slot.opposingSlot;
-			PlayableCard queuedCard = Singleton<BoardManager>.Instance.GetCardQueuedForSlot(opposingSlot);
-			if (queuedCard != null)
-			{
-				yield return base.PreSuccessfulTriggerSequence();
-				yield return new WaitForSeconds(0.25f);
-				queuedCard.Anim.LightNegationEffect();
-				yield return new WaitForSeconds(0.25f);
-				if (!queuedCard.FaceDown)
-				{ 
-					if (base.Card.Anim is CardAnimationController)
-					{
-						(base.Card.Anim as CardAnimationController).PlayAttackAnimation(false, queuedCard.Slot);
 
-					}
-				}
-				yield return queuedCard.TakeDamage(base.Card.Info.Attack, base.Card);
-				yield return base.LearnAbility(0f);
-			} else if (queuedCard == null && base.Card.Info.HasAbility(void_trample.ability))
+			
+			yield return new WaitForSeconds(0.5f);
+			var StatsUp = Random.Range(0, 6);
+			Singleton<ViewManager>.Instance.SwitchToView(View.Board, false, true);
+
+			for (var index = 0; index < StatsUp; index++)
             {
-				yield return base.PreSuccessfulTriggerSequence();
-				yield return new WaitForSeconds(0.25f);
-				queuedCard.Anim.LightNegationEffect();
-				yield return new WaitForSeconds(0.25f);
-				if (base.Card.Anim is CardAnimationController)
-				{
-					(base.Card.Anim as CardAnimationController).PlayAttackAnimation(false, base.Card.QueuedSlot);
+				CardModificationInfo statsUp = new CardModificationInfo();
 
+				var HealthorAttack = Random.Range(1, 100);
+
+				if (HealthorAttack > 50)
+				{
+					yield return new WaitForSeconds(0.2f);
+					yield return statsUp.healthAdjustment = 1;
+					base.Card.AddTemporaryMod(statsUp);
+					base.Card.Anim.StrongNegationEffect();
+
+				} else
+				{
+					yield return new WaitForSeconds(0.2f);
+					yield return statsUp.attackAdjustment = 1;
+					base.Card.AddTemporaryMod(statsUp);
+					base.Card.Anim.StrongNegationEffect();
 				}
-				yield return ShowDamageSequence(base.Card.Info.Attack, base.Card.Info.Attack, false);
 			}
+			yield return new WaitForSeconds(0.1f);
+			Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;
+			yield return ShowDamageSequence(2, 2, true);
+
 			yield break;
 		}
+
 
 		//Port KCM damage formula to fix sigils that deal damage to leshy
 		public IEnumerator ShowDamageSequence(int damage, int numWeights, bool toPlayer, float waitAfter = 0.125f, GameObject alternateWeightPrefab = null, float waitBeforeCalcDamage = 0f, bool changeView = true)
@@ -145,6 +141,5 @@ namespace voidSigils
 			}
 			yield break;
 		}
-
 	}
 }

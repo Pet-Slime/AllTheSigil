@@ -13,14 +13,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Zapper";
-			const string rulebookDescription = "[creature] will cause what it strikes to gain the Paralysis sigil. The Paralysis sigil is defined as: A card bearing this sigil only attack every other turn.";
+			const string rulebookDescription = "When [creature] damages another creature, that creature will gain the Paralysis Sigil. The Paralysis sigil is defined as: A card bearing this sigil only attack every other turn.";
 			const string LearnDialogue = "Shocking";
 			// const string TextureFile = "Artwork/void_weaken.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2, Plugin.configToxin.Value);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.zapper_sigil_a2);
-
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_shocker_a2);
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Shocker);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);

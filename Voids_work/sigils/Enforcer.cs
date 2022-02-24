@@ -16,16 +16,16 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Enforcer";
-			const string rulebookDescription = "[creature] will cause adjacent creatures to attack each upkeep.";
+			const string rulebookDescription = "At the start of the owner's turn, [creature] will cause adjacent creatures to attack.";
 			const string LearnDialogue = "It causes it's allies to attack.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 6);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.enforcer_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_enforcer_a2);
 			info.flipYIfOpponent = true;
 
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Enforcer);
+			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_enforcer);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
 			

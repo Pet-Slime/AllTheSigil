@@ -16,13 +16,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Blood Growth";
-			const string rulebookDescription = "[creature] attacks, it will gain blood. thus increasing how many sacrifices this card is worth.";
+			const string rulebookDescription = "When [creature] attacks, the amount of blood it is counted as when sacrificed will increase.";
 			const string LearnDialogue = "There is power in the blood.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 0);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.PatheticSacrificeAct2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_bloodgrowth);
 

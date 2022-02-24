@@ -22,8 +22,7 @@ namespace voidSigils
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.haste_sigil_a2);
-
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_haste_a2);
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_haste);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);

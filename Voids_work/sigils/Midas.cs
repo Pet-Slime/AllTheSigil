@@ -16,13 +16,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Midas";
-			const string rulebookDescription = "[creature] will grant one tooth per instance of Midas when it kills a card.";
+			const string rulebookDescription = "[creature] kills a creature, it will generate 1 Foil for each instance of Midas the card has.";
 			const string LearnDialogue = "A bounty, paid in full.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2, false);
 			info.canStack = true;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.midas_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_midas_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Midas);
 

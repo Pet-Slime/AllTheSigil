@@ -13,12 +13,12 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Entomophage";
-			const string rulebookDescription = "[creature] will deal more damage to those of the insect tribe.";
+			const string rulebookDescription = "[creature] will deal 2 additional damage to cards of the insect tribe.";
 			const string LearnDialogue = "They are a good source of protine I hear.";
 			// const string TextureFile = "Artwork/void_weaken.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 0);
-
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_insectKiller);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);

@@ -13,13 +13,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Resistant";
-			const string rulebookDescription = "[creature] is so tough, it will only ever take one damage.";
+			const string rulebookDescription = "[creature] will only ever take 1 damage from most things. Some effects might bypass this.";
 			const string LearnDialogue = "A hardy creature that one is.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 4, Plugin.configResistant.Value);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.resistant_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Resistant_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Resistant);
 

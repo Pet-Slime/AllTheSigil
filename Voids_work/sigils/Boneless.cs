@@ -14,13 +14,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Boneless";
-			const string rulebookDescription = "[creature] gives no bones! Not thru bone digger, picker, or death.";
+			const string rulebookDescription = "[creature] gives no bones! Any bones gained from sigils or death will be negated.";
 			const string LearnDialogue = "That creature has no bones!";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, -1);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.BonelessAct2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_boneless_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Boneless);
 

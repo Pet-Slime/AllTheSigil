@@ -15,14 +15,14 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Draw Jackalope";
-			const string rulebookDescription = "[creature] will grant a Jackalope card when played.";
+			const string rulebookDescription = "[creature] is played, a Jackalope is created in your hand.";
 			const string LearnDialogue = "Pull a Jackalope from a hat why don't ya.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3);
 			info.canStack = false;
-
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_drawjack);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);

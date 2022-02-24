@@ -17,13 +17,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Random Strike";
-			const string rulebookDescription = "[creature] will attack randomly.";
+			const string rulebookDescription = "[creature] will strike at opponent slots randomly when it attacks.";
 			const string LearnDialogue = "They strike widly...";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, -1);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.blindness_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Blind_a2);
 			info.flipYIfOpponent = true;
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Blind);

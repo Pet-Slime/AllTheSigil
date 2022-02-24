@@ -13,13 +13,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Velocity";
-			const string rulebookDescription = "[creature] will move in the direction the arrow is pointing during the endphase, and if able to move, will gain one attack and one health.";
+			const string rulebookDescription = "At the end of the owner's turn, [creature] will move in the direction inscribed in the sigil. If it is able to move, it will gain 1 power and 1 health.";
 			const string LearnDialogue = "The trail they leave behind, hurts.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2, Plugin.configAcidTrail.Value);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.acidtrail_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Volicity);
 

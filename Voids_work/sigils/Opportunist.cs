@@ -16,13 +16,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Opportunist";
-			const string rulebookDescription = "[creature] will gain one strength for each instance of Opportunist, when the opposing slot is empty.";
+			const string rulebookDescription = "[creature] will gain 1 power for each instance of Opportunist, when the opposing slot is empty.";
 			const string LearnDialogue = "It takes it's chance when it gets it.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3);
 			info.canStack = true;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.opportunist_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Opportunist_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Opportunist);
 

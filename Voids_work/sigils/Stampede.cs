@@ -22,23 +22,23 @@ namespace voidSigils
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.stampede_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_stampede_a2);
 			info.flipYIfOpponent = true;
 
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_ignit);
+			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_stampede);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
 			
-			NewAbility newAbility = new NewAbility(info, typeof(void_ignite), tex, abIds);
+			NewAbility newAbility = new NewAbility(info, typeof(void_stampede), tex, abIds);
 
 			// set ability to behaviour class
-			void_ignite.ability = newAbility.ability;
+			void_stampede.ability = newAbility.ability;
 
 			return newAbility;
 		}
 	}
 
-	public class void_ignite : AbilityBehaviour
+	public class void_stampede : AbilityBehaviour
 	{
 		public override Ability Ability => ability;
 
@@ -51,7 +51,7 @@ namespace voidSigils
 
 		public override bool RespondsToResolveOnBoard()
 		{
-			return base.Card.HasAbility(void_ignite.ability);
+			return base.Card.HasAbility(void_stampede.ability);
 		}
 
 

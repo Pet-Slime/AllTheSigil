@@ -15,13 +15,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Thief";
-			const string rulebookDescription = "[creature] will try to steal a random default sigil from an opposing creature when played, or every upkeep untill it does.";
+			const string rulebookDescription = "[creature] will try to steal a random default sigil from an opposing creature when played, or at the start of the owner's turn until it does.";
 			const string LearnDialogue = "If only I could steal the moon...";
 			// const string TextureFile = "Artwork/void_vicious.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3, Plugin.configThief.Value);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.sigilthief_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_thief_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_thief);
 

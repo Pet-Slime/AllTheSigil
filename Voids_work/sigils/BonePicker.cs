@@ -19,7 +19,7 @@ namespace voidSigils
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 0);
 			info.canStack = true;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.bonepicker_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.ability_bonepicker_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.ability_bonepicker);
 

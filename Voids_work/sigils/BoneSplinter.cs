@@ -16,13 +16,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Bone Shard";
-			const string rulebookDescription = "[creature] will grant a bone token when hit, if it lives through the attack.";
+			const string rulebookDescription = "[creature] will generate 1 bone when hit, if it lives through the attack.";
 			const string LearnDialogue = "A splinter of bone.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 0);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.boneShard_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_BoneShard_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_BoneShard);
 

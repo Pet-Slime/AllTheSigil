@@ -14,13 +14,14 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Dwarf";
-			const string rulebookDescription = "[creature] is smaller than the average of it's kind. When drawing this card, it will loose a unit of cost, as well as one attack and two health (Can't go below 1). A unit is defined as: 1 blood, 3 bones, 3 energy, or all mox.";
+
+			const string rulebookDescription = "When [creature] is drawn, it will loose one unit of cost, as well as 1 power and 2 health (can't go below 1 health). A unit is defined as: 1 blood, 3 bones, 3 energy, or all mox.";
 			const string LearnDialogue = "What a tiny creature you have there";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 0);
 			info.canStack = false;
-
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Dwarf);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);

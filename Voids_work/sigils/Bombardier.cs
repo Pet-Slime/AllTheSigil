@@ -17,13 +17,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Bombardier";
-			const string rulebookDescription = "[creature] will deal 10 damage to a random slot with a creature in it during the end phase of every turn";
+			const string rulebookDescription = "[creature] will deal 10 damage to a random creature during the end phase of the owner's turn.";
 			const string LearnDialogue = "Boom";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 0, Plugin.configBombardier.Value);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.bombardiercool_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Bombardier_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Bombardier);
 

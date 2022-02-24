@@ -19,7 +19,7 @@ namespace voidSigils
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 4);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.regeneration_F_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.ability_regen_full_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.ability_regen_full);
 

@@ -16,14 +16,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Ambush";
-			const string rulebookDescription = "[creature] will strike at a card that just got played infront of it, if it can.";
+			const string rulebookDescription = "When a creature moves into the space opposing a card bearing this sigil, they are dealt 1 damage.";
 			const string LearnDialogue = "Out of the shadows, they strike";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3, true);
 			info.canStack = false;
-
-
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_ambush);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);

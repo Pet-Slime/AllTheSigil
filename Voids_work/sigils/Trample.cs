@@ -14,13 +14,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Trample";
-			const string rulebookDescription = "[creature] will deal overkill damage to the owner of the creature and not those in queue.";
+			const string rulebookDescription = "When [creature] deals overkill damage to a card, the overkill damage will be sent to the owner.";
 			const string LearnDialogue = "A stampede can not be stopped.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 6, Plugin.configTrample.Value);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.trample_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_trample_a2);
 			info.flipYIfOpponent = true;
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_trample);

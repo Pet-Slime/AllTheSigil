@@ -21,7 +21,7 @@ namespace voidSigils
             // const string TextureFile = "Artwork/void_double_attack.png";
 
             AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 0, Plugin.configMultiStrike.Value);
-            info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.doubleattack_sigil_a2);
+            info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_doubleattack_a2);
             info.flipYIfOpponent = true;
 
             Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_double_attack);

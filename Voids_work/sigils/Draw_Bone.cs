@@ -15,14 +15,14 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Draw Bone";
-			const string rulebookDescription = "[creature] will grant a card that has a Bone cost when played.";
+			const string rulebookDescription = "[creature] is played, a card costing bone is created in your hand.";
 			const string LearnDialogue = "What will it release on death?";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3);
 			info.canStack = false;
-
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_drawbone);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);

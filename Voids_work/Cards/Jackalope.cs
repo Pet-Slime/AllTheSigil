@@ -29,7 +29,7 @@ namespace voidSigils.Voids_work.Cards
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
 			Texture2D DefaultTexture = SigilUtils.LoadTextureFromResource(Artwork.void_Jack);
-			Texture2D pixelTexture = SigilUtils.LoadTextureFromResource(Artwork.void_Acid_Puddle_p);
+			Texture2D pixelTexture = SigilUtils.LoadTextureFromResource(Artwork.void_Caustic_Puddle_p);
 
 			Texture2D eTexture = SigilUtils.LoadTextureFromResource(Artwork.void_Jack_e);
 

@@ -16,15 +16,15 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Agile";
-			const string rulebookDescription = "[creature] will dodge oncoming attacks, causing them to hit directly.";
+			const string rulebookDescription = "When a card bearing this sigil would be struck, it will move out of the way.";
 			const string LearnDialogue = "The Card jumped out of the way to save itself...";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 1, Plugin.configAgile.Value);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.agile_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Agile_a2);
 
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_agile);
+			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Agile);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
 			

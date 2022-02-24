@@ -22,7 +22,7 @@ namespace voidSigils
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.rammer_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_shove_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_shove);
 
@@ -66,8 +66,7 @@ namespace voidSigils
 			if (base.Card.Slot.IsPlayerSlot)
 			{
 				if (base.Card.slot.opposingSlot.Card != null
-				&& base.Card.HasAbility(void_Shove.ability)
-				&& base.Card.InOpponentQueue == false)
+				&& base.Card.HasAbility(void_Shove.ability))
 				{
 					PlayableCard target = base.Card.slot.opposingSlot.Card;
 
@@ -105,8 +104,7 @@ namespace voidSigils
 			if (base.Card.Slot.IsPlayerSlot && playerUpkeep == true)
 			{
 				if (base.Card.slot.opposingSlot.Card != null
-				&& base.Card.HasAbility(void_Shove.ability)
-				&& base.Card.InOpponentQueue == false)
+				&& base.Card.HasAbility(void_Shove.ability))
 				{
 					PlayableCard target = base.Card.slot.opposingSlot.Card;
 
@@ -131,9 +129,8 @@ namespace voidSigils
 				{
 
 					PlayableCard target = base.Card.slot.opposingSlot.Card;
-
-					yield return Singleton<CardSpawner>.Instance.SpawnCardToHand(target.Info, null, 0.25f, null);
 					target.Anim.PlayDeathAnimation();
+					yield return Singleton<CardSpawner>.Instance.SpawnCardToHand(target.Info, null, 0.25f, null);
 					CardSlot slotBeforeDeath = target.slot;
 					target.UnassignFromSlot();
 					target.StartCoroutine(target.DestroyWhenStackIsClear());

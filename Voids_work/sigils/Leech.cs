@@ -13,14 +13,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Leech";
-			const string rulebookDescription = "[creature] deals damage, it heals 1 Health for each damage dealt to a card.";
+			const string rulebookDescription = "When [creature] deals damage, it will heal 1 Health for each damage dealt to a card.";
 			const string LearnDialogue = "Vigor from blood!";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 3, Plugin.configLeech.Value);
 			info.canStack = true;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.leech_sigil_a2);
-
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.ability_leech_a2);
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.ability_leech);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);

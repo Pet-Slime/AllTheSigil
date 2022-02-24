@@ -14,13 +14,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Giant";
-			const string rulebookDescription = "[creature] is larger than the average of it's kind. When drawing this card, it will gain one unit of cost, as well as one attack and two health.";
+			const string rulebookDescription = "When [creature] is drawn, it will gain one unit blood of cost, as well as one attack and two health.";
 			const string LearnDialogue = "What a large creature you have there";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 0);
 			info.canStack = false;
-
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Giant);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);

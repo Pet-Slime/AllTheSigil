@@ -14,13 +14,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Dying";
-			const string rulebookDescription = "[creature] has limited time left. It will lose one health each time it declares an attack.";
+			const string rulebookDescription = "[creature] will lose 1 health each time it declares an attack.";
 			const string LearnDialogue = "Tik Toc";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, -1, Plugin.configDying.Value);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.dying_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_dying);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_dying);
 

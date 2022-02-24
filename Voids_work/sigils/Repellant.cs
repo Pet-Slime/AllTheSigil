@@ -16,13 +16,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Repellant";
-			const string rulebookDescription = "[creature] will leave something foul when killed, repelling the attacking creature into the back row.";
+			const string rulebookDescription = "When [creature] perishes, the creature that killed it gets pushed into the back row.";
 			const string LearnDialogue = "Foul";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.repellant_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_repellant_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_repellant);
 

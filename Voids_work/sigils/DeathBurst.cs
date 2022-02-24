@@ -17,13 +17,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Deathburst";
-			const string rulebookDescription = "[creature] will deal one damage to the three cards infront of it when killed.";
+			const string rulebookDescription = "[creature] will deal 1 damage to each oppsing space to the left, right, and center of it.";
 			const string LearnDialogue = "Boom";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 4, Plugin.configDeathburst.Value);
 			info.canStack = true;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.deathburst1_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_deathburst_a2);
 			info.flipYIfOpponent = true;
 			info.metaCategories.Remove(AbilityMetaCategory.Part1Modular);
 

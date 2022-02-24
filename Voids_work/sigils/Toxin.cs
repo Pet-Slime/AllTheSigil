@@ -13,13 +13,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Toxin";
-			const string rulebookDescription = "[creature] will inject toxin to what it attacks, that causes the target to wither away in strength and vigor.";
+			const string rulebookDescription = "When [creature] damages another creature, that creature looses 1 power and 1 health.";
 			const string LearnDialogue = "All things can be worn down, and in different ways.";
 			// const string TextureFile = "Artwork/void_weaken.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2, Plugin.configToxin.Value);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.toxin_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_toxin);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_toxin);
 

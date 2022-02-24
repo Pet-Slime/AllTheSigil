@@ -13,13 +13,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Burning";
-			const string rulebookDescription = "[creature] is on fire, and will gain strength the longer it is on fire, while loosing health each upkeep.";
+			const string rulebookDescription = "[creature] is on fire, and will gain 1 power and loose 1 health each upkeep.";
 			const string LearnDialogue = "It rampages while on fire.";
 			// const string TextureFile = "Artwork/void_weaken.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 0, Plugin.configToxin.Value);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.burning_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_burning_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_burning);
 

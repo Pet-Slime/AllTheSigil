@@ -16,14 +16,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Withering";
-			const string rulebookDescription = "[creature] will wither away at the end of the opponant's turn";
+			const string rulebookDescription = "[creature] will perish at the end of the opponant's turn";
 			const string LearnDialogue = "Gone like the dust";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, -1);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.WitheringAct2);
-
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Withering_a2);
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Withering);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);

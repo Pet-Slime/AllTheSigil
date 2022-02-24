@@ -13,13 +13,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Sickness";
-			const string rulebookDescription = "[creature] will loose one attack each time it declares an attack.";
+			const string rulebookDescription = "[creature] will loose 1 attack each time it declares an attack.";
 			const string LearnDialogue = "The creature's strength leaves it as it strikes.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, -1, Plugin.configSickness.Value);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.sickly_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_sick_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_sick);
 

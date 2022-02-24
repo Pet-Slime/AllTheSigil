@@ -16,13 +16,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Caustic";
-			const string rulebookDescription = "[creature] will leave an acid puddle behind when it strafes.";
+			const string rulebookDescription = "At the end of the towner's turn, [creature] will move in the direction inscribed in the sigil, and drop an acid puddle in their old space.";
 			const string LearnDialogue = "What it leaves behind is deadly.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 2);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.caustic_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_caustic_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_caustic);
 

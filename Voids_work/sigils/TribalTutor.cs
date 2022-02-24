@@ -15,13 +15,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Tribal Tutor";
-			const string rulebookDescription = "[creature] will allow you to search your deck for a card of the same tribe when played. Cards with no tribe are apart of the Tribeless Tribe.";
+			const string rulebookDescription = "When [creature] is played, you may search your deck for a card of the same tribe and take it into your hand. No tribe counts as a tribe of tribeless";
 			const string LearnDialogue = "It Calls for Kin.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 3);
 			info.canStack = false;
-
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_TribeTutor);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);

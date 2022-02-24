@@ -16,13 +16,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Tribal Ally";
-			const string rulebookDescription = "[creature] will give you a card of the same tribe when played. No tribe counts as a tribe of tribeless";
+			const string rulebookDescription = "When [creature] is played, A card of the same tribe is created in your hand. No tribe counts as a tribe of tribeless";
 			const string LearnDialogue = "It calls for it's kin.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 2, false);
 			info.canStack = false;
-
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_tribeAlly);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);

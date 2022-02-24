@@ -13,13 +13,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Acidic Trail";
-			const string rulebookDescription = "[creature] will damage the card in the opposing slot, if it is able to strafe in the direction marked.";
+			const string rulebookDescription = "At the end of the towner's turn, [creature] will move in the direction inscribed in the sigil, and deal 1 opposing creature if it is able to move.";
 			const string LearnDialogue = "The trail they leave behind, hurts.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2, Plugin.configAcidTrail.Value);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.acidtrail_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Acid_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_acid);
 

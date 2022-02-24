@@ -13,13 +13,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Nutritious";
-			const string rulebookDescription = "A creature gain 1 power and 2 health when summoned using [creature] as a sacrifice.";
+			const string rulebookDescription = "When [creature] is sacrificed, it adds 1 power and 2 health to the card it was sacrificed for.";
 			const string LearnDialogue = "That creature is so full of nutrients, the creature you play comes in stronger!";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2);
 			info.canStack = false;
-
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.ability_nutritious);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);

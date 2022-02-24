@@ -16,13 +16,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Coin Finder";
-			const string rulebookDescription = "[creature] will grant one currency during the owner's endphase.";
+			const string rulebookDescription = "At the end of the owner's turn, [creature] will grant the owner 1 foil.";
 			const string LearnDialogue = "A tooth for your thoughts?";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2, false);
 			info.canStack = true;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.coinFinder_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_coinFinder_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_coinFinder);
 

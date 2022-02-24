@@ -16,13 +16,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Toothpuller";
-			const string rulebookDescription = "[creature] will add one point of damage to the scales to the card's opponant.";
+			const string rulebookDescription = "At the end of the owner's turn, [creature] will add one point of damage to the opponent's scale.";
 			const string LearnDialogue = "That Hurts";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 7);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.toothgiver_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_toothGiver_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_toothGiver);
 
@@ -52,7 +52,7 @@ namespace voidSigils
 		{
 			yield return base.PreSuccessfulTriggerSequence();
 			yield return new WaitForSeconds(0.1f);
-			yield return ShowDamageSequence(1, 1, false, 0.25f, ResourceBank.Get<GameObject>("Prefabs/Environment/ScaleWeights/Weight_RealTooth"), 0f, true);
+			yield return ShowDamageSequence(1, 1, playerTurnEnd, 0.25f, ResourceBank.Get<GameObject>("Prefabs/Environment/ScaleWeights/Weight_RealTooth"), 0f, true);
 			yield return new WaitForSeconds(0.1f);
 			yield return base.LearnAbility(0.1f);
 			yield return new WaitForSeconds(0.1f);

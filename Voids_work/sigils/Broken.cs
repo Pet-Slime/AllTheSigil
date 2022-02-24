@@ -13,13 +13,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Broken";
-			const string rulebookDescription = "[creature] is old and broken. When it dies, it will be removed from your deck.";
+			const string rulebookDescription = "[creature] is permanently removed from your deck if it dies.";
 			const string LearnDialogue = "None of us can escape our age";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, -1);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, -2);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.broken_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_broken_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_broken);
 

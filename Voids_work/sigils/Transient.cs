@@ -13,14 +13,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Transient";
-			const string rulebookDescription = "[creature] will return to your hand at the end of the turn.";
+			const string rulebookDescription = "At the end of the owner's turn, [creature] will return to your hand.";
 			const string LearnDialogue = "The creature blinks back into the owner's hand at the end of their turn.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 0);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.transient_sigil_a2);
-
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.ability_transient_a2);
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.ability_transient);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);

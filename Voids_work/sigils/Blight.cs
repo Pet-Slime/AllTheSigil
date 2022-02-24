@@ -13,15 +13,15 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Blight";
-			const string rulebookDescription = "[creature] is a diseased card that lowers the strength and vigor of those it is sacrificed to.";
+			const string rulebookDescription = "[creature] is sacrificed, it subtracts its stat values to the card it was sacrificed for.";
 			const string LearnDialogue = "A disease shouldnt spread.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, -3);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.blight_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Blight_a2);
 
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_blight);
+			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Blight);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
 			

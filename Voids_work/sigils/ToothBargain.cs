@@ -16,13 +16,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Tooth Bargain";
-			const string rulebookDescription = "[creature] will put a tooth on your opponant's side of the scale when played, but will put two on yours when it dies.";
+			const string rulebookDescription = "When [creature] is played, it will put 1 point of damage of it's opponent's side of the scale. When it perishes, it will put 2 damage on the owner's side of the scale.";
 			const string LearnDialogue = "A deal with a devil I see...";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 0);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.tooth_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_tooth_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_tooth);
 

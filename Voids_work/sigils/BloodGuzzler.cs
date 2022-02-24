@@ -19,7 +19,7 @@ namespace voidSigils
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 4, Plugin.configBloodGuzzler.Value);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.bloodguzzler_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.ability_BloodGuzzler_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.ability_bloodguzzler);
 

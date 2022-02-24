@@ -15,16 +15,16 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Enrage";
-			const string rulebookDescription = "[creature] will empower adjacent allies, increasing their strenght by 2. However, if they perish, while empowered, they are permamently removed from your deck.";
+			const string rulebookDescription = "[creature] will empower adjacent allies, increasing their strenght by 2. However, if they perish while empowered, they are permamently removed from your deck.";
 			const string LearnDialogue = "A boost of strength, but at what cost...";
 
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, -1);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.stampede_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
 
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_zapper);
+			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_enrage);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
 			

@@ -16,13 +16,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Bodyguard";
-			const string rulebookDescription = "[creature] will redirect the initial attack of a card to it.";
+			const string rulebookDescription = "[creature] will redirect the initial attack of a card to it, if the attack was targeting an adjacent space.";
 			const string LearnDialogue = "A protector, till the very end.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.bodyguard_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Bodyguard_a2);
 			info.metaCategories.Remove(AbilityMetaCategory.Part1Modular);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_bodyguard);

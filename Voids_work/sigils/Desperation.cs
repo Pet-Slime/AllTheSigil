@@ -16,13 +16,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Desperation";
-			const string rulebookDescription = "[creature] is damaged to one health, it will gain three strength.";
+			const string rulebookDescription = "[creature] is damaged to 1 health, it will gain 3 power.";
 			const string LearnDialogue = "So close to death, it strikes out.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 0);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.PatheticSacrificeAct2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_desperation);
 

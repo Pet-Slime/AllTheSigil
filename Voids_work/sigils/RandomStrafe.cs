@@ -22,7 +22,7 @@ namespace voidSigils
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 1);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.randomStrafe_act2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_randomStrafe_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_randomStrafe);
 

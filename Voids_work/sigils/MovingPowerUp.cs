@@ -14,13 +14,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Power from Movement";
-			const string rulebookDescription = "[creature] will gain health and power each upkeep if it moved the previous round";
+			const string rulebookDescription = "At the start of the owner's turn, [creature] will gain 1 power and 1 health if it moved last round.";
 			const string LearnDialogue = "Each move, it grows";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 1);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.dying_sigil_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
 
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_MovementPowerUp);
 

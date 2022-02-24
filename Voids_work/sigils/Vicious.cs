@@ -14,14 +14,13 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Vicious";
-			const string rulebookDescription = "A vicious creature's strength grows the more it is attacked.";
+			const string rulebookDescription = "When [creature] is attacked, it gains 1 power.";
 			const string LearnDialogue = "A hit just makes it angry.";
 			// const string TextureFile = "Artwork/void_vicious.png";
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 1, Plugin.configVicious.Value);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.vicious_sigil_a2);
-
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_vicious_a2);
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_vicious);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
