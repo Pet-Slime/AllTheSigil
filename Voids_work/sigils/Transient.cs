@@ -17,7 +17,7 @@ namespace voidSigils
 			const string LearnDialogue = "The creature blinks back into the owner's hand at the end of their turn.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 0);
+			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, -1);
 			info.canStack = false;
 			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.ability_transient_a2);
 			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.ability_transient);

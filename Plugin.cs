@@ -1,6 +1,7 @@
 using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
+using DiskCardGame;
 using BepInEx.Configuration;
 
 namespace voidSigils
@@ -103,6 +104,7 @@ namespace voidSigils
 			AddFamiliar();
 			AddDoubleAttack();
 			AddHaste();
+			AddRetaliate();
 			AddStampede();
 			AddPierce();
 			AddTrample();
@@ -111,6 +113,7 @@ namespace voidSigils
 			AddDesperation();
 			AddZapper();
 			AddGiant();
+			AddLifeStatsUp();
 			AddPredator();
 			AddOpportunist();
 			AddVicious();
@@ -168,6 +171,7 @@ namespace voidSigils
 			AddBox();
 			AddConsumer();
 			addCoinFinder();
+			AddTakeAllNegatives();
 			AddDrawBlood();
 			AddDrawBone();
 			AddDrawIce();
@@ -177,6 +181,7 @@ namespace voidSigils
 			AddFisher();
 			AddHerd();
 			AddHourglass();
+			AddManeuver();
 			AddMidas();
 			AddNutritious();
 			AddPossessor();

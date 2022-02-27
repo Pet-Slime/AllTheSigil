@@ -76,6 +76,12 @@ namespace voidSigils
 		public static CardInfo GetRandomChoosableCardWithCost(int randomSeed)
 		{
 			List<CardInfo> list = CardLoader.GetUnlockedCards(CardMetaCategory.ChoiceNode, CardTemple.Nature).FindAll((CardInfo x) => x.BloodCost > 0);
+			bool flag1 = !SaveManager.SaveFile.IsPart2;
+			if (flag1)
+			{
+				list.Clear();
+				list = CardLoader.GetUnlockedCards(CardMetaCategory.GBCPack, CardTemple.Nature).FindAll((CardInfo x) => x.BloodCost > 0);
+			}
 			bool flag = list.Count == 0;
 			CardInfo result;
 			if (flag)

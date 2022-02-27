@@ -17,7 +17,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Scissors";
-			const string rulebookDescription = "When a card bearing this sigil is played, a targeted card cut in two.";
+			const string rulebookDescription = "When [creature] is played, a targeted card cut in two.";
 			const string LearnDialogue = "My card!";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 

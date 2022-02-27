@@ -15,7 +15,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Tribal Tutor";
-			const string rulebookDescription = "When [creature] is played, you may search your deck for a card of the same tribe and take it into your hand. No tribe counts as a tribe of tribeless";
+			const string rulebookDescription = "When [creature] is played, you may search your deck for a card of the same tribe and take it into your hand. No tribe counts as a tribe of tribeless.";
 			const string LearnDialogue = "It Calls for Kin.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 

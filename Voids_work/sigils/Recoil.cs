@@ -14,7 +14,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Recoil";
-			const string rulebookDescription = "[creature] will take 1 damage each time they attack";
+			const string rulebookDescription = "[creature] will take 1 damage each time they attack.";
 			const string LearnDialogue = "The strength causes the creature pain.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 

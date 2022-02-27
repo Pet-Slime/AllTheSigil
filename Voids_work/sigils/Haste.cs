@@ -16,7 +16,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Haste";
-			const string rulebookDescription = "[creature] will attack as soon as it gets played on the board";
+			const string rulebookDescription = "[creature] will attack as soon as it gets played on the board.";
 			const string LearnDialogue = "Speed";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 

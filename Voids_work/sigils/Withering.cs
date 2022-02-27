@@ -16,7 +16,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Withering";
-			const string rulebookDescription = "[creature] will perish at the end of the opponant's turn";
+			const string rulebookDescription = "[creature] will perish at the end of the opponant's turn.";
 			const string LearnDialogue = "Gone like the dust";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 

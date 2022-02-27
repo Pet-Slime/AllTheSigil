@@ -493,6 +493,12 @@
   <data name="void_lifeStatsUp_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_lifeStatsUp_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="void_Maneuver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Maneuver.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Maneuver_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Maneuver_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="void_Medic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_Medic.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -660,6 +666,12 @@
   </data>
   <data name="void_Resistant_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_Resistant_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Retaliate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Retaliate.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Retaliate_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Retaliate_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="void_scissors" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_scissors.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

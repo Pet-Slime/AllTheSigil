@@ -16,7 +16,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Tribal Ally";
-			const string rulebookDescription = "When [creature] is played, A card of the same tribe is created in your hand. No tribe counts as a tribe of tribeless";
+			const string rulebookDescription = "When [creature] is played, A card of the same tribe is created in your hand. No tribe counts as a tribe of tribeless.";
 			const string LearnDialogue = "It calls for it's kin.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 

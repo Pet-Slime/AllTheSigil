@@ -17,7 +17,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Antler Bearer";
-			const string rulebookDescription = "[creature] is killed, gain three random hooved tribe cards.";
+			const string rulebookDescription = "When [creature] is killed, gain three random hooved tribe cards.";
 			const string LearnDialogue = "The herd sticks together.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 

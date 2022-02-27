@@ -13,7 +13,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Appetizing Target";
-			const string rulebookDescription = "[creature] makes for a great target, causing the creature opposing a card bearing this sigil to gain 1 power";
+			const string rulebookDescription = "[creature] makes for a great target, causing the creature opposing a card bearing this sigil to gain 1 power.";
 			const string LearnDialogue = "That creature makes the opponant stronger";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 

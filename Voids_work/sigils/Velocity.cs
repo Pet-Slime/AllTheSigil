@@ -41,20 +41,43 @@ namespace voidSigils
 		public static Ability ability;
 
 		//Copied Strafe's code and just added damage
+		private bool PermanentForRun
+		{
+			get
+			{
+				return base.Card.Info.HasTrait(Trait.Bear);
+			}
+		}
 
 		public override IEnumerator PostSuccessfulMoveSequence(CardSlot oldSlot)
 		{
-			CardModificationInfo cardModificationInfo = base.Card.TemporaryMods.Find((CardModificationInfo x) => x.singletonId == "void_StrafingPower");
-			if (cardModificationInfo == null)
+			yield return base.PreSuccessfulTriggerSequence();
+			yield return new WaitForSeconds(0.3f);
+			bool permanentForRun = this.PermanentForRun;
+			if (permanentForRun)
 			{
-				cardModificationInfo = new CardModificationInfo();
-				cardModificationInfo.singletonId = "void_StrafingPower";
-				base.Card.AddTemporaryMod(cardModificationInfo);
+				CardModificationInfo powerMod = base.Card.Info.Mods.Find((CardModificationInfo x) => x.singletonId == "Velocity");
+				bool flag = powerMod == null;
+				if (flag)
+				{
+					powerMod = new CardModificationInfo();
+					powerMod.singletonId = "hodag";
+					RunState.Run.playerDeck.ModifyCard(base.Card.Info, powerMod);
+				}
+				powerMod.attackAdjustment++;
 			}
-			cardModificationInfo.attackAdjustment++;
-			cardModificationInfo.healthAdjustment++;
-			base.Card.OnStatsChanged();
-			yield return new WaitForSeconds(0.25f);
+			else
+			{
+				CardModificationInfo mod = new CardModificationInfo(1, 0);
+				base.Card.AddTemporaryMod(mod);
+			}
+			bool flag2 = !base.Card.Dead;
+			if (flag2)
+			{
+				base.Card.Anim.LightNegationEffect();
+				yield return new WaitForSeconds(0.3f);
+				yield return base.LearnAbility(0f);
+			}
 			yield break;
 		}
 	}

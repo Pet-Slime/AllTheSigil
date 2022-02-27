@@ -13,7 +13,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Blight";
-			const string rulebookDescription = "[creature] is sacrificed, it subtracts its stat values to the card it was sacrificed for.";
+			const string rulebookDescription = "When [creature] is sacrificed, it subtracts its stat values to the card it was sacrificed for.";
 			const string LearnDialogue = "A disease shouldnt spread.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 
