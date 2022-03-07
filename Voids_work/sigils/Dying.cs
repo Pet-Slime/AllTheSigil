@@ -41,8 +41,6 @@ namespace voidSigils
 
 		public static Ability ability;
 
-		private CardSlot lastSlot;
-
 		public override bool RespondsToSlotTargetedForAttack(CardSlot slot, PlayableCard attacker)
 		{
 			return attacker.HasAbility(void_dying.ability);
@@ -57,7 +55,6 @@ namespace voidSigils
 			yield return attacker.TakeDamage(1, null);
 			Plugin.Log.LogWarning("Dying debug " + attacker + " has taken damage");
 			yield return base.LearnAbility(0f);
-			lastSlot = slot;
 			yield break;
 		}
 	}

@@ -59,13 +59,21 @@ namespace voidSigils
 
 		public override IEnumerator OnDealDamage(int amount, PlayableCard target)
 		{
-			if (target)
+			if (target != null)
             {
 				Singleton<ViewManager>.Instance.SwitchToView(View.Board, false, true);
 				yield return new WaitForSeconds(0.1f);
 				base.Card.Anim.LightNegationEffect();
 				yield return base.PreSuccessfulTriggerSequence();
-				target.temporaryMods.Add(this.mod);
+				CardModificationInfo cardModificationInfo = target.TemporaryMods.Find((CardModificationInfo x) => x.singletonId == "void_ToxinStrength");
+				if (cardModificationInfo == null)
+				{
+					cardModificationInfo = new CardModificationInfo();
+					cardModificationInfo.singletonId = "void_ToxinStrength";
+					target.AddTemporaryMod(cardModificationInfo);
+				}
+				cardModificationInfo.attackAdjustment++;
+				target.OnStatsChanged();
 				yield return new WaitForSeconds(0.1f);
 				yield return base.LearnAbility(0.1f);
 				Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;

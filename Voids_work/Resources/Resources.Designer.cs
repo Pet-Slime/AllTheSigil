@@ -1173,6 +1173,26 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] void_Frightful {
+            get {
+                object obj = ResourceManager.GetObject("void_Frightful", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_Frightful_a2 {
+            get {
+                object obj = ResourceManager.GetObject("void_Frightful_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] void_Giant {
             get {
                 object obj = ResourceManager.GetObject("void_Giant", resourceCulture);
@@ -2006,6 +2026,26 @@ namespace voidSigils.Voids_work.Resources {
         internal static byte[] void_stampede_a2 {
             get {
                 object obj = ResourceManager.GetObject("void_stampede_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_SubmergedAmbush {
+            get {
+                object obj = ResourceManager.GetObject("void_SubmergedAmbush", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_SubmergedAmbush_a2 {
+            get {
+                object obj = ResourceManager.GetObject("void_SubmergedAmbush_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }

@@ -14,7 +14,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Electric";
-			const string rulebookDescription = "[creature] attacks a creature, they will deal half the damage to creatures adjacent to the target.";
+			const string rulebookDescription = "When [creature] decalres an attack, they will deal half the damage to creatures adjacent to the target.";
 			const string LearnDialogue = "Shocking";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 

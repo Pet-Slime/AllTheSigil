@@ -40,14 +40,6 @@ namespace voidSigils
 
 		public static Ability ability;
 
-		private CardModificationInfo mod;
-
-		private void Start()
-		{
-			this.mod = new CardModificationInfo();
-			this.mod.healthAdjustment = -1;
-		}
-
 		public override bool RespondsToDealDamage(int amount, PlayableCard target)
 		{
 			if (target.Dead)
@@ -65,7 +57,15 @@ namespace voidSigils
 				yield return new WaitForSeconds(0.1f);
 				base.Card.Anim.LightNegationEffect();
 				yield return base.PreSuccessfulTriggerSequence();
-				target.temporaryMods.Add(this.mod);
+				CardModificationInfo cardModificationInfo = target.TemporaryMods.Find((CardModificationInfo x) => x.singletonId == "void_ToxinVigor");
+				if (cardModificationInfo == null)
+				{
+					cardModificationInfo = new CardModificationInfo();
+					cardModificationInfo.singletonId = "void_ToxinVigor";
+					target.AddTemporaryMod(cardModificationInfo);
+				}
+				cardModificationInfo.healthAdjustment++;
+				target.OnStatsChanged();
 				if (target.Health <= 0)
 				{
 					yield return target.Die(false, base.Card, true);

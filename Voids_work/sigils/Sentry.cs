@@ -142,12 +142,12 @@ namespace voidSigils
 						yield return base.PreSuccessfulTriggerSequence();
 						base.Card.Anim.LightNegationEffect();
 						yield return new WaitForSeconds(0.5f);
-						if (base.Card.Anim is CardAnimationController)
+						bool impactFrameReached = false;
+						base.Card.Anim.PlayAttackAnimation(false, otherCard.slot, delegate ()
 						{
-							(base.Card.Anim as CardAnimationController).PlayAttackAnimation(false, otherCard.Slot);
-
-						}
-						
+							impactFrameReached = true;
+						});
+						yield return new WaitUntil(() => impactFrameReached);
 						yield return otherCard.TakeDamage(1, base.Card);
 						yield return new WaitForSeconds(0.5f);
 					}

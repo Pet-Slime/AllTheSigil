@@ -13,7 +13,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Acidic Trail";
-			const string rulebookDescription = "At the end of the towner's turn, [creature] will move in the direction inscribed in the sigil, and deal 1 opposing creature if it is able to move.";
+			const string rulebookDescription = "At the end of the owner's turn, [creature] will move in the direction inscribed in the sigil, and deal 1 damage to the opposing creature if it is able to move.";
 			const string LearnDialogue = "The trail they leave behind, hurts.";
 			// const string TextureFile = "Artwork/void_pathetic.png";
 

@@ -106,6 +106,7 @@ namespace voidSigils
 			AddHaste();
 			AddRetaliate();
 			AddStampede();
+			AddSubmergedAmbush();
 			AddPierce();
 			AddTrample();
 
@@ -177,6 +178,7 @@ namespace voidSigils
 			AddDrawIce();
 			AddDrawJack();
 			AddFishHook();
+			AddFrightful();
 			AddLeech();
 			AddFisher();
 			AddHerd();
@@ -193,14 +195,8 @@ namespace voidSigils
 			AddTooth();
 			AddTribalAlly();
 			AddTribalTutor();
-			AddPatchedBeesOnHit();
 			AddStrafePowerUp();
 			AddMovingPowerUp();
-		}
-
-		private void Start()
-		{
-			RemoveVanillaBeesOnHit();
 		}
 	}
 }

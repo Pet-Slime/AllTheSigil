@@ -61,7 +61,7 @@ namespace voidSigils
 				if (flag)
 				{
 					powerMod = new CardModificationInfo();
-					powerMod.singletonId = "hodag";
+					powerMod.singletonId = "Velocity";
 					RunState.Run.playerDeck.ModifyCard(base.Card.Info, powerMod);
 				}
 				powerMod.attackAdjustment++;

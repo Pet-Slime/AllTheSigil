@@ -17,27 +17,6 @@ namespace voidSigils
     internal class SigilPatches
     {
 
-		[HarmonyPatch(typeof(BoneDigger), nameof(BoneDigger.RespondsToTurnEnd))]
-		public class BoneDiggerPatch
-		{
-			[HarmonyPrefix]
-			public static bool Prefix(bool playerTurnEnd)
-			{
-				return playerTurnEnd;
-			}
-		}
-
-		[HarmonyPatch(typeof(QuadrupleBones), nameof(QuadrupleBones.RespondsToDie))]
-		public class QuadrupleBonesPatch
-		{
-			[HarmonyPostfix]
-			public static void RespondsToDie(bool wasSacrifice, PlayableCard killer, AbilityBehaviour __instance, ref bool __result)
-			{
-				__result = !__instance.Card.OpponentCard;
-			}
-		}
-
-
 		[HarmonyPatch(typeof(PackMule), nameof(PackMule.RespondsToResolveOnBoard))]
 		public class PackMulePatch
 		{

@@ -451,6 +451,12 @@
   <data name="void_fish_hook_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_fish_hook_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="void_Frightful" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Frightful.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Frightful_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Frightful_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="void_Giant" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_Giant.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -702,6 +708,12 @@
   </data>
   <data name="void_stampede_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_stampede_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_SubmergedAmbush" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_SubmergedAmbush.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_SubmergedAmbush_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_SubmergedAmbush_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="void_takeDisease" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_takeDisease.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

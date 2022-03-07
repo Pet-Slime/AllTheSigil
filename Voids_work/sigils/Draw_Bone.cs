@@ -76,7 +76,7 @@ namespace voidSigils
 		public static CardInfo GetRandomChoosableCardWithCost(int randomSeed)
 		{
 			List<CardInfo> list = CardLoader.GetUnlockedCards(CardMetaCategory.ChoiceNode, CardTemple.Nature).FindAll((CardInfo x) => x.bonesCost > 0);
-			bool flag1 = !SaveManager.SaveFile.IsPart2;
+			bool flag1 = SaveManager.SaveFile.IsPart2;
 			if (flag1)
 			{
 				list.Clear();

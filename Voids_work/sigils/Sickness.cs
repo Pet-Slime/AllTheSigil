@@ -40,30 +40,31 @@ namespace voidSigils
 
 		public static Ability ability;
 
-		private CardModificationInfo mod;
-
-		private void Start()
-		{
-			this.mod = new CardModificationInfo();
-			this.mod.attackAdjustment = -1;
-		}
-
 
 		public override bool RespondsToSlotTargetedForAttack(CardSlot slot, PlayableCard attacker)
 		{
-			return attacker.HasAbility(void_sickness.ability);
+			return base.Card == attacker;
 		}
 
 		public override IEnumerator OnSlotTargetedForAttack(CardSlot slot, PlayableCard attacker)
 		{
-
-			yield return base.PreSuccessfulTriggerSequence();
-			yield return new WaitForSeconds(0.55f);
-			attacker.Anim.LightNegationEffect();
-			yield return new WaitForSeconds(0.35f);
-			attacker.temporaryMods.Add(this.mod);
-			Plugin.Log.LogWarning("Sickness debug " + attacker + " has lost it's strength");
-			yield return base.LearnAbility(0f);
+			if (base.Card == attacker && !attacker.Dead)
+			{
+				yield return base.PreSuccessfulTriggerSequence();
+				yield return new WaitForSeconds(0.55f);
+				base.Card.Anim.LightNegationEffect();
+				yield return new WaitForSeconds(0.35f);
+				CardModificationInfo cardModificationInfo = base.Card.TemporaryMods.Find((CardModificationInfo x) => x.singletonId == "void_sickness");
+				if (cardModificationInfo == null)
+				{
+					cardModificationInfo = new CardModificationInfo();
+					cardModificationInfo.singletonId = "void_sickness";
+					base.Card.AddTemporaryMod(cardModificationInfo);
+				}
+				cardModificationInfo.attackAdjustment++;
+				base.Card.OnStatsChanged();
+				yield return base.LearnAbility(0f);
+			}
 			yield break;
 		}
 

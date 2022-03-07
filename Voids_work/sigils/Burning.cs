@@ -40,14 +40,7 @@ namespace voidSigils
 
 		public static Ability ability;
 
-		private CardModificationInfo mod;
 
-		private void Start()
-		{
-			this.mod = new CardModificationInfo();
-			this.mod.attackAdjustment = 1;
-			this.mod.healthAdjustment = -1;
-		}
 
 		public override bool RespondsToUpkeep(bool playerUpkeep)
 		{
@@ -56,11 +49,24 @@ namespace voidSigils
 
 		public override IEnumerator OnUpkeep(bool playerUpkeep)
 		{
+			if (base.Card.HasAbility(Ability.Submerge) || base.Card.HasAbility(Ability.SubmergeSquid))
+			{
+				yield break;
+			}
 			Singleton<ViewManager>.Instance.SwitchToView(View.Board, false, true);
 			yield return new WaitForSeconds(0.1f);
 			base.Card.Anim.LightNegationEffect();
 			yield return base.PreSuccessfulTriggerSequence();
-			base.Card.temporaryMods.Add(this.mod);
+			CardModificationInfo cardModificationInfo = base.Card.TemporaryMods.Find((CardModificationInfo x) => x.singletonId == "void_Burning");
+			if (cardModificationInfo == null)
+			{
+				cardModificationInfo = new CardModificationInfo();
+				cardModificationInfo.singletonId = "void_Burning";
+				base.Card.AddTemporaryMod(cardModificationInfo);
+			}
+			cardModificationInfo.attackAdjustment++;
+			cardModificationInfo.healthAdjustment--;
+			base.Card.OnStatsChanged();
 			if (base.Card.Health <= 0)
 			{
 				yield return base.Card.Die(false, base.Card, true);
