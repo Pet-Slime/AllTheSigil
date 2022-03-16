@@ -72,7 +72,7 @@ namespace voidSigils
 					cardModificationInfo.singletonId = "void_ToxinStrength";
 					target.AddTemporaryMod(cardModificationInfo);
 				}
-				cardModificationInfo.attackAdjustment++;
+				cardModificationInfo.attackAdjustment--;
 				target.OnStatsChanged();
 				yield return new WaitForSeconds(0.1f);
 				yield return base.LearnAbility(0.1f);

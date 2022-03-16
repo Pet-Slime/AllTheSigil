@@ -64,8 +64,8 @@ namespace voidSigils
 					cardModificationInfo.singletonId = "void_Toxin";
 					target.AddTemporaryMod(cardModificationInfo);
 				}
-				cardModificationInfo.attackAdjustment++;
-				cardModificationInfo.healthAdjustment++;
+				cardModificationInfo.attackAdjustment--;
+				cardModificationInfo.healthAdjustment--;
 				target.OnStatsChanged();
 				if (target.Health <= 0)
 				{

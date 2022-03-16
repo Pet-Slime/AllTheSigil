@@ -118,10 +118,8 @@ namespace voidSigils
 		[HarmonyPostfix]
 		public static IEnumerator Postfix(IEnumerator enumerator, CardSlot attackingSlot, CardSlot opposingSlot, float waitAfter = 0f)
 		{
-			Plugin.Log.LogWarning("aquatic strike patch 1 fired");
 			if (attackingSlot.Card != null && opposingSlot.Card != null && opposingSlot.Card.FaceDown && opposingSlot.Card.HasAbility(void_SubmergedAmbush.ability) && !attackingSlot.Card.AttackIsBlocked(opposingSlot))
 			{
-				Plugin.Log.LogWarning("aquatic strike patch 2 fired");
 				yield return enumerator;
 				yield return new WaitForSeconds(0.55f);
 				yield return attackingSlot.Card.TakeDamage(1, opposingSlot.Card);

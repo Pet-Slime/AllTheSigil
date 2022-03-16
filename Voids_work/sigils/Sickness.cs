@@ -61,7 +61,7 @@ namespace voidSigils
 					cardModificationInfo.singletonId = "void_sickness";
 					base.Card.AddTemporaryMod(cardModificationInfo);
 				}
-				cardModificationInfo.attackAdjustment++;
+				cardModificationInfo.attackAdjustment--;
 				base.Card.OnStatsChanged();
 				yield return base.LearnAbility(0f);
 			}
