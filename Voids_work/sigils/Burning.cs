@@ -9,28 +9,24 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Original
-		private NewAbility AddBurning()
+		private void AddBurning()
 		{
 			// setup ability
 			const string rulebookName = "Burning";
 			const string rulebookDescription = "[creature] is on fire, and will gain 1 power and loose 1 health each upkeep.";
 			const string LearnDialogue = "It rampages while on fire.";
-			// const string TextureFile = "Artwork/void_weaken.png";
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Burning);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Burning_a2);
+			int powerlevel = 0;
+			bool LeshyUsable = Plugin.configToxin.Value;
+			bool part1Shops = true;
+			bool canStack = false;
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 0, Plugin.configToxin.Value);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Burning_a2);
 
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Burning);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Burning), tex, abIds);
 
 			// set ability to behaviour class
-			void_Burning.ability = newAbility.ability;
-
-			return newAbility;
+			void_Burning.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Burning), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

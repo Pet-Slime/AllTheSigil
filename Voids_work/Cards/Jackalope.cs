@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using DiskCardGame;
-using UnityEngine;
-using APIPlugin;
+﻿using DiskCardGame;
+using InscryptionAPI.Card;
 using Artwork = voidSigils.Voids_work.Resources.Resources;
 
 namespace voidSigils.Voids_work.Cards
@@ -11,70 +9,58 @@ namespace voidSigils.Voids_work.Cards
 		public static void AddCard()
 		{
 
-			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
 
-			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Hooved);
+			// This builds our card information.
+			CardInfo Jackalope = CardManager.New(
+				// Card internal name.
+				"void_Jackalope",
 
-			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.Strafe);
+				// Card display name.
+				"Jackalope",
 
-			List<Trait> Traits = new List<Trait>();
+				// Attack.
+				2,
 
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-			customAbilities.Add(AbilityIdentifier.GetAbilityIdentifier("extraVoid.inscryption.voidSigils", "Draw Jackalope"));
+				// Health.
+				2,
 
-			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
+				// Descryption.
+				description: "A Jackalope",
 
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
+				// Card ID Prefix
+				modPrefix: "void"
+			)
 
-			Texture2D DefaultTexture = SigilUtils.LoadTextureFromResource(Artwork.void_Jack);
-			Texture2D pixelTexture = SigilUtils.LoadTextureFromResource(Artwork.void_Caustic_Puddle_p);
+			// These are the abilities this card will have.
+			// The format for custom abilities is 'CustomAbilityClass.ability'.
+			// The format for vanilla abilitites is Ability.Ability'.
+			.AddAbilities(Ability.Strafe, void_DrawJack.ability)
 
-			Texture2D eTexture = SigilUtils.LoadTextureFromResource(Artwork.void_Jack_e);
+			.AddTribes(Tribe.Hooved)
 
-			IceCubeIdentifier iceCubeId = null;
-			EvolveIdentifier evolveId = null;
-			TailIdentifier tail = null;
+			.SetCost(bloodCost: 2)
 
-			NewCard.Add(name: "void_Jackalope",
-				displayedName: "Jackalope",
-				baseAttack: 2,
-				baseHealth: 2,
-				metaCategories,
-				cardComplexity: CardComplexity.Advanced,
-				temple: CardTemple.Nature,
-				description: "Jacka",
-				hideAttackAndHealth: false,
-				bloodCost: 2,
-				bonesCost: 0,
-				energyCost: 0,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.None,
-				Tribes,
-				Traits,
-				specialAbilities,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTexture,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId,
-				iceCubeId,
-				tail);
+			// These are the special abilities this card will have.
+			// These do not show up like other abilities; They are invisible to the player.
+			// The format for custom special abilities is 'CustomSpecialAbilityClass.CustomSpecialAbilityID'.
+			// The format for vanilla special abilities is SpecialTriggeredAbility.Ability'.
+			//.AddSpecialAbilities(NewTestSpecialAbility.TestSpecialAbility, SpecialTriggeredAbility.CardsInHand)
+
+			// MetaCategories tell the game where this card should be available as a rewward or for other purposes.
+			// In this case, CardMetaCategory.Rare tells the game to put this card in the post-boss reward event.
+
+			// The first image is the card portrait.
+			// The second image is the emissive portrait.
+			.SetPortrait(SigilUtils.LoadTextureFromResource(Artwork.void_Jack), SigilUtils.LoadTextureFromResource(Artwork.void_Jack_e))
+
+			;
+
+			// Pass the card to the API.
+			CardManager.Add(Jackalope);
 		}
+
+		// --------------------------------------------------------------------------------------------------------------------------------------------------
+
 	}
 }
 

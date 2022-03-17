@@ -12,28 +12,24 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by Tilted hat
-		private NewAbility AddCaustic()
+		private void AddCaustic()
 		{
 			// setup ability
 			const string rulebookName = "Caustic";
 			const string rulebookDescription = "At the end of the towner's turn, [creature] will move in the direction inscribed in the sigil, and drop an acid puddle in their old space.";
 			const string LearnDialogue = "What it leaves behind is deadly.";
-			// const string TextureFile = "Artwork/void_pathetic.png";
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Caustic);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Caustic_a2);
+			int powerlevel = 2;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 2);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Caustic_a2);
 
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Caustic);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Caustic), tex, abIds);
 
 			// set ability to behaviour class
-			void_Caustic.ability = newAbility.ability;
-
-			return newAbility;
+			void_Caustic.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Caustic), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

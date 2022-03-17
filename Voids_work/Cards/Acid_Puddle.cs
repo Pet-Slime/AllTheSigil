@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using DiskCardGame;
-using UnityEngine;
-using APIPlugin;
+﻿using DiskCardGame;
+using InscryptionAPI.Card;
 using Artwork = voidSigils.Voids_work.Resources.Resources;
 
 namespace voidSigils.Voids_work.Cards
@@ -11,72 +9,58 @@ namespace voidSigils.Voids_work.Cards
 		public static void AddCard()
 		{
 
-			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
+            // This builds our card information.
+            CardInfo AcidPuddle = CardManager.New(
+                // Card internal name.
+                "void_Acid_Puddle",
 
-			List<Tribe> Tribes = new List<Tribe>();
+                // Card display name.
+                "Caustic Puddle",
 
-			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.Sharp);
+                // Attack.
+                0,
 
-			List<Trait> Traits = new List<Trait>();
-			Traits.Add(Trait.Terrain);
+                // Health.
+                0,
 
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
+                // Descryption.
+                description: "A puddle that errods all that touches it.",
 
-			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
+                // Card ID Prefix
+                modPrefix: "void"
+            )
 
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.TerrainBackground);
+            // These are the abilities this card will have.
+            // The format for custom abilities is 'CustomAbilityClass.ability'.
+            // The format for vanilla abilitites is Ability.Ability'.
+            .AddAbilities(Ability.Sharp)
 
-			Texture2D DefaultTexture = SigilUtils.LoadTextureFromResource(Artwork.void_Caustic_Puddle);
-			Texture2D pixelTexture = SigilUtils.LoadTextureFromResource(Artwork.void_Caustic_Puddle_p);
+            // These are the special abilities this card will have.
+            // These do not show up like other abilities; They are invisible to the player.
+            // The format for custom special abilities is 'CustomSpecialAbilityClass.CustomSpecialAbilityID'.
+            // The format for vanilla special abilities is SpecialTriggeredAbility.Ability'.
+            //.AddSpecialAbilities(NewTestSpecialAbility.TestSpecialAbility, SpecialTriggeredAbility.CardsInHand)
 
-			Texture2D eTexture = SigilUtils.LoadTextureFromResource(Artwork.void_Caustic_Puddle_e);
+            // CardAppearanceBehaviours are things like card backgrounds.
+            // In this case, the card has a Rare background.
+            .AddAppearances(CardAppearanceBehaviour.Appearance.TerrainBackground)
 
-			IceCubeIdentifier iceCubeId = null;
-			EvolveIdentifier evolveId = null;
-			TailIdentifier tail = null;
+            // MetaCategories tell the game where this card should be available as a rewward or for other purposes.
+            // In this case, CardMetaCategory.Rare tells the game to put this card in the post-boss reward event.
 
-			NewCard.Add(name: "void_Acid_Puddle",
-				displayedName: "Acid Puddle",
-				baseAttack: 0,
-				baseHealth: 1,
-				metaCategories,
-				cardComplexity: CardComplexity.Advanced,
-				temple: CardTemple.Nature,
-				description: "A puddle of Acid, dangerous to the touch",
-				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: 0,
-				energyCost: 0,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.None,
-				Tribes,
-				Traits,
-				specialAbilities,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTexture,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId,
-				iceCubeId,
-				tail);
+            // The first image is the card portrait.
+            // The second image is the emissive portrait.
+            .SetPortrait(SigilUtils.LoadTextureFromResource(Artwork.void_Caustic_Puddle), SigilUtils.LoadTextureFromResource(Artwork.void_Caustic_Puddle_e))
+            .SetPixelPortrait(SigilUtils.LoadTextureFromResource(Artwork.void_Caustic_Puddle_p))
 
+            ;
 
-		}
-	}
+            // Pass the card to the API.
+            CardManager.Add(AcidPuddle);
+        }
+
+        // --------------------------------------------------------------------------------------------------------------------------------------------------
+
+    }
 }
 
