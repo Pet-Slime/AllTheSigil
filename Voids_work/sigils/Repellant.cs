@@ -12,32 +12,26 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by Blind
-		private NewAbility AddRepellant()
+		private void AddRepellant()
 		{
 			// setup ability
 			const string rulebookName = "Repellant";
 			const string rulebookDescription = "When [creature] perishes, the creature that killed it gets pushed into the back row.";
 			const string LearnDialogue = "Foul";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Repellant_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Repellant);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_repellant), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Repellant);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Repellant_a2);
+			int powerlevel = 3;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_repellant.ability = newAbility.ability;
-
-			return newAbility;
+			void_Repellant.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Repellant), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 
-	public class void_repellant : AbilityBehaviour
+	public class void_Repellant : AbilityBehaviour
 	{
 		public override Ability Ability => ability;
 

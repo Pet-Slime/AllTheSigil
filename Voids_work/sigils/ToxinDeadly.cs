@@ -23,12 +23,12 @@ namespace voidSigils
 			bool canStack = false;
 
 			// set ability to behaviour class
-			void_ToxinDeadly.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_ToxinDeadly), tex_a1, tex_a2, LearnDialogue,
+			void_Toxin_Deadly.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Toxin_Deadly), tex_a1, tex_a2, LearnDialogue,
 																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 
-	public class void_ToxinDeadly : AbilityBehaviour
+	public class void_Toxin_Deadly : AbilityBehaviour
 	{
 		public override Ability Ability => ability;
 
@@ -40,7 +40,7 @@ namespace voidSigils
 			{
 				return false;
 			}
-			return base.Card.HasAbility(void_ToxinDeadly.ability);
+			return base.Card.HasAbility(void_Toxin_Deadly.ability);
 		}
 
 		public override IEnumerator OnDealDamage(int amount, PlayableCard target)

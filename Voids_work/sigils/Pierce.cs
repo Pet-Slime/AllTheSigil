@@ -63,7 +63,7 @@ namespace voidSigils
 				}
 				yield return queuedCard.TakeDamage(base.Card.Info.Attack, base.Card);
 				yield return base.LearnAbility(0f);
-			} else if (queuedCard == null && base.Card.Info.HasAbility(void_trample.ability))
+			} else if (queuedCard == null && base.Card.Info.HasAbility(void_Trample.ability))
             {
 				yield return base.PreSuccessfulTriggerSequence();
 				yield return new WaitForSeconds(0.25f);
