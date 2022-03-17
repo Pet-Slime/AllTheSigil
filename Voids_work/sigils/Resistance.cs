@@ -9,28 +9,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by Blind
-		private NewAbility AddResistant()
+		private void AddResistant()
 		{
 			// setup ability
 			const string rulebookName = "Resistant";
 			const string rulebookDescription = "[creature] will only ever take 1 damage from most things. Some effects might bypass this.";
 			const string LearnDialogue = "A hardy creature that one is.";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 4, Plugin.configResistant.Value);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Resistant_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Resistant);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Resistant), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Resistant);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Resistant_a2);
+			int powerlevel = 4;
+			bool LeshyUsable = Plugin.configResistant.Value;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Resistant.ability = newAbility.ability;
-
-			return newAbility;
+			void_Resistant.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Resistant), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

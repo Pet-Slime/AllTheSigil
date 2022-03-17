@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using APIPlugin;
 using DiskCardGame;
 using UnityEngine;
 using Artwork = voidSigils.Voids_work.Resources.Resources;
@@ -9,28 +8,24 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Port from Cyn Sigil a day
-		private NewAbility AddBloodGuzzler()
+		private void AddBloodGuzzler()
 		{
 			// setup ability
 			const string rulebookName = "BloodGuzzler";
 			const string rulebookDescription = "[creature] deals damage, it gains 1 Health for each damage dealt.";
-			const string LearnDialogue = "Life, thru death";
-			// const string TextureFile = "Artwork/void_pathetic.png";
+			const string LearnDialogue = "Gain life from the blood.";
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.ability_bloodguzzler);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.ability_BloodGuzzler_a2);
+			int powerlevel = 0;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 4, Plugin.configBloodGuzzler.Value);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.ability_BloodGuzzler_a2);
 
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.ability_bloodguzzler);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_BloodGuzzler), tex, abIds);
 
 			// set ability to behaviour class
-			void_BloodGuzzler.ability = newAbility.ability;
-
-			return newAbility;
+			void_BloodGuzzler.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_BloodGuzzler), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

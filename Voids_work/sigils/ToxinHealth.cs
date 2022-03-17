@@ -9,32 +9,26 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Original
-		private NewAbility AddToxinVigor()
+		private void AddToxinVigor()
 		{
 			// setup ability
 			const string rulebookName = "Toxin (Vigor)";
 			const string rulebookDescription = "When [creature] damages another creature, that creature looses 1 health.";
 			const string LearnDialogue = "Even once combat is over, vigor leaves it's target";
-			// const string TextureFile = "Artwork/void_weaken.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 1, Plugin.configToxin.Value);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_toxin_health_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_toxin_health);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_ToxinVigor), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Toxin_Health);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Toxin_Health_a2);
+			int powerlevel = 2;
+			bool LeshyUsable = Plugin.configToxin.Value;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_ToxinVigor.ability = newAbility.ability;
-
-			return newAbility;
+			void_Toxin_Health.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Toxin_Health), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 
-	public class void_ToxinVigor : AbilityBehaviour
+	public class void_Toxin_Health : AbilityBehaviour
 	{
 		public override Ability Ability => ability;
 
@@ -57,11 +51,11 @@ namespace voidSigils
 				yield return new WaitForSeconds(0.1f);
 				base.Card.Anim.LightNegationEffect();
 				yield return base.PreSuccessfulTriggerSequence();
-				CardModificationInfo cardModificationInfo = target.TemporaryMods.Find((CardModificationInfo x) => x.singletonId == "void_ToxinVigor");
+				CardModificationInfo cardModificationInfo = target.TemporaryMods.Find((CardModificationInfo x) => x.singletonId == "void_Toxin_Health");
 				if (cardModificationInfo == null)
 				{
 					cardModificationInfo = new CardModificationInfo();
-					cardModificationInfo.singletonId = "void_ToxinVigor";
+					cardModificationInfo.singletonId = "void_Toxin_Health";
 					target.AddTemporaryMod(cardModificationInfo);
 				}
 				cardModificationInfo.healthAdjustment--;

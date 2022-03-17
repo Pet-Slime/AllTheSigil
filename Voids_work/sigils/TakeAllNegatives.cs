@@ -11,28 +11,22 @@ namespace voidSigils
 {
 	public partial class Plugin
 	{
-		private NewAbility AddTakeAllNegatives()
+		private void AddTakeAllNegatives()
 		{
 			// setup ability
 			const string rulebookName = "Disease Absorbtion";
 			const string rulebookDescription = "When played, [creature] will take all negative sigils onto itself.";
             const string LearnDialogue = "How Noble.";
-            // const string TextureFile = "Artwork/void_pathetic.png";
-
-            AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 0);
-            info.canStack = false;
-            info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_takeDisease_a2);
-
-            Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_takeDisease);
-
-            var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-
-            NewAbility newAbility = new NewAbility(info, typeof(ability_TakeAllNegatives), tex, abIds);
+            Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_TakeDisease);
+            Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_TakeDisease_a2);
+            int powerlevel = -1;
+            bool LeshyUsable = false;
+            bool part1Shops = true;
+            bool canStack = false;
 
             // set ability to behaviour class
-            ability_TakeAllNegatives.ability = newAbility.ability;
-
-            return newAbility;
+            ability_TakeAllNegatives.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(ability_TakeAllNegatives), tex_a1, tex_a2, LearnDialogue,
+                                                                                    true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
         }
 	}
 

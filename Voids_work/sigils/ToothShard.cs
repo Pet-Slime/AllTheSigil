@@ -12,27 +12,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Original
-		private NewAbility AddToothShard()
+		private void AddToothShard()
 		{
 			// setup ability
 			const string rulebookName = "Tooth Shard";
 			const string rulebookDescription = "[creature] will generate 1 foil when hit, if it lives through the attack.";
 			const string LearnDialogue = "A splinter of gold.";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 1);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_ToothShard_a2);
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_ToothShard);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_ToothShard), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_ToothShard);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_ToothShard_a2);
+			int powerlevel = 1;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_ToothShard.ability = newAbility.ability;
-
-			return newAbility;
+			void_ToothShard.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_ToothShard), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

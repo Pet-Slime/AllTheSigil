@@ -1,10 +1,6 @@
-﻿using HarmonyLib;
-using APIPlugin;
-using DiskCardGame;
+﻿using DiskCardGame;
 using UnityEngine;
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using Artwork = voidSigils.Voids_work.Resources.Resources;
 
 namespace voidSigils
@@ -12,28 +8,25 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Original
-		private NewAbility AddBloodGrowth()
+		private void AddBloodGrowth()
 		{
 			// setup ability
 			const string rulebookName = "Blood Growth";
 			const string rulebookDescription = "When [creature] attacks, the amount of blood it is counted as when sacrificed will increase.";
 			const string LearnDialogue = "There is power in the blood.";
-			// const string TextureFile = "Artwork/void_pathetic.png";
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_bloodgrowth);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);
+			int powerlevel = 0;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 0);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
 
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_bloodgrowth);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_BloodGrowth), tex, abIds);
 
 			// set ability to behaviour class
-			void_BloodGrowth.ability = newAbility.ability;
+			void_BloodGrowth.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_BloodGrowth), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 
-			return newAbility;
 		}
 	}
 
@@ -72,7 +65,7 @@ namespace voidSigils
             {
 				case 1:
 					base.Card.RemoveTemporaryMod(this.mod);
-					Ability Ab1 = Custom_Sigils.Bi_Blood.ability;					
+					Ability Ab1 = Ability.TripleBlood;
 					this.mod.abilities.Clear();
 					this.mod.abilities.Add(Ab1);
 					base.Card.AddTemporaryMod(this.mod);
@@ -86,7 +79,7 @@ namespace voidSigils
 					break;
 				case 3:
 					base.Card.RemoveTemporaryMod(this.mod);
-					Ability Ab3 = Custom_Sigils.Quadra_Blood.ability;
+					Ability Ab3 = Ability.TripleBlood;
 					this.mod.abilities.Clear();
 					this.mod.abilities.Add(Ab3);
 					base.Card.AddTemporaryMod(this.mod);

@@ -10,31 +10,26 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by Balrog Bean
-		private NewAbility AddEletric()
+		private void AddEletric()
 		{
 			// setup ability
 			const string rulebookName = "Electric";
 			const string rulebookDescription = "When [creature] decalres an attack, they will deal half the damage to creatures adjacent to the target.";
 			const string LearnDialogue = "Shocking";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3, Plugin.configElectric.Value);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Electric_a2);
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Electric);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_eletric), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Electric);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Electric_a2);
+			int powerlevel = 3;
+			bool LeshyUsable = Plugin.configElectric.Value;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_eletric.ability = newAbility.ability;
-
-			return newAbility;
+			void_Electric.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Electric), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 
-	public class void_eletric : AbilityBehaviour
+	public class void_Electric : AbilityBehaviour
 	{
 		public override Ability Ability => ability;
 

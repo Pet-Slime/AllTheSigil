@@ -13,34 +13,29 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by blind
-		private NewAbility AddHerd()
+		private void AddHerd()
 		{
 			// setup ability
 			const string rulebookName = "Herd";
 			const string rulebookDescription = "[creature] will summon a copy of itself each upkeep, up to three times.";
 			const string LearnDialogue = "Strength in Numbers";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 4);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Heard_3);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_herd), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Herd);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);
+			int powerlevel = 4;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_herd.ability = newAbility.ability;
-
-			return newAbility;
+			void_Herd.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Herd), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 
 		}
 	}
 
 
 
-	public class void_herd : AbilityBehaviour
+	public class void_Herd : AbilityBehaviour
 	{
 		public override Ability Ability => ability;
 
@@ -99,7 +94,7 @@ namespace voidSigils
 					yield return Singleton<BoardManager>.Instance.CreateCardInSlot(base.Card.Info, target, 0.15f, true);
 					//set up to negate the new card's herd ability, so it can't be spammed.
 					CardModificationInfo negateMod = new CardModificationInfo();
-					negateMod.negateAbilities.Add(void_herd.ability);
+					negateMod.negateAbilities.Add(void_Herd.ability);
 
 					//Clone the main card info so we don't touch the main card set
 					CardInfo OpponentCardInfo = target.Card.Info.Clone() as CardInfo;
@@ -116,19 +111,19 @@ namespace voidSigils
 
 					if (herdCount == 2)
 					{
-						base.Card.RenderInfo.OverrideAbilityIcon(void_herd.ability, tex2);
+						base.Card.RenderInfo.OverrideAbilityIcon(void_Herd.ability, tex2);
 						base.Card.RenderCard();
 					}
 
 					if (herdCount == 1)
 					{
-						base.Card.RenderInfo.OverrideAbilityIcon(void_herd.ability, tex1);
+						base.Card.RenderInfo.OverrideAbilityIcon(void_Herd.ability, tex1);
 						base.Card.RenderCard();
 					}
 
 					if (herdCount == 0)
 					{
-						base.Card.RenderInfo.OverrideAbilityIcon(void_herd.ability, tex0);
+						base.Card.RenderInfo.OverrideAbilityIcon(void_Herd.ability, tex0);
 						base.Card.RenderCard();
 					}
 				}
@@ -159,7 +154,7 @@ namespace voidSigils
 					yield return Singleton<BoardManager>.Instance.CreateCardInSlot(base.Card.Info, target, 0.15f, true);
 					//set up to negate the new card's herd ability, so it can't be spammed.
 					CardModificationInfo negateMod = new CardModificationInfo();
-					negateMod.negateAbilities.Add(void_herd.ability);
+					negateMod.negateAbilities.Add(void_Herd.ability);
 
 					//Clone the main card info so we don't touch the main card set
 					CardInfo OpponentCardInfo = target.Card.Info.Clone() as CardInfo;
@@ -176,19 +171,19 @@ namespace voidSigils
 					// Change icon
 					if (herdCount == 2)
 					{
-						base.Card.RenderInfo.OverrideAbilityIcon(void_herd.ability, tex2);
+						base.Card.RenderInfo.OverrideAbilityIcon(void_Herd.ability, tex2);
 						base.Card.RenderCard();
 					}
 
 					if (herdCount == 1)
 					{
-						base.Card.RenderInfo.OverrideAbilityIcon(void_herd.ability, tex1);
+						base.Card.RenderInfo.OverrideAbilityIcon(void_Herd.ability, tex1);
 						base.Card.RenderCard();
 					}
 
 					if (herdCount == 0)
 					{
-						base.Card.RenderInfo.OverrideAbilityIcon(void_herd.ability, tex0);
+						base.Card.RenderInfo.OverrideAbilityIcon(void_Herd.ability, tex0);
 						base.Card.RenderCard();
 					}
 				}
@@ -196,9 +191,5 @@ namespace voidSigils
 			}
 			yield break;
 		}
-
-
-
-
 	}
 }

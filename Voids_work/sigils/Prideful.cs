@@ -12,28 +12,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Original
-		private NewAbility AddPrideful()
+		private void AddPrideful()
 		{
 			// setup ability
 			const string rulebookName = "Prideful";
 			const string rulebookDescription = "[creature] will not attack a card with a power 2 lower than its own.";
 			const string LearnDialogue = "A creature's pride will be it's downfall.";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, -1, Plugin.configPrideful.Value);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Prideful_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Prideful);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Prideful), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Prideful);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Prideful_a2);
+			int powerlevel = -1;
+			bool LeshyUsable = Plugin.configPrideful.Value;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Prideful.ability = newAbility.ability;
-
-			return newAbility;
+			void_Prideful.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Prideful), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

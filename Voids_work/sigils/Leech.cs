@@ -9,27 +9,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Port from Cyn Sigil a day
-		private NewAbility AddLeech()
+		private void AddLeech()
 		{
 			// setup ability
 			const string rulebookName = "Leech";
 			const string rulebookDescription = "When [creature] deals damage, it will heal 1 Health for each damage dealt to a card.";
 			const string LearnDialogue = "Vigor from blood!";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 3, Plugin.configLeech.Value);
-			info.canStack = true;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.ability_leech_a2);
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.ability_leech);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Leech), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Leech);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Leech_a2);
+			int powerlevel = 3;
+			bool LeshyUsable = Plugin.configLeech.Value;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Leech.ability = newAbility.ability;
-
-			return newAbility;
+			void_Leech.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Leech), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

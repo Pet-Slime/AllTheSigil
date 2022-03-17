@@ -10,29 +10,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by Eri
-		private NewAbility AddTrample()
+		private void AddTrample()
 		{
 			// setup ability
 			const string rulebookName = "Trample";
 			const string rulebookDescription = "When [creature] deals overkill damage to a card, the overkill damage will be sent to the owner.";
 			const string LearnDialogue = "A stampede can not be stopped.";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 6, Plugin.configTrample.Value);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_trample_a2);
-			info.flipYIfOpponent = true;
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_trample);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_trample), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Trample);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Trample_a2);
+			int powerlevel = 6;
+			bool LeshyUsable = Plugin.configTrample.Value;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_trample.ability = newAbility.ability;
-
-			return newAbility;
+			void_Trample.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Trample), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 
@@ -47,7 +40,7 @@ namespace voidSigils
 		{
 			bool attackingSlotIsPlayerCard = attackingSlot.Card is not null && attackingSlot.IsPlayerSlot;
 			bool attackingSlotHasBrimstone =
-				attackingSlotIsPlayerCard && attackingSlot.Card.Info.HasAbility(void_trample.ability);
+				attackingSlotIsPlayerCard && attackingSlot.Card.Info.HasAbility(void_Trample.ability);
 			if (attackingSlotHasBrimstone)
 			{
 				Plugin.Log.LogDebug($"{SigilUtils.GetLogOfCardInSlot(attackingSlot.Card)} - Setting damage to 1 for Brimstone");
@@ -56,7 +49,7 @@ namespace voidSigils
 		}
 	}
 
-	public class void_trample : AbilityBehaviour
+	public class void_Trample : AbilityBehaviour
 	{
 		public override Ability Ability => ability;
 
@@ -109,7 +102,7 @@ namespace voidSigils
 			[HarmonyPrefix]
 			public static void Prefix(ref int damage, ref CardSlot attackingSlot, ref CardSlot opposingSlot)
 			{
-				if (attackingSlot.Card != null && damage > 0 && attackingSlot.Card.HasAbility(void_trample.ability))
+				if (attackingSlot.Card != null && damage > 0 && attackingSlot.Card.HasAbility(void_Trample.ability))
                 {
 					damage = 0;
 				}

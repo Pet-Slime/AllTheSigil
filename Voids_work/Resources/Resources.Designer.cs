@@ -63,16 +63,6 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] ability_beesonhit {
-            get {
-                object obj = ResourceManager.GetObject("ability_beesonhit", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
         internal static byte[] ability_bloodguzzler {
             get {
                 object obj = ResourceManager.GetObject("ability_bloodguzzler", resourceCulture);
@@ -86,76 +76,6 @@ namespace voidSigils.Voids_work.Resources {
         internal static byte[] ability_BloodGuzzler_a2 {
             get {
                 object obj = ResourceManager.GetObject("ability_BloodGuzzler_a2", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] ability_bonepicker {
-            get {
-                object obj = ResourceManager.GetObject("ability_bonepicker", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] ability_bonepicker_a2 {
-            get {
-                object obj = ResourceManager.GetObject("ability_bonepicker_a2", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] ability_leech {
-            get {
-                object obj = ResourceManager.GetObject("ability_leech", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] ability_leech_a2 {
-            get {
-                object obj = ResourceManager.GetObject("ability_leech_a2", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] ability_nutritious {
-            get {
-                object obj = ResourceManager.GetObject("ability_nutritious", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] ability_poisonous {
-            get {
-                object obj = ResourceManager.GetObject("ability_poisonous", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] ability_poisonous_a2 {
-            get {
-                object obj = ResourceManager.GetObject("ability_poisonous_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -243,46 +163,6 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] ability_thickshell {
-            get {
-                object obj = ResourceManager.GetObject("ability_thickshell", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] ability_thickshell_a2 {
-            get {
-                object obj = ResourceManager.GetObject("ability_thickshell_a2", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] ability_transient {
-            get {
-                object obj = ResourceManager.GetObject("ability_transient", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] ability_transient_a2 {
-            get {
-                object obj = ResourceManager.GetObject("ability_transient_a2", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
         internal static byte[] herd0_sigil_a2 {
             get {
                 object obj = ResourceManager.GetObject("herd0_sigil_a2", resourceCulture);
@@ -353,9 +233,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_acid {
+        internal static byte[] void_AcidTrail {
             get {
-                object obj = ResourceManager.GetObject("void_acid", resourceCulture);
+                object obj = ResourceManager.GetObject("void_AcidTrail", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -363,9 +243,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_Acid_a2 {
+        internal static byte[] void_AcidTrail_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_Acid_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_AcidTrail_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -503,9 +383,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_antler {
+        internal static byte[] void_Antler {
             get {
-                object obj = ResourceManager.GetObject("void_antler", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Antler", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -613,9 +493,29 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_boneless_a2 {
+        internal static byte[] void_Boneless_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_boneless_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Boneless_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_BonePicker {
+            get {
+                object obj = ResourceManager.GetObject("void_BonePicker", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_BonePicker_a2 {
+            get {
+                object obj = ResourceManager.GetObject("void_BonePicker_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -643,9 +543,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_broken {
+        internal static byte[] void_Box {
             get {
-                object obj = ResourceManager.GetObject("void_broken", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Box", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -653,9 +553,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_broken_a2 {
+        internal static byte[] void_Broken {
             get {
-                object obj = ResourceManager.GetObject("void_broken_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Broken", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -663,9 +563,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_burning {
+        internal static byte[] void_Broken_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_burning", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Broken_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -673,9 +573,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_burning_a2 {
+        internal static byte[] void_Burning {
             get {
-                object obj = ResourceManager.GetObject("void_burning_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Burning", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -683,9 +583,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_caustic {
+        internal static byte[] void_Burning_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_caustic", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Burning_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -693,9 +593,19 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_caustic_a2 {
+        internal static byte[] void_Caustic {
             get {
-                object obj = ResourceManager.GetObject("void_caustic_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Caustic", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_Caustic_a2 {
+            get {
+                object obj = ResourceManager.GetObject("void_Caustic_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -733,9 +643,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_coinFinder {
+        internal static byte[] void_CoinFinder {
             get {
-                object obj = ResourceManager.GetObject("void_coinFinder", resourceCulture);
+                object obj = ResourceManager.GetObject("void_CoinFinder", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -743,9 +653,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_coinFinder_a2 {
+        internal static byte[] void_CoinFinder_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_coinFinder_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_CoinFinder_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -753,9 +663,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_consumer {
+        internal static byte[] void_Consumer {
             get {
-                object obj = ResourceManager.GetObject("void_consumer", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Consumer", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -773,9 +683,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_coward_a2 {
+        internal static byte[] void_Coward_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_coward_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Coward_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -783,19 +693,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_crate {
+        internal static byte[] void_Deathburst {
             get {
-                object obj = ResourceManager.GetObject("void_crate", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] void_deathburst {
-            get {
-                object obj = ResourceManager.GetObject("void_deathburst", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Deathburst", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -833,9 +733,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_deathburst_a2 {
+        internal static byte[] void_Deathburst_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_deathburst_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Deathburst_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -843,9 +743,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_desperation {
+        internal static byte[] void_Desperation {
             get {
-                object obj = ResourceManager.GetObject("void_desperation", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Desperation", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -963,9 +863,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_drawblood {
+        internal static byte[] void_DrawBlood {
             get {
-                object obj = ResourceManager.GetObject("void_drawblood", resourceCulture);
+                object obj = ResourceManager.GetObject("void_DrawBlood", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -973,9 +873,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_drawbone {
+        internal static byte[] void_DrawBlood_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_drawbone", resourceCulture);
+                object obj = ResourceManager.GetObject("void_DrawBlood_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -983,9 +883,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_drawice {
+        internal static byte[] void_DrawBone {
             get {
-                object obj = ResourceManager.GetObject("void_drawice", resourceCulture);
+                object obj = ResourceManager.GetObject("void_DrawBone", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -993,9 +893,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_drawice_a2 {
+        internal static byte[] void_DrawBone_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_drawice_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_DrawBone_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1003,9 +903,29 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_drawjack {
+        internal static byte[] void_DrawIce {
             get {
-                object obj = ResourceManager.GetObject("void_drawjack", resourceCulture);
+                object obj = ResourceManager.GetObject("void_DrawIce", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_DrawIce_a2 {
+            get {
+                object obj = ResourceManager.GetObject("void_DrawIce_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_DrawJack {
+            get {
+                object obj = ResourceManager.GetObject("void_DrawJack", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1023,9 +943,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_dying {
+        internal static byte[] void_Dying {
             get {
-                object obj = ResourceManager.GetObject("void_dying", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Dying", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1033,9 +953,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_dying_a2 {
+        internal static byte[] void_Dying_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_dying_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Dying_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1063,9 +983,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_enforcer {
+        internal static byte[] void_Enforcer {
             get {
-                object obj = ResourceManager.GetObject("void_enforcer", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Enforcer", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1073,9 +993,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_enforcer_a2 {
+        internal static byte[] void_Enforcer_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_enforcer_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Enforcer_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1083,9 +1003,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_enrage {
+        internal static byte[] void_Enrage {
             get {
-                object obj = ResourceManager.GetObject("void_enrage", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Enrage", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1093,9 +1013,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_familair {
+        internal static byte[] void_Entomophage {
             get {
-                object obj = ResourceManager.GetObject("void_familair", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Entomophage", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1103,9 +1023,19 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_familair_a2 {
+        internal static byte[] void_Familiar {
             get {
-                object obj = ResourceManager.GetObject("void_familair_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Familiar", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_Familiar_a2 {
+            get {
+                object obj = ResourceManager.GetObject("void_Familiar_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1133,9 +1063,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_fish_hook {
+        internal static byte[] void_Fisher {
             get {
-                object obj = ResourceManager.GetObject("void_fish_hook", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Fisher", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1143,9 +1073,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_fish_hook_a2 {
+        internal static byte[] void_Fisher_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_fish_hook_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Fisher_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1153,9 +1083,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_fisher {
+        internal static byte[] void_FishHook {
             get {
-                object obj = ResourceManager.GetObject("void_fisher", resourceCulture);
+                object obj = ResourceManager.GetObject("void_FishHook", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1163,9 +1093,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_fisher_a2 {
+        internal static byte[] void_FishHook_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_fisher_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_FishHook_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1203,9 +1133,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_grazing {
+        internal static byte[] void_Grazing {
             get {
-                object obj = ResourceManager.GetObject("void_grazing", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Grazing", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1213,9 +1143,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_haste {
+        internal static byte[] void_Haste {
             get {
-                object obj = ResourceManager.GetObject("void_haste", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Haste", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1223,9 +1153,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_haste_a2 {
+        internal static byte[] void_Haste_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_haste_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Haste_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1263,9 +1193,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_Heard_3 {
+        internal static byte[] void_Herd {
             get {
-                object obj = ResourceManager.GetObject("void_Heard_3", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Herd", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1276,16 +1206,6 @@ namespace voidSigils.Voids_work.Resources {
         internal static byte[] void_Hourglass {
             get {
                 object obj = ResourceManager.GetObject("void_Hourglass", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] void_insectKiller {
-            get {
-                object obj = ResourceManager.GetObject("void_insectKiller", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1306,6 +1226,26 @@ namespace voidSigils.Voids_work.Resources {
         internal static byte[] void_Jack_e {
             get {
                 object obj = ResourceManager.GetObject("void_Jack_e", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_Leech {
+            get {
+                object obj = ResourceManager.GetObject("void_Leech", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_Leech_a2 {
+            get {
+                object obj = ResourceManager.GetObject("void_Leech_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1453,9 +1393,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_medic_a2 {
+        internal static byte[] void_Medic_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_medic_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Medic_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1473,9 +1413,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_midas_a2 {
+        internal static byte[] void_Midas_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_midas_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Midas_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1486,6 +1426,16 @@ namespace voidSigils.Voids_work.Resources {
         internal static byte[] void_MovementPowerUp {
             get {
                 object obj = ResourceManager.GetObject("void_MovementPowerUp", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_Nutritious {
+            get {
+                object obj = ResourceManager.GetObject("void_Nutritious", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1603,9 +1553,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_paralysis {
+        internal static byte[] void_Paralysis {
             get {
-                object obj = ResourceManager.GetObject("void_paralysis", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Paralysis", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1613,9 +1563,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_paralysis_a2 {
+        internal static byte[] void_Paralysis_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_paralysis_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Paralysis_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1623,9 +1573,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_pathetic {
+        internal static byte[] void_Pathetic {
             get {
-                object obj = ResourceManager.GetObject("void_pathetic", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Pathetic", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1643,9 +1593,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_pierce {
+        internal static byte[] void_Pierce {
             get {
-                object obj = ResourceManager.GetObject("void_pierce", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Pierce", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1653,9 +1603,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_pierce_a2 {
+        internal static byte[] void_Pierce_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_pierce_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Pierce_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1663,9 +1613,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_possessor {
+        internal static byte[] void_Poisonous {
             get {
-                object obj = ResourceManager.GetObject("void_possessor", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Poisonous", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1673,9 +1623,29 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_possessor_a2 {
+        internal static byte[] void_Poisonous_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_possessor_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Poisonous_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_Possessor {
+            get {
+                object obj = ResourceManager.GetObject("void_Possessor", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_Possessor_a2 {
+            get {
+                object obj = ResourceManager.GetObject("void_Possessor_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1813,9 +1783,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_protector {
+        internal static byte[] void_Protector {
             get {
-                object obj = ResourceManager.GetObject("void_protector", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Protector", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1823,9 +1793,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_protector_a2 {
+        internal static byte[] void_Protector_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_protector_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Protector_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1833,9 +1803,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_randomStrafe {
+        internal static byte[] void_Ram {
             get {
-                object obj = ResourceManager.GetObject("void_randomStrafe", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Ram", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1843,9 +1813,29 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_randomStrafe_a2 {
+        internal static byte[] void_Ram_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_randomStrafe_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Ram_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_RandomStrafe {
+            get {
+                object obj = ResourceManager.GetObject("void_RandomStrafe", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_RandomStrafe_a2 {
+            get {
+                object obj = ResourceManager.GetObject("void_RandomStrafe_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1863,9 +1853,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_recoil_a2 {
+        internal static byte[] void_Recoil_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_recoil_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Recoil_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1873,9 +1863,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_repellant {
+        internal static byte[] void_Repellant {
             get {
-                object obj = ResourceManager.GetObject("void_repellant", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Repellant", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1883,9 +1873,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_repellant_a2 {
+        internal static byte[] void_Repellant_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_repellant_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Repellant_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1933,9 +1923,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_scissors {
+        internal static byte[] void_Scissors {
             get {
-                object obj = ResourceManager.GetObject("void_scissors", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Scissors", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1943,9 +1933,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_scissors_a2 {
+        internal static byte[] void_Scissors_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_scissors_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Scissors_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1953,9 +1943,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_Shocker {
+        internal static byte[] void_Sickness {
             get {
-                object obj = ResourceManager.GetObject("void_Shocker", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Sickness", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1963,9 +1953,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_shocker_a2 {
+        internal static byte[] void_Sickness_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_shocker_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Sickness_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1973,9 +1963,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_shove {
+        internal static byte[] void_Stampede {
             get {
-                object obj = ResourceManager.GetObject("void_shove", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Stampede", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -1983,49 +1973,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_shove_a2 {
+        internal static byte[] void_Stampede_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_shove_a2", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] void_sick {
-            get {
-                object obj = ResourceManager.GetObject("void_sick", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] void_sick_a2 {
-            get {
-                object obj = ResourceManager.GetObject("void_sick_a2", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] void_stampede {
-            get {
-                object obj = ResourceManager.GetObject("void_stampede", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] void_stampede_a2 {
-            get {
-                object obj = ResourceManager.GetObject("void_stampede_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Stampede_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2053,9 +2003,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_takeDisease {
+        internal static byte[] void_TakeDisease {
             get {
-                object obj = ResourceManager.GetObject("void_takeDisease", resourceCulture);
+                object obj = ResourceManager.GetObject("void_TakeDisease", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2063,9 +2013,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_takeDisease_a2 {
+        internal static byte[] void_TakeDisease_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_takeDisease_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_TakeDisease_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2073,9 +2023,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_thief {
+        internal static byte[] void_ThickShell {
             get {
-                object obj = ResourceManager.GetObject("void_thief", resourceCulture);
+                object obj = ResourceManager.GetObject("void_ThickShell", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2083,9 +2033,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_thief_a2 {
+        internal static byte[] void_ThickShell_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_thief_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_ThickShell_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2093,9 +2043,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_tooth {
+        internal static byte[] void_Thief {
             get {
-                object obj = ResourceManager.GetObject("void_tooth", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Thief", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2103,9 +2053,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_tooth_a2 {
+        internal static byte[] void_Thief_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_tooth_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Thief_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2113,9 +2063,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_toothGiver {
+        internal static byte[] void_Tooth {
             get {
-                object obj = ResourceManager.GetObject("void_toothGiver", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Tooth", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2123,9 +2073,29 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_toothGiver_a2 {
+        internal static byte[] void_Tooth_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_toothGiver_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Tooth_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_ToothGiver {
+            get {
+                object obj = ResourceManager.GetObject("void_ToothGiver", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_ToothGiver_a2 {
+            get {
+                object obj = ResourceManager.GetObject("void_ToothGiver_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2153,9 +2123,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_toxin {
+        internal static byte[] void_Toxin {
             get {
-                object obj = ResourceManager.GetObject("void_toxin", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Toxin", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2163,9 +2133,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_toxin_a2 {
+        internal static byte[] void_Toxin_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_toxin_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Toxin_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2173,9 +2143,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_toxin_deadly {
+        internal static byte[] void_Toxin_Deadly {
             get {
-                object obj = ResourceManager.GetObject("void_toxin_deadly", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Toxin_Deadly", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2183,9 +2153,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_toxin_deadly_a2 {
+        internal static byte[] void_Toxin_Deadly_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_toxin_deadly_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Toxin_Deadly_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2193,9 +2163,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_toxin_health {
+        internal static byte[] void_Toxin_Health {
             get {
-                object obj = ResourceManager.GetObject("void_toxin_health", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Toxin_Health", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2203,9 +2173,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_toxin_health_a2 {
+        internal static byte[] void_Toxin_Health_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_toxin_health_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Toxin_Health_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2213,9 +2183,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_toxin_sickness {
+        internal static byte[] void_Toxin_Sickness {
             get {
-                object obj = ResourceManager.GetObject("void_toxin_sickness", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Toxin_Sickness", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2223,9 +2193,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_toxin_sickness_a2 {
+        internal static byte[] void_Toxin_Sickness_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_toxin_sickness_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Toxin_Sickness_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2233,9 +2203,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_toxin_strength {
+        internal static byte[] void_Toxin_Strength {
             get {
-                object obj = ResourceManager.GetObject("void_toxin_strength", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Toxin_Strength", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2243,9 +2213,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_toxin_strength_a2 {
+        internal static byte[] void_Toxin_Strength_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_toxin_strength_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Toxin_Strength_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2253,9 +2223,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_trample {
+        internal static byte[] void_Trample {
             get {
-                object obj = ResourceManager.GetObject("void_trample", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Trample", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2263,9 +2233,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_trample_a2 {
+        internal static byte[] void_Trample_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_trample_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Trample_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2273,9 +2243,29 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_tribeAlly {
+        internal static byte[] void_Transient {
             get {
-                object obj = ResourceManager.GetObject("void_tribeAlly", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Transient", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_Transient_a2 {
+            get {
+                object obj = ResourceManager.GetObject("void_Transient_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_TribeAlly {
+            get {
+                object obj = ResourceManager.GetObject("void_TribeAlly", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2413,9 +2403,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_vicious {
+        internal static byte[] void_Vicious {
             get {
-                object obj = ResourceManager.GetObject("void_vicious", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Vicious", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2423,9 +2413,9 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] void_vicious_a2 {
+        internal static byte[] void_Vicious_a2 {
             get {
-                object obj = ResourceManager.GetObject("void_vicious_a2", resourceCulture);
+                object obj = ResourceManager.GetObject("void_Vicious_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -2456,6 +2446,26 @@ namespace voidSigils.Voids_work.Resources {
         internal static byte[] void_Withering_a2 {
             get {
                 object obj = ResourceManager.GetObject("void_Withering_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_Zapper {
+            get {
+                object obj = ResourceManager.GetObject("void_Zapper", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_Zapper_a2 {
+            get {
+                object obj = ResourceManager.GetObject("void_Zapper_a2", resourceCulture);
                 return ((byte[])(obj));
             }
         }

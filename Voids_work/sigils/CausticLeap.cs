@@ -22,9 +22,9 @@ namespace voidSigils
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 2);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_caustic_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Caustic_a2);
 
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_caustic);
+			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Caustic);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
 			

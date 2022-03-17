@@ -2,9 +2,6 @@
 using APIPlugin;
 using DiskCardGame;
 using UnityEngine;
-using HarmonyLib;
-using System;
-using System.Collections.Generic;
 using Artwork = voidSigils.Voids_work.Resources.Resources;
 
 namespace voidSigils
@@ -12,28 +9,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by Blind
-		private NewAbility AddFamiliar()
+		private void AddFamiliar()
 		{
 			// setup ability
 			const string rulebookName = "Familiar";
 			const string rulebookDescription = "A familiar will help with attacking when it's adjacent allies attack a card.";
 			const string LearnDialogue = "A familiar helps those in need.";
-			// const string TextureFile = "Artwork/void_vicious.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 1, Plugin.configFamiliar.Value);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_familair_a2);
-			info.flipYIfOpponent = true;
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_familair);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Familiar), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Familiar);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Familiar_a2);
+			int powerlevel = 1;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Familiar.ability = newAbility.ability;
-
-			return newAbility;
+			void_Familiar.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Familiar), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

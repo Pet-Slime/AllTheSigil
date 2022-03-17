@@ -12,28 +12,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Original
-		private NewAbility AddPredator()
+		private void AddPredator()
 		{
 			// setup ability
 			const string rulebookName = "Predator";
 			const string rulebookDescription = "[creature] will gain 1 power for each instance of Predator, when the opposing slot has a card.";
 			const string LearnDialogue = "It hunts";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3);
-			info.canStack = true;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Predator_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Predator);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-
-			NewAbility newAbility = new NewAbility(info, typeof(void_Predator), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Predator);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Predator_a2);
+			int powerlevel = 3;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Predator.ability = newAbility.ability;
-
-			return newAbility;
+			void_Predator.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Predator), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

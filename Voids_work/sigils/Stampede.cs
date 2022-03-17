@@ -12,33 +12,26 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by Blind
-		private NewAbility AddStampede()
+		private void AddStampede()
 		{
 			// setup ability
 			const string rulebookName = "Stampede";
 			const string rulebookDescription = "[creature] will cause adjacent creatures to attack when played on the board.";
 			const string LearnDialogue = "Power in Numbers";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_stampede_a2);
-			info.flipYIfOpponent = true;
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_stampede);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_stampede), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Stampede);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Stampede_a2);
+			int powerlevel = 3;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_stampede.ability = newAbility.ability;
-
-			return newAbility;
+			void_Stampede.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Stampede), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 
-	public class void_stampede : AbilityBehaviour
+	public class void_Stampede : AbilityBehaviour
 	{
 		public override Ability Ability => ability;
 
@@ -51,7 +44,7 @@ namespace voidSigils
 
 		public override bool RespondsToResolveOnBoard()
 		{
-			return base.Card.HasAbility(void_stampede.ability);
+			return base.Card.HasAbility(void_Stampede.ability);
 		}
 
 

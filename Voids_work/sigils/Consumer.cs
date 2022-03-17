@@ -9,28 +9,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by Tilted hat
-		private NewAbility AddConsumer()
+		private void AddConsumer()
 		{
 			// setup ability
 			const string rulebookName = "Consumer";
 			const string rulebookDescription = "When [creature] kills another creature, it gains 2 health.";
 			const string LearnDialogue = "Nothing but bones left in its wake. A truly horrific appetite.";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 4, Plugin.configConsumer.Value);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_consumer);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Consumer), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Consumer);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);
+			int powerlevel = 4;
+			bool LeshyUsable = Plugin.configConsumer.Value;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Consumer.ability = newAbility.ability;
-
-			return newAbility;
+			void_Consumer.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Consumer), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

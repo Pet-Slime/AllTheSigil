@@ -12,29 +12,23 @@ namespace voidSigils
 	public partial class Plugin
 	{
         //Port from Zerg mod by James
-		private NewAbility AddDoubleAttack()
+		private void AddDoubleAttack()
 		{
 			// setup ability
 			const string rulebookName = "Multi-Strike";
 			const string rulebookDescription = "[creature] will strike a card multiple times, if it lives through the first attack. Will not trigger -on attack- or -on damage- effects with the extra strikes.";
             const string LearnDialogue = "So fast, so many strikes";
-            // const string TextureFile = "Artwork/void_double_attack.png";
+            Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_double_attack);
+            Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_doubleattack_a2);
+            int powerlevel = 0;
+            bool LeshyUsable = Plugin.configMultiStrike.Value;
+            bool part1Shops = true;
+            bool canStack = true;
 
-            AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 0, Plugin.configMultiStrike.Value);
-            info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_doubleattack_a2);
-            info.flipYIfOpponent = true;
-
-            Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_double_attack);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_DoubleAttack), tex, abIds);
-
-			// set ability to behaviour class
-			void_DoubleAttack.ability = newAbility.ability;
-
-			return newAbility;
-		}
+            // set ability to behaviour class
+            void_DoubleAttack.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_DoubleAttack), tex_a1, tex_a2, LearnDialogue,
+                                                                                    true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
+        }
 	}
 
     [HarmonyPatch(typeof(AbilityIconInteractable), "LoadIcon")]

@@ -9,27 +9,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Port from Cyn Sigil a day
-		private NewAbility AddNutritious()
+		private void AddNutritious()
 		{
 			// setup ability
 			const string rulebookName = "Nutritious";
 			const string rulebookDescription = "When [creature] is sacrificed, it adds 1 power and 2 health to the card it was sacrificed for.";
 			const string LearnDialogue = "That creature is so full of nutrients, the creature you play comes in stronger!";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.ability_nutritious);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-
-			NewAbility newAbility = new NewAbility(info, typeof(void_Nutritious), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Nutritious);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);
+			int powerlevel = 2;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Nutritious.ability = newAbility.ability;
-
-			return newAbility;
+			void_Nutritious.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Nutritious), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

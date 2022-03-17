@@ -10,9 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BepInEx.Analyzers" Version="1.0.7" PrivateAssets="all" />
-    <PackageReference Include="BepInEx.Core" Version="5.4.16" />
+    <PackageReference Include="BepInEx.Analyzers" Version="1.0.8" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.Core" Version="5.4.19" />
     <PackageReference Include="BepInEx.PluginInfoProps" Version="1.1.0" />
+    <PackageReference Include="Inscryption.GameLibs" Version="1.2.0-r.1" />
     <PackageReference Include="UnityEngine.Modules" Version="2019.4.24" IncludeAssets="compile" />
   </ItemGroup>
 
@@ -21,16 +22,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="API">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Inscryption\BepInEx\plugins\API_dev-API\API_KCM.dll</HintPath>
+    <Reference Include="InscryptionAPI">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Inscryption\BepInEx\plugins\API 2.0\InscryptionAPI.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>lib\Assembly-CSharp.dll</HintPath>
-      <CopyLocal>False</CopyLocal>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="Custom_Sigils">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Inscryption\BepInEx\plugins\AllTheSigils-All_The_Sigils\plugins\Custom_Sigils.dll</HintPath>
+    <Reference Include="InscryptionCommunityPatch">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Inscryption\BepInEx\plugins\API 2.0\InscryptionCommunityPatch.dll</HintPath>
     </Reference>
     <Reference Include="Sirenix.Serialization">
       <HintPath>lib\Sirenix.Serialization.dll</HintPath>

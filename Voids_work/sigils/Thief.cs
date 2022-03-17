@@ -11,28 +11,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by memes4life
-		private NewAbility AddThief()
+		private void AddThief()
 		{
 			// setup ability
 			const string rulebookName = "Thief";
 			const string rulebookDescription = "[creature] will try to steal a random default sigil from an opposing creature when played, or at the start of the owner's turn until it does.";
 			const string LearnDialogue = "If only I could steal the moon...";
-			// const string TextureFile = "Artwork/void_vicious.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3, Plugin.configThief.Value);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_thief_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_thief);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Thief), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Thief);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Thief_a2);
+			int powerlevel = 3;
+			bool LeshyUsable = Plugin.configThief.Value;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Thief.ability = newAbility.ability;
-
-			return newAbility;
+			void_Thief.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Thief), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

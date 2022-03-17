@@ -12,27 +12,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Oiriginal cause FUCK SUBMERG
-		private NewAbility AddFisher()
+		private void AddFisher()
 		{
 			// setup ability
 			const string rulebookName = "Lure";
 			const string rulebookDescription = "[creature] will cause facedown cards to become face up when attacking.";
 			const string LearnDialogue = "The Submerge are brought back to the surface";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 1);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_fisher_a2);
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_fisher);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Fisher), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Fisher);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Fisher_a2);
+			int powerlevel = 1;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Fisher.ability = newAbility.ability;
-
-			return newAbility;
+			void_Fisher.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Fisher), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

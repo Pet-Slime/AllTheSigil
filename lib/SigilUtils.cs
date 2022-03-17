@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using APIPlugin;
 using BepInEx;
 using DiskCardGame;
 using UnityEngine;
+using InscryptionAPI.Card;
 using static System.IO.File;
 
 namespace voidSigils
@@ -14,26 +12,44 @@ namespace voidSigils
 	public static class SigilUtils
 	{
 
-		public static AbilityInfo CreateInfoWithDefaultSettings(
-			string rulebookName, string rulebookDescription, string LearnDialogue, bool withDialogue = false, int powerLevel = 0, bool leshyUsable = false
+		public static AbilityInfo CreateAbilityWithDefaultSettings(
+			string rulebookName, string rulebookDescription, Type behavior, Texture2D text_a1, Texture2D text_a2, 
+			string LearnDialogue, bool withDialogue = false, int powerLevel = 0, bool leshyUsable = false, bool part1Modular = true, bool stack = false
 		)
 		{
-			AbilityInfo info = ScriptableObject.CreateInstance<AbilityInfo>();
-			info.powerLevel = powerLevel;
-			info.rulebookName = rulebookName;
-			info.rulebookDescription = rulebookDescription;
-			info.metaCategories = new List<AbilityMetaCategory>()
-			{
-				AbilityMetaCategory.Part1Modular, AbilityMetaCategory.Part1Rulebook
-			};
-			info.opponentUsable = leshyUsable;
+			AbilityInfo createdAbilityInfo = AbilityManager.New(
+				voidSigils.Plugin.PluginGuid,
+				rulebookName,
+				rulebookDescription,
+				behavior,
+				text_a1
+			)
+			// This specifies the icon for the ability if it exists in Part 2.
+			.SetPixelAbilityIcon(text_a2)
+			;
+			// This sets up the learned Dialog event
 			if (withDialogue)
 			{
-				info.abilityLearnedDialogue = SetAbilityInfoDialogue(LearnDialogue);
+				createdAbilityInfo.abilityLearnedDialogue = SetAbilityInfoDialogue(LearnDialogue);
 			}
-
-			return info;
+			// How powerful the ability is
+			createdAbilityInfo.powerLevel = powerLevel;
+			// Can it show up on totems for leshy?
+			createdAbilityInfo.opponentUsable = leshyUsable;
+			// If true, allows in shops and in totems. If false, just the rule book
+			if (part1Modular)
+            {
+				createdAbilityInfo.metaCategories = new List<AbilityMetaCategory>() { AbilityMetaCategory.Part1Modular, AbilityMetaCategory.Part1Rulebook };
+			} else
+			{
+				createdAbilityInfo.metaCategories = new List<AbilityMetaCategory>() { AbilityMetaCategory.Part1Rulebook };
+			}
+			// Does the ability stack?
+			createdAbilityInfo.canStack = stack;
+			return createdAbilityInfo;
 		}
+
+
 
 		public static DialogueEvent.LineSet SetAbilityInfoDialogue(string dialogue)
 		{
@@ -89,11 +105,6 @@ namespace voidSigils
 			{
 				return 0;
 			}
-		}
-
-		public static AbilityIdentifier GetAbilityId(string rulebookName)
-		{
-			return AbilityIdentifier.GetAbilityIdentifier(voidSigils.Plugin.PluginGuid, rulebookName);
 		}
 
 		public static string GetFullPathOfFile(string fileToLookFor)

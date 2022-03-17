@@ -12,28 +12,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by blind
-		private NewAbility AddMidas()
+		private void AddMidas()
 		{
 			// setup ability
 			const string rulebookName = "Midas";
 			const string rulebookDescription = "[creature] kills a creature, it will generate 1 Foil for each instance of Midas the card has.";
 			const string LearnDialogue = "A bounty, paid in full.";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2, false);
-			info.canStack = true;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_midas_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Midas);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Midas), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Midas);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Midas_a2);
+			int powerlevel = 2;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = true;
 
 			// set ability to behaviour class
-			void_Midas.ability = newAbility.ability;
-
-			return newAbility;
+			void_Midas.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Midas), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 
 		}
 	}

@@ -9,28 +9,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Original
-		private NewAbility AddToxinDeadly()
+		private void AddToxinDeadly()
 		{
 			// setup ability
 			const string rulebookName = "Toxin (Deadly)";
 			const string rulebookDescription = "When [creature] damages another creature, that creature gains the Dying Sigil. The Dying Sigil is defined as: When ever a creature bearing this sigil declares an attack, they will loose one health.";
 			const string LearnDialogue = "Even once combat is over, it leaves a deadly mark";
-			// const string TextureFile = "Artwork/void_weaken.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2, Plugin.configToxin.Value);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_toxin_deadly_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_toxin_deadly);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_ToxinDeadly), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Toxin_Deadly);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Toxin_Deadly_a2);
+			int powerlevel = 2;
+			bool LeshyUsable = Plugin.configToxin.Value;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_ToxinDeadly.ability = newAbility.ability;
-
-			return newAbility;
+			void_ToxinDeadly.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_ToxinDeadly), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 
@@ -58,7 +52,7 @@ namespace voidSigils
 				base.Card.Anim.LightNegationEffect();
 				yield return base.PreSuccessfulTriggerSequence();
 				//make the card mondification info
-				CardModificationInfo cardModificationInfo = new CardModificationInfo(void_dying.ability);
+				CardModificationInfo cardModificationInfo = new CardModificationInfo(void_Dying.ability);
 				//Clone the main card info so we don't touch the main card set
 				CardInfo targetCardInfo = target.Info.Clone() as CardInfo;
 				//Add the modifincations to the cloned info

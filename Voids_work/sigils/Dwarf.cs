@@ -10,28 +10,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Original
-		private NewAbility AddDwarf()
+		private void AddDwarf()
 		{
 			// setup ability
 			const string rulebookName = "Dwarf";
-
 			const string rulebookDescription = "When [creature] is drawn, it will loose one unit of cost, as well as 1 power and 2 health (can't go below 1 health). A unit is defined as: 1 blood, 3 bones, 3 energy, or all mox.";
 			const string LearnDialogue = "What a tiny creature you have there";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 0);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Dwarf);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Dwarf), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Dwarf);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);
+			int powerlevel = 0;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Dwarf.ability = newAbility.ability;
-
-			return newAbility;
+			void_Dwarf.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Dwarf), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

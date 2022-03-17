@@ -12,27 +12,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Port from act 3 to match the flavor of act 1
-		private NewAbility AddAmbush()
+		private void AddAmbush()
 		{
 			// setup ability
 			const string rulebookName = "Ambush";
 			const string rulebookDescription = "When a creature moves into the space opposing a card bearing this sigil, they are dealt 1 damage.";
 			const string LearnDialogue = "Out of the shadows, they strike";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3, true);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_ambush);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Ambush), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_ambush);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);
+			int powerlevel = 3;
+			bool LeshyUsable = true;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Ambush.ability = newAbility.ability;
-
-			return newAbility;
+			void_Ambush.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Ambush), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

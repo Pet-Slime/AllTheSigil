@@ -12,28 +12,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Original
-		private NewAbility AddPathetic()
+		private void AddPathetic()
 		{
 			// setup ability
 			const string rulebookName = "Pathetic Sacrifice";
-			const string rulebookDescription = "[creature] is so pathetic, it is not a worthy or noble sacrifice. A card with this sigil is meant to stay on the board, and thus can't be targeted by the hammer.";
+			const string rulebookDescription = "[creature] is so pathetic, it is not a worthy or noble sacrifice. [creature] is meant to stay on the board, and thus can't be targeted by the hammer.";
 			const string LearnDialogue = "That is not a noble, or worthy sacrifice";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, -3);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Pathetic_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_pathetic);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Pathetic), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Pathetic);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Pathetic_a2);
+			int powerlevel = -3;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Pathetic.ability = newAbility.ability;
-
-			return newAbility;
+			void_Pathetic.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Pathetic), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

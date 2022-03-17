@@ -48,7 +48,7 @@ namespace voidSigils
 		}
 
 		[HarmonyPatch(typeof(BuildTotemSequencer))]
-		public class void_TeethPatch_CostChoiceSequencer
+		public class void_NegativeTotem_ExtraTotems
 		{
 			[HarmonyPostfix, HarmonyPatch(nameof(BuildTotemSequencer.NewPiecePhase))]
 			public static IEnumerator Postfix(

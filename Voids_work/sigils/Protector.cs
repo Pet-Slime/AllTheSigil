@@ -12,31 +12,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by Blind
-		private NewAbility AddProtector()
+		private void AddProtector()
 		{
 			// setup ability
 			const string rulebookName = "Protector";
 			const string rulebookDescription = "[creature] will attacks on adjacent allies to hit directly.";
 			const string LearnDialogue = "They protect their allies, but who protects you?";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_protector_a2);
-			info.metaCategories.Remove(AbilityMetaCategory.Part1Modular);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_protector);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Protector), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Protector);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Protector_a2);
+			int powerlevel = 2;
+			bool LeshyUsable = false;
+			bool part1Shops = false;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Protector.ability = newAbility.ability;
-
-			
-
-			return newAbility;
+			void_Protector.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Protector), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

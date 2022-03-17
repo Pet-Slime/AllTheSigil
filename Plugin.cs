@@ -33,8 +33,10 @@ namespace voidSigils
 		internal static ConfigEntry<bool> configElectric;
 		internal static ConfigEntry<bool> configFamiliar;
 		internal static ConfigEntry<bool> configLeech;
+		internal static ConfigEntry<bool> configParalysis;
 		internal static ConfigEntry<bool> configPossessor;
 		internal static ConfigEntry<bool> configPrideful;
+		internal static ConfigEntry<bool> configRecoil;
 		internal static ConfigEntry<bool> configRegen;
 		internal static ConfigEntry<bool> configResistant;
 		internal static ConfigEntry<bool> configSickness;
@@ -79,7 +81,9 @@ namespace voidSigils
 			configBurning = Config.Bind("Bad Sigil", "Burning", true, "Should Leshy have this?");
 			configCowardly = Config.Bind("Bad Sigil", "Cowardly", true, "Should Leshy have this?");
 			configDying = Config.Bind("Bad Sigil", "Dying", true, "Should Leshy have this?");
+			configParalysis = Config.Bind("Bad Sigil", "Paralysis", true, "Should Leshy have this?");
 			configPrideful = Config.Bind("Bad Sigil", "Prideful", true, "Should Leshy have this?");
+			configRecoil = Config.Bind("Bad Sigil", "Recoil", true, "Should Leshy have this?");
 			configSickness = Config.Bind("Bad Sigil", "Sickness", true, "Should Leshy have this?");
 
 			configBombardier = Config.Bind("Chaos Sigil", "Bombardier", true, "Should Leshy have this?");
@@ -100,7 +104,7 @@ namespace voidSigils
 			AddDeathburst();
 			AddEletric();
 			AddEnforcer();
-			AddInsectKiller();
+			AddEntomophage();
 			AddFamiliar();
 			AddDoubleAttack();
 			AddHaste();
@@ -112,7 +116,7 @@ namespace voidSigils
 
 			//Buff Attack Sigils
 			AddDesperation();
-			AddZapper();
+			AddEnrage();
 			AddGiant();
 			AddLifeStatsUp();
 			AddPredator();
@@ -188,7 +192,7 @@ namespace voidSigils
 			AddNutritious();
 			AddPossessor();
 			AddRandomStrafe();
-			AddShove();
+			AddRam();
 			AddRepellant();
 			AddScissors();
 			AddThief();

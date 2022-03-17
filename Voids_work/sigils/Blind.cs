@@ -1,9 +1,6 @@
 ﻿using DiskCardGame;
 using HarmonyLib;
 using UnityEngine;
-using APIPlugin;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using Artwork = voidSigils.Voids_work.Resources.Resources;
 using Random = UnityEngine.Random;
@@ -13,31 +10,23 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Original
-		private NewAbility AddBlind()
+		private void AddBlind()
 		{
 			// setup ability
 			const string rulebookName = "Random Strike";
 			const string rulebookDescription = "[creature] will strike at opponent slots randomly when it attacks.";
 			const string LearnDialogue = "They strike widly...";
-			// const string TextureFile = "Artwork/void_pathetic.png";
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Blind);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Blind_a2);
+			int powerlevel = -1;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, -1);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Blind_a2);
-			info.flipYIfOpponent = true;
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Blind);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Blind), tex, abIds);
 
 			// set ability to behaviour class
-			void_Blind.ability = newAbility.ability;
-
-			
-
-			return newAbility;
+			void_Blind.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Blind), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

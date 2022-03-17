@@ -11,33 +11,26 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by Blind
-		private NewAbility AddZapper()
+		private void AddEnrage()
 		{
 			// setup ability
 			const string rulebookName = "Enrage";
 			const string rulebookDescription = "[creature] will empower adjacent allies, increasing their strenght by 2. However, if they perish while empowered, they are permamently removed from your deck.";
 			const string LearnDialogue = "A boost of strength, but at what cost...";
-
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, -1);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_enrage);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_zapper), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Enrage);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);
+			int powerlevel = -1;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_zapper.ability = newAbility.ability;
-
-			return newAbility;
+			void_Enrage.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Enrage), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 
-	public class void_zapper : AbilityBehaviour
+	public class void_Enrage : AbilityBehaviour
 	{
 		public override Ability Ability => ability;
 
@@ -115,7 +108,7 @@ namespace voidSigils
 			{
 				foreach (CardSlot slotState in Singleton<BoardManager>.Instance.GetAdjacentSlots(__instance.slot))
 				{
-					if (slotState.Card != null && slotState.Card.Info.HasAbility(void_zapper.ability))
+					if (slotState.Card != null && slotState.Card.Info.HasAbility(void_Enrage.ability))
 					{
 						__result = __result + 2;
 					}

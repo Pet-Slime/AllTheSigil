@@ -11,27 +11,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Original
-		private NewAbility AddTribalTutor()
+		private void AddTribalTutor()
 		{
 			// setup ability
 			const string rulebookName = "Tribal Tutor";
 			const string rulebookDescription = "When [creature] is played, you may search your deck for a card of the same tribe and take it into your hand. No tribe counts as a tribe of tribeless.";
 			const string LearnDialogue = "It Calls for Kin.";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 3);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_TribeTutor);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_TribalTutor), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_TribeTutor);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);
+			int powerlevel = 1;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_TribalTutor.ability = newAbility.ability;
-
-			return newAbility;
+			void_TribalTutor.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_TribalTutor), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

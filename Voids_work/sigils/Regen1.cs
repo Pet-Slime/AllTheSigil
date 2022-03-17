@@ -9,28 +9,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Port from Cyn Sigil a day
-		private NewAbility AddRegen1()
+		private void AddRegen1()
 		{
 			// setup ability
 			const string rulebookName = "Regen 1";
 			const string rulebookDescription = "At the end of the owner's turn, [creature] will regen 1 health.";
 			const string LearnDialogue = "This creature will heal 1 Health at the end of it's owner's turn.";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 1, Plugin.configRegen.Value);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.ability_regen_1_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.ability_regen_1);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-
-			NewAbility newAbility = new NewAbility(info, typeof(void_Regen1), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.ability_regen_1);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.ability_regen_1_a2);
+			int powerlevel = 1;
+			bool LeshyUsable = Plugin.configRegen.Value;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Regen1.ability = newAbility.ability;
-
-			return newAbility;
+			void_Regen1.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Regen1), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

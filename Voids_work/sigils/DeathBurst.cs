@@ -13,30 +13,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by blind
-		private NewAbility AddDeathburst()
+		private void AddDeathburst()
 		{
 			// setup ability
 			const string rulebookName = "Deathburst";
 			const string rulebookDescription = "[creature] will deal 1 damage to each oppsing space to the left, right, and center of it.";
 			const string LearnDialogue = "Boom";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 4, Plugin.configDeathburst.Value);
-			info.canStack = true;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_deathburst_a2);
-			info.flipYIfOpponent = true;
-			info.metaCategories.Remove(AbilityMetaCategory.Part1Modular);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_deathburst);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Deathburst), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Deathburst);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Deathburst_a2);
+			int powerlevel = 3;
+			bool LeshyUsable = Plugin.configDeathburst.Value;
+			bool part1Shops = true;
+			bool canStack = true;
 
 			// set ability to behaviour class
-			void_Deathburst.ability = newAbility.ability;
-
-			return newAbility;
+			void_Deathburst.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Deathburst), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 
 		}
 	}

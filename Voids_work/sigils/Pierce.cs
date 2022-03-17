@@ -9,32 +9,26 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by BarlogBean
-		private NewAbility AddPierce()
+		private void AddPierce()
 		{
 			// setup ability
 			const string rulebookName = "Pierce";
 			const string rulebookDescription = "[creature] attacks the card in queue behind it's initial target first when declaring an attack.";
 			const string LearnDialogue = "My creatures!";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 4);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_pierce_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_pierce);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_pierce), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Pierce);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Pierce_a2);
+			int powerlevel = 4;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_pierce.ability = newAbility.ability;
-
-			return newAbility;
+			void_Pierce.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Pierce), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 
-	public class void_pierce : AbilityBehaviour
+	public class void_Pierce : AbilityBehaviour
 	{
 		public override Ability Ability => ability;
 
@@ -46,7 +40,7 @@ namespace voidSigils
 			PlayableCard target = slot.Card;
 			PlayableCard queuedCard = Singleton<BoardManager>.Instance.GetCardQueuedForSlot(opposingSlot);
 
-			return target != null && !target.Dead && queuedCard != null && attacker.HasAbility(void_pierce.ability);
+			return target != null && !target.Dead && queuedCard != null && attacker.HasAbility(void_Pierce.ability);
 		}
 
 		public override IEnumerator OnSlotTargetedForAttack(CardSlot slot, PlayableCard attacker)

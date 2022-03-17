@@ -9,31 +9,26 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Original
-		private NewAbility AddShocker()
+		private void AddZapper()
 		{
 			// setup ability
 			const string rulebookName = "Zapper";
 			const string rulebookDescription = "When [creature] damages another creature, that creature will gain the Paralysis Sigil. The Paralysis sigil is defined as: A card bearing this sigil only attack every other turn.";
 			const string LearnDialogue = "Shocking";
-			// const string TextureFile = "Artwork/void_weaken.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2, Plugin.configToxin.Value);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_shocker_a2);
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Shocker);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Shocker), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Zapper);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Zapper_a2);
+			int powerlevel = 1;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Shocker.ability = newAbility.ability;
-
-			return newAbility;
+			void_Zapper.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Zapper), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability; ;
 		}
 	}
 
-	public class void_Shocker : AbilityBehaviour
+	public class void_Zapper : AbilityBehaviour
 	{
 		public override Ability Ability => ability;
 
@@ -45,7 +40,7 @@ namespace voidSigils
 			{
 				return false;
 			}
-			return base.Card.HasAbility(void_Shocker.ability);
+			return base.Card.HasAbility(void_Zapper.ability);
 		}
 
 		public override IEnumerator OnDealDamage(int amount, PlayableCard target)

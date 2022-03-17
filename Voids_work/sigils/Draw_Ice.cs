@@ -11,32 +11,26 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by Sire
-		private NewAbility AddDrawIce()
+		private void AddDrawIce()
 		{
 			// setup ability
 			const string rulebookName = "Draw Card";
 			const string rulebookDescription = "[creature] is played, a card relating to it's ice cube parameter (default Opossum) is created in your hand.";
 			const string LearnDialogue = "What will it release on death?";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_drawjack);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-
-			NewAbility newAbility = new NewAbility(info, typeof(ability_drawice), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_DrawIce);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_DrawIce_a2);
+			int powerlevel = 3;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			ability_drawice.ability = newAbility.ability;
-
-			return newAbility;
+			void_DrawIce.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_DrawIce), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 
-	public class ability_drawice : DrawCreatedCard
+	public class void_DrawIce : DrawCreatedCard
 	{
 		public override Ability Ability => ability;
 

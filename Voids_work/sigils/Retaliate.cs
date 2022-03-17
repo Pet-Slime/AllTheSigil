@@ -9,28 +9,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by Blind
-		private NewAbility AddRetaliate()
+		private void AddRetaliate()
 		{
 			// setup ability
 			const string rulebookName = "Retaliate";
 			const string rulebookDescription = "[creature] will strike those who strike their adjacent allies.";
 			const string LearnDialogue = "It will defend it's allies";
-			// const string TextureFile = "Artwork/void_vicious.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 5, Plugin.configFamiliar.Value);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Retaliate_a2);
-			info.flipYIfOpponent = true;
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Retaliate);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Retaliate), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Retaliate);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Retaliate_a2);
+			int powerlevel = 5;
+			bool LeshyUsable = Plugin.configFamiliar.Value;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Retaliate.ability = newAbility.ability;
-
-			return newAbility;
+			void_Retaliate.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Retaliate), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

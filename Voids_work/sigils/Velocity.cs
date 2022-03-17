@@ -9,32 +9,26 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by Sire
-		private NewAbility AddStrafePowerUp()
+		private void AddStrafePowerUp()
 		{
 			// setup ability
 			const string rulebookName = "Velocity";
 			const string rulebookDescription = "At the end of the owner's turn, [creature] will move in the direction inscribed in the sigil. If it is able to move, it will gain 1 power and 1 health.";
 			const string LearnDialogue = "The trail they leave behind, hurts.";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2, Plugin.configAcidTrail.Value);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Volicity);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_StrafingPower), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Volicity);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);
+			int powerlevel = 1;
+			bool LeshyUsable = Plugin.configAcidTrail.Value;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_StrafingPower.ability = newAbility.ability;
-
-			return newAbility;
+			void_Volicity.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Volicity), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 
-	public class void_StrafingPower : Strafe
+	public class void_Volicity : Strafe
 	{
 		public override Ability Ability => ability;
 

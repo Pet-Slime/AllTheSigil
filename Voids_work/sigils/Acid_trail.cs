@@ -9,28 +9,24 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by Blind
-		private NewAbility AddAcidTrail()
+		private void AddAcidTrail()
 		{
 			// setup ability
 			const string rulebookName = "Acidic Trail";
 			const string rulebookDescription = "At the end of the owner's turn, [creature] will move in the direction inscribed in the sigil, and deal 1 damage to the opposing creature if it is able to move.";
 			const string LearnDialogue = "The trail they leave behind, hurts.";
-			// const string TextureFile = "Artwork/void_pathetic.png";
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_AcidTrail);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_AcidTrail_a2);
+			int powerlevel = 2;
+			bool LeshyUsable = Plugin.configAcidTrail.Value;
+			bool part1Shops = true;
+			bool canStack = false;
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2, Plugin.configAcidTrail.Value);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Acid_a2);
 
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_acid);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_AcidTrail), tex, abIds);
 
 			// set ability to behaviour class
-			void_AcidTrail.ability = newAbility.ability;
-
-			return newAbility;
+			void_AcidTrail.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_AcidTrail), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

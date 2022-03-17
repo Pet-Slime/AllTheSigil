@@ -10,28 +10,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by Blind
-		private NewAbility AddBoneless()
+		private void AddBoneless()
 		{
 			// setup ability
 			const string rulebookName = "Boneless";
 			const string rulebookDescription = "[creature] gives no bones! Any bones gained from sigils or death will be negated.";
 			const string LearnDialogue = "That creature has no bones!";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, -1);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_boneless_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Boneless);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Boneless), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Boneless);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Boneless_a2);
+			int powerlevel = -1;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Boneless.ability = newAbility.ability;
-
-			return newAbility;
+			void_Boneless.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Boneless), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

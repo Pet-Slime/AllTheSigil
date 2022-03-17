@@ -13,27 +13,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Ported from the Zerg mod, with permission from James
-		private NewAbility AddFishHook()
+		private void AddFishHook()
 		{
 			// setup ability
 			const string rulebookName = "Fish Hook";
 			const string rulebookDescription = "When [creature], a targeted card is moved to your side of the board.";
 			const string LearnDialogue = "Go Fish";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 0);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_fish_hook_a2);
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_fish_hook);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_FishHook), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_FishHook);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_FishHook_a2);
+			int powerlevel = 0;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_FishHook.ability = newAbility.ability;
-
-			return newAbility;
+			void_FishHook.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_FishHook), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

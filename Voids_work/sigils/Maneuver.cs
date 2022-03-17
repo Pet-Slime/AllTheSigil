@@ -12,28 +12,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Original
-		private NewAbility AddManeuver()
+		private void AddManeuver()
 		{
 			// setup ability
 			const string rulebookName = "Maneuver";
 			const string rulebookDescription = "At the start of the owner's turn, [creature] will strafe in the direction inscribed on the sigil if there is a creature in the opposing slot from it. Else it will strafe in the opposite direction inscribed on the sigil.";
 			const string LearnDialogue = "That is not a noble, or worthy sacrifice";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 2);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Maneuver_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Maneuver);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Maneuver), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Maneuver);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Maneuver_a2);
+			int powerlevel = 2;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Maneuver.ability = newAbility.ability;
-
-			return newAbility;
+			void_Maneuver.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Maneuver), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

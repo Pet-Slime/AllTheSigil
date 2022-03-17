@@ -12,33 +12,26 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by Blind
-		private NewAbility AddEnforcer()
+		private void AddEnforcer()
 		{
 			// setup ability
 			const string rulebookName = "Enforcer";
 			const string rulebookDescription = "At the start of the owner's turn, [creature] will cause adjacent creatures to attack.";
 			const string LearnDialogue = "It causes it's allies to attack.";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 6);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_enforcer_a2);
-			info.flipYIfOpponent = true;
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_enforcer);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Instigator), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Enforcer);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Enforcer_a2);
+			int powerlevel = 7;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Instigator.ability = newAbility.ability;
-
-			return newAbility;
+			void_Enforcer.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Enforcer), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 
-	public class void_Instigator : AbilityBehaviour
+	public class void_Enforcer : AbilityBehaviour
 	{
 		public override Ability Ability => ability;
 

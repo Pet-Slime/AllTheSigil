@@ -10,32 +10,26 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Original
-		private NewAbility AddDying()
+		private void AddDying()
 		{
 			// setup ability
 			const string rulebookName = "Dying";
 			const string rulebookDescription = "[creature] will lose 1 health each time it declares an attack.";
 			const string LearnDialogue = "Tik Toc";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, -1, Plugin.configDying.Value);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_dying);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_dying);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_dying), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Dying);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Dying_a2);
+			int powerlevel = 0;
+			bool LeshyUsable = Plugin.configDying.Value;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_dying.ability = newAbility.ability;
-
-			return newAbility;
+			void_Dying.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Dying), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 
-	public class void_dying : AbilityBehaviour
+	public class void_Dying : AbilityBehaviour
 	{
 		public override Ability Ability => ability;
 
@@ -43,7 +37,7 @@ namespace voidSigils
 
 		public override bool RespondsToSlotTargetedForAttack(CardSlot slot, PlayableCard attacker)
 		{
-			return attacker.HasAbility(void_dying.ability);
+			return attacker.HasAbility(void_Dying.ability);
 		}
 
 		public override IEnumerator OnSlotTargetedForAttack(CardSlot slot, PlayableCard attacker)

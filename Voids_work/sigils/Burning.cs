@@ -19,9 +19,9 @@ namespace voidSigils
 
 			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 0, Plugin.configToxin.Value);
 			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_burning_a2);
+			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Burning_a2);
 
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_burning);
+			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Burning);
 
 			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
 			

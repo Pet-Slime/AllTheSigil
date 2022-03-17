@@ -9,28 +9,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Port from Cyn Sigil a day
-		private NewAbility AddThickShell()
+		private void AddThickShell()
 		{
 			// setup ability
 			const string rulebookName = "Thick Shell";
 			const string rulebookDescription = "When attacked, [creature] takes 1 less damage.";
 			const string LearnDialogue = "The thick shell on that creature protected it from one damage!";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2, Plugin.configThickShell.Value);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.ability_thickshell_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.ability_thickshell);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-
-			NewAbility newAbility = new NewAbility(info, typeof(void_ThickShell), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_ThickShell);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_ThickShell_a2);
+			int powerlevel = 2;
+			bool LeshyUsable = Plugin.configThickShell.Value;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_ThickShell.ability = newAbility.ability;
-
-			return newAbility;
+			void_ThickShell.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_ThickShell), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

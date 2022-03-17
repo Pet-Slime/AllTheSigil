@@ -10,27 +10,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Original
-		private NewAbility AddVicious()
+		private void AddVicious()
 		{
 			// setup ability
 			const string rulebookName = "Vicious";
 			const string rulebookDescription = "When [creature] is attacked, it gains 1 power.";
 			const string LearnDialogue = "A hit just makes it angry.";
-			// const string TextureFile = "Artwork/void_vicious.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 1, Plugin.configVicious.Value);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_vicious_a2);
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_vicious);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Vicious), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Vicious);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Vicious_a2);
+			int powerlevel = 1;
+			bool LeshyUsable = Plugin.configVicious.Value;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Vicious.ability = newAbility.ability;
-
-			return newAbility;
+			void_Vicious.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Vicious), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

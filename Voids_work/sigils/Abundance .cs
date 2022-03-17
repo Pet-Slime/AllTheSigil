@@ -11,29 +11,26 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by blind
-		private NewAbility AddAbundance()
+		private void AddAbundance()
 		{
 			// setup ability
 			const string rulebookName = "Abundance";
 			const string rulebookDescription = "[creature] will grant one tooth per instance of Abundance when killed.";
 			const string LearnDialogue = "Gooooooooldddddd! *cough* sorry about that. Couldn't resist.";
-			// const string TextureFile = "Artwork/void_pathetic.png";
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Abundance);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Abundance_a2);
+			int powerlevel = 1;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 3, false);
-			info.canStack = true;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Abundance_a2);
 
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Abundance);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Abundance), tex, abIds);
-			
 
 			// set ability to behaviour class
-			void_Abundance.ability = newAbility.ability;
+			void_Abundance.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Abundance), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 
-			return newAbility;
+
 
 		}
 	}

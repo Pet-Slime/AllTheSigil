@@ -1,8 +1,5 @@
-﻿using HarmonyLib;
-using APIPlugin;
-using DiskCardGame;
+﻿using DiskCardGame;
 using UnityEngine;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Artwork = voidSigils.Voids_work.Resources.Resources;
@@ -13,32 +10,28 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by Sire
-		private NewAbility AddAntler()
+		private void AddAntler()
 		{
 			// setup ability
 			const string rulebookName = "Antler Bearer";
 			const string rulebookDescription = "When [creature] is killed, gain three random hooved tribe cards.";
 			const string LearnDialogue = "The herd sticks together.";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 2);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_antler);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_antler), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Antler);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);
+			int powerlevel = 2;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_antler.ability = newAbility.ability;
+			void_Antler.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Antler), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 
-			return newAbility;
+
 		}
 	}
 
-	public class void_antler : AbilityBehaviour
+	public class void_Antler : AbilityBehaviour
 	{
 		public override Ability Ability => ability;
 

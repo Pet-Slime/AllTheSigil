@@ -1,10 +1,6 @@
-﻿using HarmonyLib;
-using APIPlugin;
-using DiskCardGame;
+﻿using DiskCardGame;
 using UnityEngine;
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using Artwork = voidSigils.Voids_work.Resources.Resources;
 
 namespace voidSigils
@@ -12,32 +8,26 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Original
-		private NewAbility AddTooth()
+		private void AddTooth()
 		{
 			// setup ability
 			const string rulebookName = "Toothpuller";
 			const string rulebookDescription = "At the end of the owner's turn, [creature] will add one point of damage to the opponent's scale.";
 			const string LearnDialogue = "That Hurts";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 7);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_toothGiver_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_toothGiver);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_toothGiver), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_ToothGiver);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_ToothGiver_a2);
+			int powerlevel = 7;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_toothGiver.ability = newAbility.ability;
-
-			return newAbility;
+			void_ToothGiver.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_ToothGiver), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 
-	public class void_toothGiver : AbilityBehaviour
+	public class void_ToothGiver : AbilityBehaviour
 	{
 		public override Ability Ability => ability;
 

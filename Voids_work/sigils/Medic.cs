@@ -13,28 +13,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by blind
-		private NewAbility AddMedic()
+		private void AddMedic()
 		{
 			// setup ability
 			const string rulebookName = "Medic";
 			const string rulebookDescription = "At the start of the owner's turn, [creature] will try heal 1 damage to a friendly card for each instance of Medic.";
 			const string LearnDialogue = "A good patching";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 4);
-			info.canStack = true;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_medic_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Medic);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Medic), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Medic);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Medic_a2);
+			int powerlevel = 3;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = true;
 
 			// set ability to behaviour class
-			void_Medic.ability = newAbility.ability;
-
-			return newAbility;
+			void_Medic.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Medic), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 
 		}
 	}

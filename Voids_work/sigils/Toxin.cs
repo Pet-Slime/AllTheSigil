@@ -9,28 +9,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Original
-		private NewAbility AddToxin()
+		private void AddToxin()
 		{
 			// setup ability
 			const string rulebookName = "Toxin";
 			const string rulebookDescription = "When [creature] damages another creature, that creature looses 1 power and 1 health.";
 			const string LearnDialogue = "All things can be worn down, and in different ways.";
-			// const string TextureFile = "Artwork/void_weaken.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 2, Plugin.configToxin.Value);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_toxin);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_toxin);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Toxin), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Toxin);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Toxin_a2);
+			int powerlevel = 2;
+			bool LeshyUsable = Plugin.configToxin.Value;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Toxin.ability = newAbility.ability;
-
-			return newAbility;
+			void_Toxin.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Toxin), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

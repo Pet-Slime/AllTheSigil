@@ -12,34 +12,26 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Original
-		private NewAbility AddAgile()
+		private void AddAgile()
 		{
 			// setup ability
 			const string rulebookName = "Agile";
 			const string rulebookDescription = "When a card bearing this sigil would be struck, it will move out of the way.";
 			const string LearnDialogue = "The Card jumped out of the way to save itself...";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue, true, 1, Plugin.configAgile.Value);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Agile_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Agile);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_agile), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Agile);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Agile_a2);
+			int powerlevel = 1;
+			bool LeshyUsable = Plugin.configAgile.Value;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_agile.ability = newAbility.ability;
-
-			
-
-			return newAbility;
+			void_Agile.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Agile), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 
-	public class void_agile : AbilityBehaviour
+	public class void_Agile : AbilityBehaviour
 	{
 		public override Ability Ability => ability;
 

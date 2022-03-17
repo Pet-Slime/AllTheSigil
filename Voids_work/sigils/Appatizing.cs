@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using APIPlugin;
 using DiskCardGame;
 using UnityEngine;
 using Artwork = voidSigils.Voids_work.Resources.Resources;
@@ -9,32 +8,26 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by Blind
-		private NewAbility AddAppetizing()
+		private void AddAppetizing()
 		{
 			// setup ability
 			const string rulebookName = "Appetizing Target";
 			const string rulebookDescription = "[creature] makes for a great target, causing the creature opposing a card bearing this sigil to gain 1 power.";
 			const string LearnDialogue = "That creature makes the opponant stronger";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, -2, Plugin.configAppetizing.Value);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_alarm);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_appetizing), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Antler);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);
+			int powerlevel = -2;
+			bool LeshyUsable = Plugin.configAppetizing.Value;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_appetizing.ability = newAbility.ability;
-
-			return newAbility;
+			void_Appetizing.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Appetizing), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 
-	public class void_appetizing : AbilityBehaviour
+	public class void_Appetizing : AbilityBehaviour
 	{
 		public override Ability Ability => ability;
 
@@ -50,7 +43,7 @@ namespace voidSigils
 		{
 			if (__instance.OnBoard)
 			{
-				if (__instance.slot.opposingSlot.Card != null && __instance.slot.opposingSlot.Card.Info.HasAbility(void_appetizing.ability))
+				if (__instance.slot.opposingSlot.Card != null && __instance.slot.opposingSlot.Card.Info.HasAbility(void_Appetizing.ability))
 				{
 					__result++;
 				}

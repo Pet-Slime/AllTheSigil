@@ -1,10 +1,7 @@
 ﻿using HarmonyLib;
-using APIPlugin;
 using DiskCardGame;
 using UnityEngine;
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using Artwork = voidSigils.Voids_work.Resources.Resources;
 
 namespace voidSigils
@@ -12,28 +9,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Inspired by Nevernamed, coded differently.
-		private NewAbility AddSubmergedAmbush()
+		private void AddSubmergedAmbush()
 		{
 			// setup ability
 			const string rulebookName = "Submerged Ambush";
 			const string rulebookDescription = "[creature] will deal 1 damage to cards that attacked over it while it was face-down.";
 			const string LearnDialogue = "It strikes from the water.";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 4);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_SubmergedAmbush_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_SubmergedAmbush);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_SubmergedAmbush), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_SubmergedAmbush);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_SubmergedAmbush_a2);
+			int powerlevel = 4;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_SubmergedAmbush.ability = newAbility.ability;
-
-			return newAbility;
+			void_SubmergedAmbush.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_SubmergedAmbush), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

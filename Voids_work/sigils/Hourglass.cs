@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using APIPlugin;
+﻿using System.Collections;
 using DiskCardGame;
 using UnityEngine;
 using Artwork = voidSigils.Voids_work.Resources.Resources;
@@ -10,27 +8,22 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by Sire
-		private NewAbility AddHourglass()
+		private void AddHourglass()
 		{
 			// setup ability
 			const string rulebookName = "Hourglass";
 			const string rulebookDescription = "[creature] will cause the opponant to skip their turn when played.";
 			const string LearnDialogue = "The sands of time tic away";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 6);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.no_a2);
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_Hourglass);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_Hourglass), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Hourglass);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);
+			int powerlevel = 6;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Hourglass.ability = newAbility.ability;
-
-			return newAbility;
+			void_Hourglass.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Hourglass), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

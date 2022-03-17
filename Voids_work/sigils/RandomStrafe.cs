@@ -12,32 +12,26 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Original
-		private NewAbility AddRandomStrafe()
+		private void AddRandomStrafe()
 		{
 			// setup ability
 			const string rulebookName = "Random Strafe";
 			const string rulebookDescription = "[creature] is drawn, it will gain a random strafe sigil.";
 			const string LearnDialogue = "How will it move?";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, LearnDialogue,  true, 1);
-			info.canStack = false;
-			info.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_randomStrafe_a2);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Artwork.void_randomStrafe);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(void_randomStrafe), tex, abIds);
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_RandomStrafe);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_RandomStrafe_a2);
+			int powerlevel = 1;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			void_randomStrafe.ability = newAbility.ability;
-
-			return newAbility;
+			void_RandomStrafe.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_RandomStrafe), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 
-	public class void_randomStrafe : AbilityBehaviour
+	public class void_RandomStrafe : AbilityBehaviour
 	{
 		public override Ability Ability => ability;
 
