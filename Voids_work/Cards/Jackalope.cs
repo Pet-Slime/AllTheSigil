@@ -12,6 +12,10 @@ namespace voidSigils.Voids_work.Cards
 
 			// This builds our card information.
 			CardInfo Jackalope = CardManager.New(
+
+				// Card ID Prefix
+				modPrefix: "void",
+
 				// Card internal name.
 				"void_Jackalope",
 
@@ -25,10 +29,8 @@ namespace voidSigils.Voids_work.Cards
 				2,
 
 				// Descryption.
-				description: "A Jackalope",
+				description: "A Jackalope"
 
-				// Card ID Prefix
-				modPrefix: "void"
 			)
 
 			// These are the abilities this card will have.
@@ -56,7 +58,7 @@ namespace voidSigils.Voids_work.Cards
 			;
 
 			// Pass the card to the API.
-			CardManager.Add(Jackalope);
+			CardManager.Add("void", Jackalope);
 		}
 
 		// --------------------------------------------------------------------------------------------------------------------------------------------------

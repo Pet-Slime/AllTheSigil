@@ -40,7 +40,9 @@ namespace voidSigils
 		{
 			get
 			{
-				return CardLoader.GetCardByName("void_Jackalope");
+				CardInfo cardByName = CardLoader.GetCardByName("void_Jackalope");
+				cardByName.Mods.AddRange(base.Card.temporaryMods);
+				return cardByName;
 			}
 		}
 

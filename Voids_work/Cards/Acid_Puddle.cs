@@ -11,6 +11,11 @@ namespace voidSigils.Voids_work.Cards
 
             // This builds our card information.
             CardInfo AcidPuddle = CardManager.New(
+
+                // Card ID Prefix
+                modPrefix: "void",
+
+
                 // Card internal name.
                 "void_Acid_Puddle",
 
@@ -24,10 +29,8 @@ namespace voidSigils.Voids_work.Cards
                 0,
 
                 // Descryption.
-                description: "A puddle that errods all that touches it.",
+                description: "A puddle that errods all that touches it."
 
-                // Card ID Prefix
-                modPrefix: "void"
             )
 
             // These are the abilities this card will have.
@@ -56,7 +59,7 @@ namespace voidSigils.Voids_work.Cards
             ;
 
             // Pass the card to the API.
-            CardManager.Add(AcidPuddle);
+            CardManager.Add("void", AcidPuddle);
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------------------------

@@ -42,7 +42,7 @@ namespace voidSigils
 		public override bool RespondsToPreDeathAnimation(bool wasSacrifice)
 		{
 			if (base.Card.slot.opposingSlot.Card != null 
-				&& base.Card.HasAbility(void_repellant.ability)
+				&& base.Card.HasAbility(void_Repellant.ability)
 				&& base.Card.InOpponentQueue == false)
             {
 				PlayableCard card = base.Card.Slot.opposingSlot.Card;
