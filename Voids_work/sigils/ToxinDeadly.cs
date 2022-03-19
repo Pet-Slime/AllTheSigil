@@ -45,8 +45,8 @@ namespace voidSigils
 
 		public override IEnumerator OnDealDamage(int amount, PlayableCard target)
 		{
-			if (target != null)
-            {
+			if (target != null && !target.HasAbility(Ability.MadeOfStone))
+			{
 				Singleton<ViewManager>.Instance.SwitchToView(View.Board, false, true);
 				yield return new WaitForSeconds(0.1f);
 				base.Card.Anim.LightNegationEffect();
@@ -60,7 +60,6 @@ namespace voidSigils
 				//Set the target's info to the clone'd info
 				target.SetInfo(targetCardInfo);
 				target.Anim.PlayTransformAnimation();
-				Plugin.Log.LogWarning("toxin debug " + target + " should have dying");
 				yield return new WaitForSeconds(0.1f);
 				yield return base.LearnAbility(0.1f);
 				Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;

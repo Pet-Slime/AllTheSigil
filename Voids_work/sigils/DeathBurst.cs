@@ -21,7 +21,7 @@ namespace voidSigils
 			const string LearnDialogue = "Boom";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Deathburst);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Deathburst_a2);
-			int powerlevel = 3;
+			int powerlevel = 4;
 			bool LeshyUsable = Plugin.configDeathburst.Value;
 			bool part1Shops = true;
 			bool canStack = true;

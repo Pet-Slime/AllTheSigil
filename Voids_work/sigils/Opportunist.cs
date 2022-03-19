@@ -20,7 +20,7 @@ namespace voidSigils
 			const string LearnDialogue = "It takes it's chance when it gets it.";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Opportunist);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Opportunist_a2);
-			int powerlevel = 3;
+			int powerlevel = 2;
 			bool LeshyUsable = false;
 			bool part1Shops = true;
 			bool canStack = true;

@@ -94,113 +94,113 @@ namespace voidSigils
 			Harmony harmony = new(PluginGuid);
 			harmony.PatchAll();
 
-			//Add Card
-			Voids_work.Cards.Acid_Puddle.AddCard();
-			Voids_work.Cards.Jackalope.AddCard();
 
 			//Attack sigils
+			AddAbundance();
 			AddAcidTrail();
+			AddAntler();
+			AddAgile();
 			AddAmbush();
+			AddAppetizing();
+			AddBlight();
+			AddBloodGrowth();
+			AddBloodGuzzler();
+			AddBodyguard();
+			AddBombardier();
+			AddBonePicker();
+			AddBoneless();
+			AddBoneShard();
+			AddBox();
+			AddBroken();
+			AddBurning();
+			AddCaustic();
+			addCoinFinder();
+			AddConsumer();
+			AddCoward();
 			AddDeathburst();
+			AddDesperation();
+			AddDiseaseAbsorbtion();
+			AddDrawBlood();
+			AddDrawBone();
+			AddDrawIce();
+			AddDrawJack();
+			AddDwarf();
+			AddDying();
 			AddEletric();
 			AddEnforcer();
+			AddEnrage();
 			AddEntomophage();
 			AddFamiliar();
-			AddDoubleAttack();
-			AddHaste();
-			AddRetaliate();
-			AddStampede();
-			AddSubmergedAmbush();
-			AddPierce();
-			AddTrample();
-
-			//Buff Attack Sigils
-			AddDesperation();
-			AddEnrage();
+			AddFireStarter();
+			AddFishHook();
+			AddFrightful();
 			AddGiant();
-			AddLifeStatsUp();
-			AddPredator();
-			AddOpportunist();
-			AddVicious();
-
-			//Defensive sigils
-			AddAgile();
-			AddBodyguard();
-			AddCaustic();
 			AddGrazing();
+
+			AddHaste();
+			AddHerd();
+			AddHourglass();
+			AddLeech();
+			AddLeadBones();
+			AddLeadEnergy();
+			AddLifeStatsUp(); //Life Gambler
+			AddFisher(); //Lure
+			AddManeuver();
 			AddMedic();
+			AddMidas();
+			AddDoubleAttack(); //multstrike
+			AddNutritious();
+			AddOpportunist();
+			AddParalise();
+			AddPathetic();
+			AddPierce();
+			AddPoisonous();
+			AddPossessor();
+			AddMovingPowerUp(); // Power from movement
+			AddPredator();
+			AddPrideful();
+			AddProtector();
+			AddRam();
+			AddRandomStrafe();
+			AddBlind(); // Random Strikes
+			AddRecoil();
 			AddRegenFull();
 			AddRegen1();
 			AddRegen2();
 			AddRegen3();
+			AddRepellant();
 			AddResistant();
-			AddProtector();
-			AddPoisonous();
+			AddRetaliate();
+			AddScissors();
+			AddSickness();
+			AddStampede();
+			AddSubmergedAmbush();
 			AddThickShell();
-
-			//Debuff sigils
-			AddDwarf();
-			AddFireStarter();
+			AddThief(); 
+			AddToothBargain();
+			AddToothPuller();
+			AddToothShard();
 			AddToxin();
 			AddToxinStrength();
 			AddToxinVigor();
 			AddToxinDeadly();
 			AddToxinSickly();
+			AddTrample();
+			AddTransient();
+			AddTribalAlly();
+			AddTribalTutor();
+			AddStrafePowerUp(); // Velocity
+			AddVicious();
+			AddWithering();
 			AddZapper();
 
 			//Negative Sigils
-			AddAppetizing();
-			AddBlight();
-			AddBlind();
-			AddBroken();
-			AddBombardier();
-			AddBoneless();
-			AddBurning();
-			AddCoward();
-			AddDying();
-			AddPathetic();
-			AddParalise();
-			AddPrideful();
-			AddRecoil();
-			AddSickness();
-			AddToothpicker();
-			AddTransient();
-			AddWithering();
+			AddGripper();
 
-			//Utility Sigils
-			AddAntler();
-			AddAbundance();
-			AddBloodGrowth();
-			AddBloodGuzzler();
-			AddBonePicker();
-			AddBox();
-			AddConsumer();
-			addCoinFinder();
-			AddTakeAllNegatives();
-			AddDrawBlood();
-			AddDrawBone();
-			AddDrawIce();
-			AddDrawJack();
-			AddFishHook();
-			AddFrightful();
-			AddLeech();
-			AddFisher();
-			AddHerd();
-			AddHourglass();
-			AddManeuver();
-			AddMidas();
-			AddNutritious();
-			AddPossessor();
-			AddRandomStrafe();
-			AddRam();
-			AddRepellant();
-			AddScissors();
-			AddThief();
-			AddTooth();
-			AddTribalAlly();
-			AddTribalTutor();
-			AddStrafePowerUp();
-			AddMovingPowerUp();
+
+			//Add Card
+			Voids_work.Cards.Acid_Puddle.AddCard();
+			Voids_work.Cards.Jackalope.AddCard();
 		}
 	}
 }

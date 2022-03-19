@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using APIPlugin;
 using DiskCardGame;
 using UnityEngine;
 using Artwork = voidSigils.Voids_work.Resources.Resources;
@@ -45,7 +44,7 @@ namespace voidSigils
 
 		public override IEnumerator OnDealDamage(int amount, PlayableCard target)
 		{
-			if (target)
+			if (target && !target.HasAbility(Ability.MadeOfStone))
             {
 				Singleton<ViewManager>.Instance.SwitchToView(View.Board, false, true);
 				yield return new WaitForSeconds(0.1f);

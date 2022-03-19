@@ -17,7 +17,7 @@ namespace voidSigils
 			const string LearnDialogue = "A disease shouldnt spread.";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Blight);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Blight_a2);
-			int powerlevel = -3;
+			int powerlevel = -5;
 			bool LeshyUsable = false;
 			bool part1Shops = true;
 			bool canStack = false;

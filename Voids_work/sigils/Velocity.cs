@@ -59,10 +59,11 @@ namespace voidSigils
 					RunState.Run.playerDeck.ModifyCard(base.Card.Info, powerMod);
 				}
 				powerMod.attackAdjustment++;
+				powerMod.healthAdjustment++;
 			}
 			else
 			{
-				CardModificationInfo mod = new CardModificationInfo(1, 0);
+				CardModificationInfo mod = new CardModificationInfo(1, 1);
 				base.Card.AddTemporaryMod(mod);
 			}
 			bool flag2 = !base.Card.Dead;

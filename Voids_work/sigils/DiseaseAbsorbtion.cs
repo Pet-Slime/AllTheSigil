@@ -11,7 +11,7 @@ namespace voidSigils
 {
 	public partial class Plugin
 	{
-		private void AddTakeAllNegatives()
+		private void AddDiseaseAbsorbtion()
 		{
 			// setup ability
 			const string rulebookName = "Disease Absorbtion";

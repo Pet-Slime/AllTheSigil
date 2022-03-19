@@ -12,7 +12,7 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by blind
-		private void AddToothpicker()
+		private void AddToothBargain()
 		{
 			// setup ability
 			const string rulebookName = "Tooth Bargain";

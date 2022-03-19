@@ -17,7 +17,7 @@ namespace voidSigils
 			const string LearnDialogue = "The thick shell on that creature protected it from one damage!";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_ThickShell);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_ThickShell_a2);
-			int powerlevel = 2;
+			int powerlevel = 1;
 			bool LeshyUsable = Plugin.configThickShell.Value;
 			bool part1Shops = true;
 			bool canStack = false;

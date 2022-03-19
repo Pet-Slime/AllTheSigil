@@ -20,7 +20,7 @@ namespace voidSigils
 			const string LearnDialogue = "It hunts";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Predator);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Predator_a2);
-			int powerlevel = 3;
+			int powerlevel = 2;
 			bool LeshyUsable = false;
 			bool part1Shops = true;
 			bool canStack = false;

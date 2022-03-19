@@ -23,27 +23,19 @@ namespace voidSigils
 				rulebookDescription,
 				behavior,
 				text_a1
-			)
-			// This specifies the icon for the ability if it exists in Part 2.
-			.SetPixelAbilityIcon(text_a2)
-			;
+			);
+			createdAbilityInfo.SetPixelAbilityIcon(text_a2);
 			// This sets up the learned Dialog event
-			if (withDialogue)
-			{
-				createdAbilityInfo.abilityLearnedDialogue = SetAbilityInfoDialogue(LearnDialogue);
-			}
+			if (withDialogue) { createdAbilityInfo.abilityLearnedDialogue = SetAbilityInfoDialogue(LearnDialogue); }
 			// How powerful the ability is
 			createdAbilityInfo.powerLevel = powerLevel;
 			// Can it show up on totems for leshy?
 			createdAbilityInfo.opponentUsable = leshyUsable;
 			// If true, allows in shops and in totems. If false, just the rule book
 			if (part1Modular)
-            {
-				createdAbilityInfo.metaCategories = new List<AbilityMetaCategory>() { AbilityMetaCategory.Part1Modular, AbilityMetaCategory.Part1Rulebook };
-			} else
-			{
-				createdAbilityInfo.metaCategories = new List<AbilityMetaCategory>() { AbilityMetaCategory.Part1Rulebook };
-			}
+            { createdAbilityInfo.metaCategories = new List<AbilityMetaCategory>() { AbilityMetaCategory.Part1Modular, AbilityMetaCategory.Part1Rulebook };}
+			else 
+			{ createdAbilityInfo.metaCategories = new List<AbilityMetaCategory>() { AbilityMetaCategory.Part1Rulebook }; }
 			// Does the ability stack?
 			createdAbilityInfo.canStack = stack;
 			return createdAbilityInfo;

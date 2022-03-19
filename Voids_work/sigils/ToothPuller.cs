@@ -8,7 +8,7 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Original
-		private void AddTooth()
+		private void AddToothPuller()
 		{
 			// setup ability
 			const string rulebookName = "Toothpuller";

@@ -17,7 +17,7 @@ namespace voidSigils
 			const string LearnDialogue = "This creature will heal 1 Health at the end of it's owner's turn.";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Grazing);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);
-			int powerlevel = 0;
+			int powerlevel = 1;
 			bool LeshyUsable = false;
 			bool part1Shops = true;
 			bool canStack = false;

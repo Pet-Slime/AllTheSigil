@@ -45,8 +45,8 @@ namespace voidSigils
 
 		public override IEnumerator OnDealDamage(int amount, PlayableCard target)
 		{
-			if (target != null)
-            {
+			if (target != null && !target.HasAbility(Ability.MadeOfStone))
+			{
 				Singleton<ViewManager>.Instance.SwitchToView(View.Board, false, true);
 				yield return new WaitForSeconds(0.1f);
 				base.Card.Anim.LightNegationEffect();
