@@ -13,7 +13,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Lead (Energy)";
-			const string rulebookDescription = "Pay 2 bones to move the creature in the direction inscribed on the sigil.";
+			const string rulebookDescription = "Pay 2 energy to move this card one slot in the direction inscribed on the sigil.";
 			const string LearnDialogue = "You can lead  a horse to water...";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_lead_energy);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);

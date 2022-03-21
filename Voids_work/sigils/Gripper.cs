@@ -13,7 +13,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Gripper";
-			const string rulebookDescription = "At the end of the owner's turn, [creature] will move in the direction inscribed in the sigil, and deal 1 damage to the opposing creature if it is able to move.";
+			const string rulebookDescription = "At the end of the owner's turn, [creature] will move in the direction inscribed in the sigil, and try to move the opposing creature with it if it can.";
 			const string LearnDialogue = "The trail they leave behind, hurts.";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Gripper);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Gripper_a2);

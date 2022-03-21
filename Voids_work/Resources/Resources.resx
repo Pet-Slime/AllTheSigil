@@ -307,6 +307,12 @@
   <data name="void_Coward_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_coward_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="void_DeadlyWaters" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_DeadlyWaters.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_DeadlyWaters_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_DeadlyWaters_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="void_Deathburst" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_deathburst.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -324,6 +330,18 @@
   </data>
   <data name="void_Desperation" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_desperation.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Dive_Bones" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Dive_Bones.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Dive_Bones_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Dive_Bones_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Dive_Energy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Dive_Energy.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Dive_Energy_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Dive_Energy_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="void_doubleattack_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_doubleattack_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -489,6 +507,12 @@
   </data>
   <data name="void_Herd" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_Heard_3.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_HighTide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_HighTide.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_HighTide_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_HighTide_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="void_Hourglass" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_Hourglass.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -724,11 +748,29 @@
   <data name="void_Retaliate_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_Retaliate_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="void_Schooling" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Schooling.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_Schooling_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_Schooling_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="void_Scissors" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_scissors.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="void_Scissors_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_scissors_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_ShadowStep" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_ShadowStep.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_ShadowStep_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_ShadowStep_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_ShadowStep_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_ShadowStep_back.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_ShadowStep_back_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_ShadowStep_back_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="void_Sickness" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_sick.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -759,6 +801,12 @@
   </data>
   <data name="void_TakeDisease_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_takeDisease_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_TakeOff_Bones" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_TakeOff_Bones.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_TakeOff_Energy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_TakeOff_Energy.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="void_ThickShell" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\ability_thickshell.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -873,6 +921,12 @@
   </data>
   <data name="void_TribeTutor_reptile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_TribeTutor_reptile.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_TurbulentWaters" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_TurbulentWaters.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_TurbulentWaters_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_TurbulentWaters_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="void_Vicious" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_vicious.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

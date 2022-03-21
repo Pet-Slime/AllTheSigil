@@ -17,7 +17,7 @@ namespace voidSigils
 			const string LearnDialogue = "Attacking something poisonous, isn't that smart.";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Poisonous);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Poisonous_a2);
-			int powerlevel = 4;
+			int powerlevel = 2;
 			bool LeshyUsable = false;
 			bool part1Shops = true;
 			bool canStack = false;

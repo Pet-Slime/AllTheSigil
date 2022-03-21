@@ -117,9 +117,12 @@ namespace voidSigils
 			addCoinFinder();
 			AddConsumer();
 			AddCoward();
+			AddDeadlyWaters();
 			AddDeathburst();
 			AddDesperation();
 			AddDiseaseAbsorbtion();
+			AddDiveBones();
+			AddDiveEnergy();
 			AddDrawBlood();
 			AddDrawBone();
 			AddDrawIce();
@@ -136,9 +139,10 @@ namespace voidSigils
 			AddFrightful();
 			AddGiant();
 			AddGrazing();
-
+			AddGripper();
 			AddHaste();
 			AddHerd();
+			AddHighTide();
 			AddHourglass();
 			AddLeech();
 			AddLeadBones();
@@ -171,10 +175,14 @@ namespace voidSigils
 			AddRepellant();
 			AddResistant();
 			AddRetaliate();
+			AddSchooling();
 			AddScissors();
+//			AddShadowStep();
 			AddSickness();
 			AddStampede();
 			AddSubmergedAmbush();
+			AddTakeOffBones();
+			AddTakeOffEnergy();
 			AddThickShell();
 			AddThief(); 
 			AddToothBargain();
@@ -189,13 +197,13 @@ namespace voidSigils
 			AddTransient();
 			AddTribalAlly();
 			AddTribalTutor();
+			addTurbulentWaters();
 			AddStrafePowerUp(); // Velocity
 			AddVicious();
 			AddWithering();
 			AddZapper();
 
 			//Negative Sigils
-			AddGripper();
 
 
 			//Add Card

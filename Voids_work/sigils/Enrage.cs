@@ -99,7 +99,7 @@ namespace voidSigils
 	}
 
 	[HarmonyPatch(typeof(PlayableCard), "GetPassiveAttackBuffs")]
-	public class MakeZapperWorkTry3
+	public class sigil_passive_buffs
 	{
 		[HarmonyPostfix]
 		public static void Postfix(ref int __result, ref PlayableCard __instance)
@@ -110,12 +110,19 @@ namespace voidSigils
 				{
 					if (slotState.Card != null && slotState.Card.Info.HasAbility(void_Enrage.ability))
 					{
-						__result = __result + 2;
+						__result += 2;
 					}
 				}
+
+				foreach (CardSlot slotState in Singleton<BoardManager>.Instance.AllSlots)
+				{
+					if (slotState.Card != null && slotState.Card.Info.HasAbility(void_Schooling.ability))
+					{
+						__result++;
+					}
+				}
+
 			}
 		}
 	}
-
-
 }

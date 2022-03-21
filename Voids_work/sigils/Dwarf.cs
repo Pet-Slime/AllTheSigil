@@ -42,6 +42,7 @@ namespace voidSigils
 
 		public override IEnumerator OnDrawn()
 		{
+			yield return base.PreSuccessfulTriggerSequence();
 			(Singleton<PlayerHand>.Instance as PlayerHand3D).MoveCardAboveHand(base.Card);
 			yield return base.Card.FlipInHand(new Action(this.AddMod));
 			yield return base.LearnAbility(0.5f);
