@@ -1513,6 +1513,26 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] void_LowTide {
+            get {
+                object obj = ResourceManager.GetObject("void_LowTide", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_LowTide_a2 {
+            get {
+                object obj = ResourceManager.GetObject("void_LowTide_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] void_Maneuver {
             get {
                 object obj = ResourceManager.GetObject("void_Maneuver", resourceCulture);

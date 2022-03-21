@@ -14,7 +14,7 @@ namespace voidSigils
 		public const string APIGUID = "cyantist.inscryption.api";
 		public const string PluginGuid = "extraVoid.inscryption.voidSigils";
 		private const string PluginName = "Extra Sigils";
-		private const string PluginVersion = "3.0.0";
+		private const string PluginVersion = "3.1.0";
 
 		public static string Directory;
 		internal static ManualLogSource Log;
@@ -148,6 +148,7 @@ namespace voidSigils
 			AddLeadBones();
 			AddLeadEnergy();
 			AddLifeStatsUp(); //Life Gambler
+			AddLowTide();
 			AddFisher(); //Lure
 			AddManeuver();
 			AddMedic();

@@ -13,7 +13,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Dive (Energy)";
-			const string rulebookDescription = "Pay 2 energy to submerge this card.";
+			const string rulebookDescription = "Pay 2 energy to cause this card to flip face down at the end of the owner's turn.";
 			const string LearnDialogue = "Care for a swim?";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Dive_Energy);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);

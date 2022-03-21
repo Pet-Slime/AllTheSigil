@@ -13,7 +13,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Dive (Bones)";
-			const string rulebookDescription = "Pay 2 bones to submerge this card.";
+			const string rulebookDescription = "Pay 2 bones to cause this card to flip face down at the end of the owner's turn.";
 			const string LearnDialogue = "Care for a dive?";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Dive_Bones);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);

@@ -38,7 +38,7 @@ namespace voidSigils
 
 		public override bool RespondsToOtherCardResolve(PlayableCard otherCard)
 		{
-			return base.Card.OnBoard;
+			return base.Card.OnBoard && otherCard.slot != base.Card.slot;
 		}
 
 		public override IEnumerator OnOtherCardResolve(PlayableCard otherCard)
@@ -47,7 +47,7 @@ namespace voidSigils
 			base.Card.Anim.LightNegationEffect();
 			yield return base.PreSuccessfulTriggerSequence();
 			yield return new WaitForSeconds(0.25f);
-			if (!otherCard.HasAbility(Ability.Submerge) || !otherCard.HasAbility(Ability.SubmergeSquid))
+			if (!otherCard.HasAbility(Ability.Submerge) && !otherCard.HasAbility(Ability.SubmergeSquid))
             {
 				//make the card mondification info
 				CardModificationInfo cardModificationInfo = new CardModificationInfo(Ability.Submerge);

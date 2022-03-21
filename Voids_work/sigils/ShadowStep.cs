@@ -37,6 +37,8 @@ namespace voidSigils
 
 		public static Ability ability;
 
+		private int triggerPriority = int.MinValue;
+
 
 		public override bool RespondsToResolveOnBoard()
 		{
@@ -45,36 +47,13 @@ namespace voidSigils
 
 		public override IEnumerator OnResolveOnBoard()
 		{
-			
 			Singleton<ViewManager>.Instance.SwitchToView(View.Board, false, true);
 			yield return new WaitForSeconds(0.15f);
-			yield return base.PreSuccessfulTriggerSequence();
+			setCarback(base.Card);
 			base.Card.SetFaceDown(true, false);
-///			this.setCarback(base.Card);
-			base.Card.UpdateFaceUpOnBoardEffects();
-			this.OnResurface();
 			yield return new WaitForSeconds(0.3f);
-			this.triggerPriority = int.MinValue;
-			Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;
-			yield break;
-		}
-
-		public override bool RespondsToTurnEnd(bool playerTurnEnd)
-		{
-			return base.Card != null && base.Card.OpponentCard != playerTurnEnd;
-		}
-
-		public override IEnumerator OnTurnEnd(bool playerTurnEnd)
-		{
-			Singleton<ViewManager>.Instance.SwitchToView(View.Board, false, true);
-			yield return new WaitForSeconds(0.15f);
-			yield return base.PreSuccessfulTriggerSequence();
-			base.Card.SetFaceDown(false, false);
-///			this.setCarback(base.Card);
-			base.Card.UpdateFaceUpOnBoardEffects();
-			this.OnResurface();
-			yield return new WaitForSeconds(0.3f);
-			this.triggerPriority = int.MinValue;
+			yield return base.LearnAbility(0f);
+			this.triggerPriority = int.MaxValue;
 			Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;
 			yield break;
 		}
@@ -97,17 +76,14 @@ namespace voidSigils
 				}
             }
 			if (othercards)
-            {
-				Singleton<ViewManager>.Instance.SwitchToView(View.Board, false, true);
+			{
 				yield return new WaitForSeconds(0.15f);
 				yield return base.PreSuccessfulTriggerSequence();
-				base.Card.SetFaceDown(true, false);
-///				this.setCarback(base.Card);
+				base.Card.SetFaceDown(false, false);
 				base.Card.UpdateFaceUpOnBoardEffects();
 				this.OnResurface();
 				yield return new WaitForSeconds(0.3f);
 				this.triggerPriority = int.MinValue;
-				Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;
 				yield break;
 			}
 			yield break;
@@ -130,7 +106,6 @@ namespace voidSigils
 			}
 		}
 
-		private int triggerPriority = int.MinValue;
 
 
 		[HarmonyPatch(typeof(CombatPhaseManager), "SlotAttackSequence", MethodType.Normal)]
@@ -148,16 +123,6 @@ namespace voidSigils
 					//do combat
 					return true;
                 }
-			}
-		}
-
-		[HarmonyPatch(typeof(PaperCardAnimationController), "NegationEffect", MethodType.Normal)]
-		public class Sacrifice_ShadowStep_Patch
-		{
-			[HarmonyPostfix]
-			public static void ChooseSacrificesForCard()
-			{
-
 			}
 		}
 	}

@@ -13,7 +13,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Take-Off (Bones)";
-			const string rulebookDescription = "Pay 2 bones to give this card flying till the start of your next turn.";
+			const string rulebookDescription = "Pay 2 bones to give this card Airborne till the start of your next turn.";
 			const string LearnDialogue = "Spread your wings and fly.";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_TakeOff_Bones);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);
@@ -28,7 +28,6 @@ namespace voidSigils
 																					true, powerlevel, LeshyUsable, part1Shops, canStack);
 
 			test.activated = true;
-
 			test.pixelIcon = SigilUtils.LoadSpriteFromResource(Artwork.void_Dive_Bones_a2);
 
 
@@ -76,19 +75,22 @@ namespace voidSigils
 
 		public override bool RespondsToUpkeep(bool playerUpkeep)
 		{
-			return base.Card.OpponentCard != playerUpkeep && base.Card.FaceDown;
+			Plugin.Log.LogMessage("Takeoff Upkeep response fired 1");
+			return base.Card.OpponentCard != playerUpkeep && base.Card.HasAbility(Ability.Flying);
 		}
 
 		public override IEnumerator OnUpkeep(bool playerUpkeep)
 		{
+			Plugin.Log.LogMessage("Takeoff Upkeep response fired 2");
 			yield return new WaitForSeconds(0.15f);
 			yield return base.PreSuccessfulTriggerSequence();
 			CardModificationInfo cardModificationInfo = base.Card.TemporaryMods.Find((CardModificationInfo x) => x.singletonId == "void_TakeOff_Flying");
-			if (cardModificationInfo != null)
-			{
-				base.Card.RemoveTemporaryMod(cardModificationInfo);
-				base.Card.Anim.PlayTransformAnimation();
-			}
+			CardInfo targetCardInfo = base.Card.Info.Clone() as CardInfo;
+			//Add the modifincations to the cloned info
+			targetCardInfo.Mods.Remove(cardModificationInfo);
+			//Set the target's info to the clone'd info
+			base.Card.SetInfo(targetCardInfo);
+			base.Card.Anim.PlayTransformAnimation();
 			yield return new WaitForSeconds(0.3f);
 			yield break;
 		}
