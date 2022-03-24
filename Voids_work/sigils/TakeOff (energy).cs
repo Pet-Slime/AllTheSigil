@@ -13,7 +13,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Take-Off (Energy)";
-			const string rulebookDescription = "Pay 2 energy to give this card Airborne till the start of your next turn.";
+			const string rulebookDescription = "Pay 2 energy to give this card Airborne till the start of the owner's next turn.";
 			const string LearnDialogue = "Spread your wings and fly.";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_TakeOff_Energy);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);

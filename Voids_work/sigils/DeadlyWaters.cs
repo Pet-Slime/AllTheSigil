@@ -13,7 +13,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Deadly Waters";
-			const string rulebookDescription = "[creature] will kill cards that attacked over it while it was face-down.";
+			const string rulebookDescription = "[creature] will kill cards that attacked over it while it was face-down. Does not affect cards that have Airborne.";
 			const string LearnDialogue = "It's not always safe to go into the waters.";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_DeadlyWaters);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_DeadlyWaters_a2);
@@ -41,7 +41,7 @@ namespace voidSigils
 		[HarmonyPostfix]
 		public static IEnumerator Postfix(IEnumerator enumerator, CardSlot attackingSlot, CardSlot opposingSlot, float waitAfter = 0f)
 		{
-			if (attackingSlot.Card != null && opposingSlot.Card != null && opposingSlot.Card.FaceDown && opposingSlot.Card.HasAbility(void_DeadlyWaters.ability) && !attackingSlot.Card.AttackIsBlocked(opposingSlot))
+			if (attackingSlot.Card != null && opposingSlot.Card != null && opposingSlot.Card.FaceDown && opposingSlot.Card.HasAbility(void_DeadlyWaters.ability) && !attackingSlot.Card.AttackIsBlocked(opposingSlot) && !attackingSlot.Card.HasAbility(Ability.Flying))
 			{
 				yield return enumerator;
 				yield return new WaitForSeconds(0.55f);

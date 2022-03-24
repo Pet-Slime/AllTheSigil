@@ -11,27 +11,27 @@ namespace voidSigils
 	public partial class Plugin
 	{
 		//Request by blind
-		private void AddPossessor()
+		private void AddPossessorPowerful()
 		{
 			// setup ability
-			const string rulebookName = "Possessor";
-			const string rulebookDescription = "When [creature] perishes, it will grant a random friendly card that is on the board it's base power and health.";
+			const string rulebookName = "Powerful Possessor";
+			const string rulebookDescription = "When [creature] perishes, it will grant a random friendly card that is on the board it's base plus modified power and base plus modified health.";
 			const string LearnDialogue = "It passes it's strength onto those who remain";
-			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Possessor);
-			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Possessor_a2);
-			int powerlevel = 1;
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Possessor_Powerful);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Possessor_Powerful_a2);
+			int powerlevel = 3;
 			bool LeshyUsable = false;
 			bool part1Shops = true;
 			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Possessor.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Possessor), tex_a1, tex_a2, LearnDialogue,
+			void_Possessor_Powerful.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Possessor_Powerful), tex_a1, tex_a2, LearnDialogue,
 																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 
 		}
 	}
 
-	public class void_Possessor : AbilityBehaviour
+	public class void_Possessor_Powerful : AbilityBehaviour
 	{
 		public override Ability Ability => ability;
 
@@ -54,8 +54,26 @@ namespace voidSigils
 		{		
 			// Get the base card
 			PlayableCard card = base.Card;
-			this.mod.attackAdjustment = card.Info.baseAttack;
-			this.mod.healthAdjustment = card.Info.baseHealth;
+			int modifiedHealth = 0;
+			int modifiedAttack = 0;
+			if (card.TemporaryMods.Count > 0)
+			{
+				var holder = card.TemporaryMods.FindAll((CardModificationInfo x) => x.healthAdjustment != 0);
+				foreach (CardModificationInfo mod in holder)
+				{
+					modifiedHealth += mod.healthAdjustment;
+				}
+
+				holder = card.TemporaryMods.FindAll((CardModificationInfo x) => x.attackAdjustment != 0);
+				foreach (CardModificationInfo mod in holder)
+				{
+					modifiedAttack += mod.attackAdjustment;
+				}
+			}
+			this.mod.attackAdjustment = card.Info.baseAttack + card.GetPassiveAttackBuffs() + modifiedAttack;
+			this.mod.healthAdjustment = card.Info.baseHealth + card.GetPassiveHealthBuffs() + modifiedHealth;
+
+
 
 			if (card.slot.IsPlayerSlot)
 			{

@@ -15,7 +15,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Draw Jackalope";
-			const string rulebookDescription = "[creature] is played, a Jackalope is created in your hand.";
+			const string rulebookDescription = "When [creature] is played, a Jackalope is created in your hand.";
 			const string LearnDialogue = "Pull a Jackalope from a hat why don't ya.";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_DrawJack);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);

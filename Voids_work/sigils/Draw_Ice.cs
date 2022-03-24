@@ -15,7 +15,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Draw Card";
-			const string rulebookDescription = "[creature] is played, a card relating to it's ice cube parameter (default Opossum) is created in your hand.";
+			const string rulebookDescription = "When [creature] is played, a card relating to it's ice cube parameter (default Opossum) is created in your hand.";
 			const string LearnDialogue = "What will it release on death?";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_DrawIce);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_DrawIce_a2);

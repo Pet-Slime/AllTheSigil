@@ -4,7 +4,6 @@ using UnityEngine;
 using Artwork = voidSigils.Voids_work.Resources.Resources;
 using HarmonyLib;
 using InscryptionAPI.Card;
-using HarmonyLib;
 
 namespace voidSigils
 {

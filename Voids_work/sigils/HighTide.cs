@@ -15,7 +15,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "High Tide";
-			const string rulebookDescription = "While [creature] is on the board, it will grant creatures that are played the waterborne sigil.";
+			const string rulebookDescription = "While [creature] is on the board, it will grant creatures that are played the waterborne sigil. Does not affect cards that are Airborne.";
 			const string LearnDialogue = "The waters rise.";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_HighTide);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_HighTide_a2);
@@ -38,7 +38,7 @@ namespace voidSigils
 
 		public override bool RespondsToOtherCardResolve(PlayableCard otherCard)
 		{
-			return base.Card.OnBoard && otherCard.slot != base.Card.slot;
+			return base.Card.OnBoard && otherCard.slot != base.Card.slot && !otherCard.HasAbility(Ability.Flying);
 		}
 
 		public override IEnumerator OnOtherCardResolve(PlayableCard otherCard)

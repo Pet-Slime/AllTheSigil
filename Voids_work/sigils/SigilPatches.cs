@@ -47,6 +47,26 @@ namespace voidSigils
 			}
 		}
 
+		[HarmonyPatch(typeof(CombatPhaseManager), "SlotAttackSequence", MethodType.Normal)]
+		public class stopCombat_Patch
+		{
+			[HarmonyPrefix]
+			public static bool SlotAttackSequence(CardSlot slot)
+			{
+				if (slot.Card.HasAbility(void_ShadowStep.ability) || slot.Card.HasAbility(void_Sluggish.ability) || slot.Card.HasAbility(void_Hasteful.ability))
+				{
+					//skip combat and do nothing
+					return false;
+				}
+				else
+				{
+					//do combat
+					return true;
+				}
+			}
+		}
+
+
 		[HarmonyPatch(typeof(BuildTotemSequencer))]
 		public class void_NegativeTotem_ExtraTotems
 		{

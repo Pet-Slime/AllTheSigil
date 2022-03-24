@@ -15,7 +15,7 @@ namespace voidSigils
 			const string rulebookDescription = "When [creature] attacks, the amount of blood it is counted as when sacrificed will increase.";
 			const string LearnDialogue = "There is power in the blood.";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_bloodgrowth);
-			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_bloodgrowth_a2);
 			int powerlevel = 0;
 			bool LeshyUsable = false;
 			bool part1Shops = true;
@@ -41,6 +41,9 @@ namespace voidSigils
 		private CardModificationInfo mod;
 
 
+		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("org.memez4life.inscryption.customsigils", "Noble Sacrifice");
+		public static readonly Ability CustomAbility2 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("org.memez4life.inscryption.customsigils", "Superior Sacrifice");
+
 
 		private void Start()
 		{
@@ -59,13 +62,13 @@ namespace voidSigils
 			yield return base.PreSuccessfulTriggerSequence();
 			base.Card.Status.hiddenAbilities.Add(this.Ability);
 
-			attacks += 1;
+			this.attacks += 1;
 
-			switch (attacks)
+			switch (this.attacks)
             {
 				case 1:
 					base.Card.RemoveTemporaryMod(this.mod);
-					Ability Ab1 = Ability.TripleBlood;
+					Ability Ab1 = CustomAbility1;
 					this.mod.abilities.Clear();
 					this.mod.abilities.Add(Ab1);
 					base.Card.AddTemporaryMod(this.mod);
@@ -79,7 +82,7 @@ namespace voidSigils
 					break;
 				case 3:
 					base.Card.RemoveTemporaryMod(this.mod);
-					Ability Ab3 = Ability.TripleBlood;
+					Ability Ab3 = CustomAbility2;
 					this.mod.abilities.Clear();
 					this.mod.abilities.Add(Ab3);
 					base.Card.AddTemporaryMod(this.mod);

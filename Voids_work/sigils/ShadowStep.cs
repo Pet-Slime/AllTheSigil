@@ -105,25 +105,5 @@ namespace voidSigils
 				card.SetCardback(SigilUtils.LoadTextureFromResource(Artwork.void_ShadowStep_back_a2));
 			}
 		}
-
-
-
-		[HarmonyPatch(typeof(CombatPhaseManager), "SlotAttackSequence", MethodType.Normal)]
-		public class AttackIsBlocked_ShadowStep_Patch
-		{
-			[HarmonyPrefix]
-			public static bool SlotAttackSequence(CardSlot slot)
-			{
-				if (slot.Card.HasAbility(void_ShadowStep.ability))
-				{
-					//skip combat and do nothing
-					return false;
-				} else
-                {
-					//do combat
-					return true;
-                }
-			}
-		}
 	}
 }

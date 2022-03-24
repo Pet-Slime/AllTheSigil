@@ -15,7 +15,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Schooling";
-			const string rulebookDescription = "[creature] will grant creatures with the waterborn sigil to gain 1 power";
+			const string rulebookDescription = "[creature] will grant creatures with the waterborn 1 power.";
 			const string LearnDialogue = "The waterborn stick together.";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Schooling);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Schooling_a2);

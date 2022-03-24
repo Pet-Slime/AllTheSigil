@@ -13,7 +13,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Submerged Ambush";
-			const string rulebookDescription = "[creature] will deal 1 damage to cards that attacked over it while it was face-down.";
+			const string rulebookDescription = "[creature] will deal 1 damage to cards that attacked over it while it was face-down. Does not affect cards that are Airborne.";
 			const string LearnDialogue = "It strikes from the water.";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_SubmergedAmbush);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_SubmergedAmbush_a2);
@@ -109,7 +109,7 @@ namespace voidSigils
 		[HarmonyPostfix]
 		public static IEnumerator Postfix(IEnumerator enumerator, CardSlot attackingSlot, CardSlot opposingSlot, float waitAfter = 0f)
 		{
-			if (attackingSlot.Card != null && opposingSlot.Card != null && opposingSlot.Card.FaceDown && opposingSlot.Card.HasAbility(void_SubmergedAmbush.ability) && !attackingSlot.Card.AttackIsBlocked(opposingSlot))
+			if (attackingSlot.Card != null && opposingSlot.Card != null && opposingSlot.Card.FaceDown && opposingSlot.Card.HasAbility(void_SubmergedAmbush.ability) && !attackingSlot.Card.AttackIsBlocked(opposingSlot) && !attackingSlot.Card.HasAbility(Ability.Flying))
 			{
 				yield return enumerator;
 				yield return new WaitForSeconds(0.55f);

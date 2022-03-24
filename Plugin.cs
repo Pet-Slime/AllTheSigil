@@ -127,6 +127,7 @@ namespace voidSigils
 			AddDrawBone();
 			AddDrawIce();
 			AddDrawJack();
+			AddDrawStrafe();
 			AddDwarf();
 			AddDying();
 			AddEletric();
@@ -141,6 +142,7 @@ namespace voidSigils
 			AddGrazing();
 			AddGripper();
 			AddHaste();
+			AddHasteful();
 			AddHerd();
 			AddHighTide();
 			AddHourglass();
@@ -161,6 +163,7 @@ namespace voidSigils
 			AddPierce();
 			AddPoisonous();
 			AddPossessor();
+			AddPossessorPowerful(); // Powerful Possessor
 			AddMovingPowerUp(); // Power from movement
 			AddPredator();
 			AddPrideful();
@@ -180,6 +183,7 @@ namespace voidSigils
 			AddScissors();
 //			AddShadowStep();
 			AddSickness();
+			AddSluggish();
 			AddStampede();
 			AddSubmergedAmbush();
 			AddTakeOffBones();

@@ -41,6 +41,7 @@ namespace voidSigils
 			return createdAbilityInfo;
 		}
 
+
 		public static DialogueEvent.LineSet SetAbilityInfoDialogue(string dialogue)
 		{
 			return new DialogueEvent.LineSet(
@@ -175,5 +176,7 @@ namespace voidSigils
 		}
 
 		
+
+
 	}
 }

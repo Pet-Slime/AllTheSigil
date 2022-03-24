@@ -15,7 +15,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Draw Bone";
-			const string rulebookDescription = "[creature] is played, a card costing bone is created in your hand.";
+			const string rulebookDescription = "When [creature] is played, a card costing bone is created in your hand.";
 			const string LearnDialogue = "What will it release on death?";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_DrawBone);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_DrawBone_a2);

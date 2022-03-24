@@ -17,7 +17,7 @@ namespace voidSigils
 			const string rulebookDescription = "When [creature] is drawn, it will gain one unit blood of cost, as well as one attack and two health.";
 			const string LearnDialogue = "What a large creature you have there";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Giant);
-			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Giant_a2);
 			int powerlevel = 3;
 			bool LeshyUsable = false;
 			bool part1Shops = true;
@@ -42,6 +42,7 @@ namespace voidSigils
 
 		public override IEnumerator OnDrawn()
 		{
+			yield return base.PreSuccessfulTriggerSequence();
 			(Singleton<PlayerHand>.Instance as PlayerHand3D).MoveCardAboveHand(base.Card);
 			yield return base.Card.FlipInHand(new Action(this.AddMod));
 			yield return base.LearnAbility(0.5f);

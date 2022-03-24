@@ -19,7 +19,7 @@ namespace voidSigils
 			const string LearnDialogue = "The waters be rough.";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_TurbulentWaters);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_TurbulentWaters_a2);
-			int powerlevel = 5;
+			int powerlevel = 3;
 			bool LeshyUsable = false;
 			bool part1Shops = true;
 			bool canStack = true;
