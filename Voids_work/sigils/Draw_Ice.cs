@@ -40,7 +40,7 @@ namespace voidSigils
 		{
 			get
 			{
-				string creatureWithinId = "Opossum";
+				string creatureWithinId = "Stoat";
 				bool flag = base.Card.Info.iceCubeParams != null && base.Card.Info.iceCubeParams.creatureWithin != null;
 				if (flag)
 				{

@@ -94,7 +94,7 @@ namespace voidSigils
 				if (targets.Count > 0)
                 {
 					// pick a random target from the target list
-					PlayableCard target = targets[Random.Range(0, (targets.Count))];
+					PlayableCard target = targets[SeededRandom.Range(0, (targets.Count), base.GetRandomSeed())];
 					base.Card.Anim.LightNegationEffect();
 					yield return base.PreSuccessfulTriggerSequence();
 					target.Anim.StrongNegationEffect();

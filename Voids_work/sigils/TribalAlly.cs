@@ -143,7 +143,7 @@ namespace voidSigils
 			}
 			
 			///pick a random card from that list
-			CardInfo target = targets[Random.Range(0, (targets.Count))];
+			CardInfo target = targets[SeededRandom.Range(0, (targets.Count), base.GetRandomSeed())];
 
 			yield return base.PreSuccessfulTriggerSequence();
 			base.Card.Anim.StrongNegationEffect();

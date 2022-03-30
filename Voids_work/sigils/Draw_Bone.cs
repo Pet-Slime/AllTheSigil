@@ -40,7 +40,7 @@ namespace voidSigils
 		{
 			get
 			{
-				var creatureWithinId = GetRandomChoosableCardWithCost(SaveManager.SaveFile.GetCurrentRandomSeed());
+				var creatureWithinId = GetRandomChoosableCardWithCost(base.GetRandomSeed());
 
 				return CardLoader.GetCardByName(creatureWithinId.name);
 			}
@@ -74,7 +74,7 @@ namespace voidSigils
 			if (flag1)
 			{
 				list.Clear();
-				list = CardLoader.GetUnlockedCards(CardMetaCategory.GBCPack, CardTemple.Undead).FindAll((CardInfo x) => x.BloodCost > 0);
+				list = CardLoader.GetUnlockedCards(CardMetaCategory.GBCPack, CardTemple.Undead).FindAll((CardInfo x) => x.bonesCost > 0);
 			}
 			bool flag = list.Count == 0;
 			CardInfo result;

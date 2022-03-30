@@ -73,17 +73,17 @@ namespace voidSigils
 				yield return new WaitForSeconds(0.2f);
 			}
 
-			var target = targets[Random.Range(0, (targets.Count))];
+			var target = targets[SeededRandom.Range(0, (targets.Count), base.GetRandomSeed()+1)];
 
 			yield return Singleton<CardSpawner>.Instance.SpawnCardToHand(target, null, 0.25f, null);
 			yield return new WaitForSeconds(0.45f);
 
-			target = targets[Random.Range(0, (targets.Count))];
+			target = targets[SeededRandom.Range(0, (targets.Count), base.GetRandomSeed() + 2)];
 
 			yield return Singleton<CardSpawner>.Instance.SpawnCardToHand(target, null, 0.25f, null);
 			yield return new WaitForSeconds(0.45f);
 
-			target = targets[Random.Range(0, (targets.Count))];
+			target = targets[SeededRandom.Range(0, (targets.Count), base.GetRandomSeed() + 3)];
 
 			yield return Singleton<CardSpawner>.Instance.SpawnCardToHand(target, null, 0.25f, null);
 			yield return new WaitForSeconds(0.45f);

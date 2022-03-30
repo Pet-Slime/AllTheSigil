@@ -85,7 +85,7 @@ namespace voidSigils
 			Ability result;
 			if (flag)
 			{
-				result = learnedAbilities[UnityEngine.Random.Range(0, learnedAbilities.Count)];
+				result = learnedAbilities[SeededRandom.Range(0, learnedAbilities.Count, base.GetRandomSeed())];
 			}
 			else
 			{

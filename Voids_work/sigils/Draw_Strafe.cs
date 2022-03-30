@@ -45,7 +45,7 @@ namespace voidSigils
 		{
 			get
 			{
-				var creatureWithinId = GetRandomChoosableCardWithCost(SaveManager.SaveFile.GetCurrentRandomSeed());
+				var creatureWithinId = GetRandomChoosableCardWithCost(base.GetRandomSeed());
 
 				return CardLoader.GetCardByName(creatureWithinId.name);
 			}
@@ -118,8 +118,7 @@ namespace voidSigils
 			}
 			else
 			{
-				var shuffledcards = list.OrderBy(a => rng.Next()).ToList();
-				result = CardLoader.Clone(shuffledcards[SeededRandom.Range(0, shuffledcards.Count, randomSeed)]);
+				result = CardLoader.Clone(list[SeededRandom.Range(0, list.Count, randomSeed)]);
 			}
 			return result;
 		}

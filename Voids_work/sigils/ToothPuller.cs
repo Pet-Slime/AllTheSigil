@@ -42,7 +42,7 @@ namespace voidSigils
 		{
 			yield return base.PreSuccessfulTriggerSequence();
 			yield return new WaitForSeconds(0.1f);
-			yield return ShowDamageSequence(1, 1, playerTurnEnd, 0.25f, ResourceBank.Get<GameObject>("Prefabs/Environment/ScaleWeights/Weight_RealTooth"), 0f, true);
+			yield return ShowDamageSequence(1, 1, !base.Card.slot.IsPlayerSlot, 0.25f, ResourceBank.Get<GameObject>("Prefabs/Environment/ScaleWeights/Weight_RealTooth"), 0f, true);
 			yield return new WaitForSeconds(0.1f);
 			yield return base.LearnAbility(0.1f);
 			yield return new WaitForSeconds(0.1f);

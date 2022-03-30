@@ -2423,6 +2423,26 @@ namespace voidSigils.Voids_work.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] void_StrongWind {
+            get {
+                object obj = ResourceManager.GetObject("void_StrongWind", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_StrongWind_a2 {
+            get {
+                object obj = ResourceManager.GetObject("void_StrongWind_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] void_SubmergedAmbush {
             get {
                 object obj = ResourceManager.GetObject("void_SubmergedAmbush", resourceCulture);

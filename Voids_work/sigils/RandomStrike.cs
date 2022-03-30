@@ -58,7 +58,7 @@ namespace voidSigils
 					allSlots = Singleton<BoardManager>.Instance.playerSlots;
 				}
 
-				CardSlot target = allSlots[Random.Range(0, (allSlots.Count))];
+				CardSlot target = allSlots[SeededRandom.Range(0, (allSlots.Count), SaveManager.SaveFile.GetCurrentRandomSeed())];
 
 				opposingSlot = target;
 

@@ -40,7 +40,7 @@ namespace voidSigils
 		{
 			get
 			{
-				var creatureWithinId = GetRandomChoosableCardWithCost(SaveManager.SaveFile.GetCurrentRandomSeed());
+				var creatureWithinId = GetRandomChoosableCardWithCost(base.GetRandomSeed());
 
 				return CardLoader.GetCardByName(creatureWithinId.name);
 			}

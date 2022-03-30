@@ -46,7 +46,7 @@ namespace voidSigils
             Singleton<ViewManager>.Instance.SwitchToView(View.Board, false, true);
 
             PlayableCard crows = (PlayableCard)base.Card;
-            var PLCards = Singleton<BoardManager>.Instance.GetSlots(true);
+            var PLCards = Singleton<BoardManager>.Instance.GetSlots(crows.slot.IsPlayerSlot);
 
 
             crows.Anim.StrongNegationEffect();
@@ -79,7 +79,7 @@ namespace voidSigils
 
                             CardModificationInfo negativeAbilityMod = new CardModificationInfo(abilities[index].ability);
                             crows.AddTemporaryMod(negativeAbilityMod);
-                            crows.Anim.LightNegationEffect();
+                            crows.Anim.PlayTransformAnimation();
 
                         }
                     }

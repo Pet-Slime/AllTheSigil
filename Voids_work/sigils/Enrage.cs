@@ -116,7 +116,7 @@ namespace voidSigils
 
 				foreach (CardSlot slotState in Singleton<BoardManager>.Instance.AllSlots)
 				{
-					if (slotState.Card != null && slotState.Card.Info.HasAbility(void_Schooling.ability))
+					if (slotState.Card != null && slotState.Card.HasAbility(void_Schooling.ability) && (__instance.HasAbility(Ability.Submerge) || __instance.HasAbility(Ability.SubmergeSquid)    ))
 					{
 						__result++;
 					}

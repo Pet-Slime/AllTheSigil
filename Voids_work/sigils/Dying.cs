@@ -110,50 +110,50 @@ namespace voidSigils
 				case 0:
 					if (!SaveManager.SaveFile.IsPart2)
 					{
-						base.Card.RenderInfo.OverrideAbilityIcon(Ability.Evolve, SigilUtils.LoadTextureFromResource(Artwork.void_Dying));
+						base.Card.RenderInfo.OverrideAbilityIcon(void_Dying.ability, SigilUtils.LoadTextureFromResource(Artwork.void_Dying));
 					} else
 					{
-						base.Card.RenderInfo.OverrideAbilityIcon(Ability.Evolve, SigilUtils.LoadTextureFromResource(Artwork.void_Dying_a2));
+						base.Card.RenderInfo.OverrideAbilityIcon(void_Dying.ability, SigilUtils.LoadTextureFromResource(Artwork.void_Dying_a2));
 					}
 						break;
 				case 1:
 					if (!SaveManager.SaveFile.IsPart2)
 					{
-						base.Card.RenderInfo.OverrideAbilityIcon(Ability.Evolve, SigilUtils.LoadTextureFromResource(Artwork.void_dying_1));
+						base.Card.RenderInfo.OverrideAbilityIcon(void_Dying.ability, SigilUtils.LoadTextureFromResource(Artwork.void_dying_1));
 					}
 					else
 					{
-						base.Card.RenderInfo.OverrideAbilityIcon(Ability.Evolve, SigilUtils.LoadTextureFromResource(Artwork.void_dying_a2_1));
+						base.Card.RenderInfo.OverrideAbilityIcon(void_Dying.ability, SigilUtils.LoadTextureFromResource(Artwork.void_dying_a2_1));
 					}
 					break;
 				case 2:
 					if (!SaveManager.SaveFile.IsPart2)
 					{
-						base.Card.RenderInfo.OverrideAbilityIcon(Ability.Evolve, SigilUtils.LoadTextureFromResource(Artwork.void_dying_2));
+						base.Card.RenderInfo.OverrideAbilityIcon(void_Dying.ability, SigilUtils.LoadTextureFromResource(Artwork.void_dying_2));
 					}
 					else
 					{
-						base.Card.RenderInfo.OverrideAbilityIcon(Ability.Evolve, SigilUtils.LoadTextureFromResource(Artwork.void_dying_a2_2));
+						base.Card.RenderInfo.OverrideAbilityIcon(void_Dying.ability, SigilUtils.LoadTextureFromResource(Artwork.void_dying_a2_2));
 					}
 					break;
 				case 3:
 					if (!SaveManager.SaveFile.IsPart2)
 					{
-						base.Card.RenderInfo.OverrideAbilityIcon(Ability.Evolve, SigilUtils.LoadTextureFromResource(Artwork.void_dying_3));
+						base.Card.RenderInfo.OverrideAbilityIcon(void_Dying.ability, SigilUtils.LoadTextureFromResource(Artwork.void_dying_3));
 					}
 					else
 					{
-						base.Card.RenderInfo.OverrideAbilityIcon(Ability.Evolve, SigilUtils.LoadTextureFromResource(Artwork.void_dying_a2_3));
+						base.Card.RenderInfo.OverrideAbilityIcon(void_Dying.ability, SigilUtils.LoadTextureFromResource(Artwork.void_dying_a2_3));
 					}
 					break;
 				case 4:
 					if (!SaveManager.SaveFile.IsPart2)
 					{
-						base.Card.RenderInfo.OverrideAbilityIcon(Ability.Evolve, SigilUtils.LoadTextureFromResource(Artwork.void_dying_4));
+						base.Card.RenderInfo.OverrideAbilityIcon(void_Dying.ability, SigilUtils.LoadTextureFromResource(Artwork.void_dying_4));
 					}
 					else
 					{
-						base.Card.RenderInfo.OverrideAbilityIcon(Ability.Evolve, SigilUtils.LoadTextureFromResource(Artwork.void_dying_a2_4));
+						base.Card.RenderInfo.OverrideAbilityIcon(void_Dying.ability, SigilUtils.LoadTextureFromResource(Artwork.void_dying_a2_4));
 					}
 					break;
             }

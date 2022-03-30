@@ -826,6 +826,12 @@
   <data name="void_Sticky_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_Sticky_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="void_StrongWind" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_StrongWind.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_StrongWind_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_StrongWind_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="void_SubmergedAmbush" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_SubmergedAmbush.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

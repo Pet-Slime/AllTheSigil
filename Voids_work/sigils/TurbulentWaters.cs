@@ -44,28 +44,33 @@ namespace voidSigils
 		public override IEnumerator OnUpkeep(bool playerUpkeep)
 		{
 			yield return new WaitForSeconds(0.2f);
-			base.Card.Anim.LightNegationEffect();
 			var allslots = Singleton<BoardManager>.Instance.AllSlots;
 			yield return base.PreSuccessfulTriggerSequence();
-			foreach (var slot in allslots)
-            {
-				if (slot.Card != null && (slot.Card.HasAbility(Ability.Submerge) || slot.Card.HasAbility(Ability.SubmergeSquid) && !slot.Card.HasAbility(void_TurbulentWaters.ability)))
-                {
-					if (slot.Card.FaceDown)
-					{
+			for (var index = 0; index < allslots.Count; index++)
+			{
+				var slot = allslots[index];
+				if (slot.Card != null && !slot.Card.HasAbility(void_TurbulentWaters.ability))
+				{
+					base.Card.Anim.LightNegationEffect();
+					if (slot.Card.HasAbility(Ability.Submerge) || slot.Card.HasAbility(Ability.SubmergeSquid))
+                    {
+						if (slot.Card.FaceDown)
+						{
+							yield return new WaitForSeconds(0.2f);
+							slot.Card.SetFaceDown(false, false);
+						}
+						bool impactFrameReached = false;
+						base.Card.Anim.PlayAttackAnimation(false, slot, delegate ()
+						{
+							impactFrameReached = true;
+						});
+						yield return new WaitUntil(() => impactFrameReached);
+						slot.Card.TakeDamage(1, base.Card);
 						yield return new WaitForSeconds(0.2f);
-						slot.Card.SetFaceDown(false, false);
 					}
-					bool impactFrameReached = false;
-					base.Card.Anim.PlayAttackAnimation(false, slot, delegate ()
-					{
-						impactFrameReached = true;
-					});
-					yield return new WaitUntil(() => impactFrameReached);
-					slot.Card.TakeDamage(1, base.Card);
-					yield return new WaitForSeconds(0.2f);
 				}
-            }
+
+			}
 			yield return base.LearnAbility(0.5f);
 			yield break;
 		}

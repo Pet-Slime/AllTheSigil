@@ -185,6 +185,7 @@ namespace voidSigils
 			AddSickness();
 			AddSluggish();
 			AddStampede();
+			AddStrongWind();
 			AddSubmergedAmbush();
 			AddTakeOffBones();
 			AddTakeOffEnergy();
