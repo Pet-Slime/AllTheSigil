@@ -17,6 +17,9 @@ namespace voidSigils
 			const string rulebookName = "Abundance";
 			const string rulebookDescription = "[creature] will grant one tooth per instance of Abundance when killed.";
 			const string LearnDialogue = "Gooooooooldddddd! *cough* sorry about that. Couldn't resist.";
+			//const string rulebookNameChinese = "富有";
+			const string rulebookDescriptionChinese = "[creature]阵亡时，每层Abundance可为持牌人提供一颗牙齿。";
+			const string LearnDialogueChinese = "金子，老子的金子！*咳咳* 抱歉。";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Abundance);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Abundance_a2);
 			int powerlevel = 1;
@@ -27,7 +30,11 @@ namespace voidSigils
 
 
 			// set ability to behaviour class
-			void_Abundance.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Abundance), tex_a1, tex_a2, LearnDialogue,
+			if(Localization.CurrentLanguage == Language.ChineseSimplified)
+				void_Abundance.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescriptionChinese, typeof(void_Abundance), tex_a1, tex_a2, LearnDialogueChinese,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
+			else
+				void_Abundance.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Abundance), tex_a1, tex_a2, LearnDialogue,
 																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 
 

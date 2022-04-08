@@ -18,6 +18,9 @@ namespace voidSigils
 			const string rulebookName = "Coin Finder";
 			const string rulebookDescription = "At the end of the owner's turn, [creature] will grant the owner 1 foil.";
 			const string LearnDialogue = "A tooth for your thoughts?";
+			//const string rulebookNameChinese = "淘金者";
+			const string rulebookDescriptionChinese = "持牌人回合结束时，[creature]将为持牌人产生1片箔片。";
+			const string LearnDialogueChinese = "你管这个叫牙齿？";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_CoinFinder);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_CoinFinder_a2);
 			int powerlevel = 2;
@@ -26,7 +29,11 @@ namespace voidSigils
 			bool canStack = true;
 
 			// set ability to behaviour class
-			void_CoinFinder.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_CoinFinder), tex_a1, tex_a2, LearnDialogue,
+			if (Localization.CurrentLanguage == Language.ChineseSimplified)
+				void_CoinFinder.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescriptionChinese, typeof(void_CoinFinder), tex_a1, tex_a2, LearnDialogueChinese,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
+			else
+				void_CoinFinder.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_CoinFinder), tex_a1, tex_a2, LearnDialogue,
 																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 
 		}

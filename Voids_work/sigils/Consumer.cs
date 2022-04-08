@@ -15,6 +15,9 @@ namespace voidSigils
 			const string rulebookName = "Consumer";
 			const string rulebookDescription = "When [creature] kills another creature, it gains 2 health.";
 			const string LearnDialogue = "Nothing but bones left in its wake. A truly horrific appetite.";
+			//const string rulebookNameChinese = "消费者";
+			const string rulebookDescriptionChinese = "[creature]击杀造物时，会增加2点生命。";
+			const string LearnDialogueChinese = "这个造物会吃掉它杀死的造物，它的胃口可真大。";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Consumer);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);
 			int powerlevel = 4;
@@ -23,7 +26,11 @@ namespace voidSigils
 			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Consumer.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Consumer), tex_a1, tex_a2, LearnDialogue,
+			if (Localization.CurrentLanguage == Language.ChineseSimplified)
+				void_Consumer.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescriptionChinese, typeof(void_Consumer), tex_a1, tex_a2, LearnDialogueChinese,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
+			else
+				void_Consumer.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Consumer), tex_a1, tex_a2, LearnDialogue,
 																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}

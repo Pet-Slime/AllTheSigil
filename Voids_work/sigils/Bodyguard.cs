@@ -15,6 +15,9 @@ namespace voidSigils
 			const string rulebookName = "Bodyguard";
 			const string rulebookDescription = "[creature] will redirect the initial attack of a card to it, if the attack was targeting a card in an adjacent space.";
 			const string LearnDialogue = "A protector, till the very end.";
+			//const string rulebookNameChinese = "小嘲讽;
+			const string rulebookDescriptionChinese = "[creature]相邻的造物受到攻击时，它会替代受到攻击。";
+			const string LearnDialogueChinese = "这个造物能吸引周围造物的仇恨并保护它们。";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_bodyguard);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Bodyguard_a2);
 			int powerlevel = 2;
@@ -23,7 +26,11 @@ namespace voidSigils
 			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Bodyguard.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Bodyguard), tex_a1, tex_a2, LearnDialogue,
+			if (Localization.CurrentLanguage == Language.ChineseSimplified)
+				void_Bodyguard.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescriptionChinese, typeof(void_Bodyguard), tex_a1, tex_a2, LearnDialogueChinese,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
+			else
+				void_Bodyguard.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Bodyguard), tex_a1, tex_a2, LearnDialogue,
 																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}

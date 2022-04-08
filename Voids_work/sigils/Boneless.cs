@@ -16,6 +16,9 @@ namespace voidSigils
 			const string rulebookName = "Boneless";
 			const string rulebookDescription = "[creature] gives no bones! Any bones gained from sigils or death will be negated.";
 			const string LearnDialogue = "That creature has no bones!";
+			//const string rulebookNameChinese = "无骨者";
+			const string rulebookDescriptionChinese = "[creature]不会产生骨头，无论是通过印记还是死后。";
+			const string LearnDialogueChinese = "这个造物没有骨头。";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Boneless);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Boneless_a2);
 			int powerlevel = -1;
@@ -24,7 +27,11 @@ namespace voidSigils
 			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Boneless.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Boneless), tex_a1, tex_a2, LearnDialogue,
+			if (Localization.CurrentLanguage == Language.ChineseSimplified)
+				void_Boneless.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescriptionChinese, typeof(void_Boneless), tex_a1, tex_a2, LearnDialogueChinese,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
+			else
+				void_Boneless.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Boneless), tex_a1, tex_a2, LearnDialogue,
 																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}

@@ -15,6 +15,9 @@ namespace voidSigils
 			const string rulebookName = "Broken";
 			const string rulebookDescription = "[creature] is permanently removed from your deck if it dies.";
 			const string LearnDialogue = "None of us can escape our age";
+			//const string rulebookNameChinese = "老化";
+			const string rulebookDescriptionChinese = "[creature]阵亡时，它将从你的牌组中永久移除。";
+			const string LearnDialogueChinese = "没人能逃过时间。";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Broken);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);
 			int powerlevel = -2;
@@ -23,7 +26,11 @@ namespace voidSigils
 			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Broken.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Broken), tex_a1, tex_a2, LearnDialogue,
+			if (Localization.CurrentLanguage == Language.ChineseSimplified)
+				void_Broken.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescriptionChinese, typeof(void_Broken), tex_a1, tex_a2, LearnDialogueChinese,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
+			else
+				void_Broken.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Broken), tex_a1, tex_a2, LearnDialogue,
 																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}

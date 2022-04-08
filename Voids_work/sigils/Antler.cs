@@ -16,6 +16,9 @@ namespace voidSigils
 			const string rulebookName = "Antler Bearer";
 			const string rulebookDescription = "When [creature] is killed, gain three random hooved tribe cards.";
 			const string LearnDialogue = "The herd sticks together.";
+			//const string rulebookNameChinese = "鹿之友";
+			const string rulebookDescriptionChinese = "[creature]阵亡时，你的手牌中将随机出现三张有蹄族群的卡牌。";
+			const string LearnDialogueChinese = "牛羊总成群。";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Antler);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);
 			int powerlevel = 2;
@@ -24,7 +27,11 @@ namespace voidSigils
 			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Antler.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Antler), tex_a1, tex_a2, LearnDialogue,
+			if (Localization.CurrentLanguage == Language.ChineseSimplified)
+				void_Antler.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescriptionChinese, typeof(void_Antler), tex_a1, tex_a2, LearnDialogueChinese,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
+			else
+				void_Antler.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Antler), tex_a1, tex_a2, LearnDialogue,
 																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 
 
