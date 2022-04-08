@@ -15,6 +15,9 @@ namespace voidSigils
 			const string rulebookName = "Blight";
 			const string rulebookDescription = "When [creature] is sacrificed, it subtracts its stat values to the card it was sacrificed for.";
 			const string LearnDialogue = "A disease shouldnt spread.";
+			//const string rulebookNameChinese = "反吐一口";
+			const string rulebookDescriptionChinese = "当[creature]被献祭时，它的状态值会从献祭来的新卡中扣除。";
+			const string LearnDialogueChinese = "别吃那东西，我上次吃就拉肚子了。";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Blight);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Blight_a2);
 			int powerlevel = -5;
@@ -23,7 +26,11 @@ namespace voidSigils
 			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Blight.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Blight), tex_a1, tex_a2, LearnDialogue,
+			if (Localization.CurrentLanguage == Language.ChineseSimplified)
+				void_Blight.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescriptionChinese, typeof(void_Blight), tex_a1, tex_a2, LearnDialogueChinese,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
+			else
+				void_Blight.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Blight), tex_a1, tex_a2, LearnDialogue,
 																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}

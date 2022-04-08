@@ -18,6 +18,9 @@ namespace voidSigils
 			const string rulebookName = "Agile";
 			const string rulebookDescription = "When a card bearing this sigil would be struck, it will move out of the way.";
 			const string LearnDialogue = "The Card jumped out of the way to save itself...";
+			//const string rulebookNameChinese = "闪转腾挪";
+			const string rulebookDescriptionChinese = "[creature]有可能受到攻击时，会向相邻空位移动。";
+			const string LearnDialogueChinese = "这个造物会跳来跳去保护自己……";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Agile);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Agile_a2);
 			int powerlevel = 1;
@@ -26,7 +29,11 @@ namespace voidSigils
 			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Agile.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Agile), tex_a1, tex_a2, LearnDialogue,
+			if (Localization.CurrentLanguage == Language.ChineseSimplified)
+				void_Agile.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescriptionChinese, typeof(void_Agile), tex_a1, tex_a2, LearnDialogueChinese,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
+			else
+				void_Agile.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Agile), tex_a1, tex_a2, LearnDialogue,
 																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}

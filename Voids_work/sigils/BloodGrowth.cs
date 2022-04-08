@@ -14,6 +14,9 @@ namespace voidSigils
 			const string rulebookName = "Blood Growth";
 			const string rulebookDescription = "When [creature] attacks, the amount of blood it is counted as when sacrificed will increase.";
 			const string LearnDialogue = "There is power in the blood.";
+			//const string rulebookNameChinese = "吸血祭品";
+			const string rulebookDescriptionChinese = "每次攻击之后，[creature]在献祭时算的血量会增加。";
+			const string LearnDialogueChinese = "鲜血即是力量！";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_bloodgrowth);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_bloodgrowth_a2);
 			int powerlevel = 0;
@@ -24,7 +27,11 @@ namespace voidSigils
 
 
 			// set ability to behaviour class
-			void_BloodGrowth.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_BloodGrowth), tex_a1, tex_a2, LearnDialogue,
+			if (Localization.CurrentLanguage == Language.ChineseSimplified)
+				void_BloodGrowth.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescriptionChinese, typeof(void_BloodGrowth), tex_a1, tex_a2, LearnDialogueChinese,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
+			else
+				void_BloodGrowth.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_BloodGrowth), tex_a1, tex_a2, LearnDialogue,
 																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 
 		}

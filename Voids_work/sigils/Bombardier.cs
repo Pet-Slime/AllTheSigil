@@ -19,6 +19,9 @@ namespace voidSigils
 			const string rulebookName = "Bombardier";
 			const string rulebookDescription = "[creature] will deal 10 damage to a random creature during the end phase of the owner's turn.";
 			const string LearnDialogue = "Boom";
+			//const string rulebookNameChinese = "掷弹手";
+			const string rulebookDescriptionChinese = "在持牌人回合结束时，[creature]随机对一个造物造成10点伤害。";
+			const string LearnDialogueChinese = "炸弹来喽！";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Bombardier);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Bombardier_a2);
 			int powerlevel = 0;
@@ -27,7 +30,11 @@ namespace voidSigils
 			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Bombardier.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Bombardier), tex_a1, tex_a2, LearnDialogue,
+			if (Localization.CurrentLanguage == Language.ChineseSimplified)
+				void_Bombardier.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescriptionChinese, typeof(void_Bombardier), tex_a1, tex_a2, LearnDialogueChinese,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
+			else
+				void_Bombardier.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Bombardier), tex_a1, tex_a2, LearnDialogue,
 																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}

@@ -15,6 +15,9 @@ namespace voidSigils
 			const string rulebookName = "Burning";
 			const string rulebookDescription = "[creature] is on fire, and will gain 1 power and loose 1 health each upkeep.";
 			const string LearnDialogue = "It rampages while on fire.";
+			//const string rulebookNameChinese = "燃烧";
+			const string rulebookDescriptionChinese = "在你的回合之初，[creature]会增加1点力量并损失1点生命。";
+			const string LearnDialogueChinese = "这个造物身处火中。";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Burning);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Burning_a2);
 			int powerlevel = 0;
@@ -25,7 +28,11 @@ namespace voidSigils
 
 
 			// set ability to behaviour class
-			void_Burning.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Burning), tex_a1, tex_a2, LearnDialogue,
+			if (Localization.CurrentLanguage == Language.ChineseSimplified)
+				void_Burning.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescriptionChinese, typeof(void_Burning), tex_a1, tex_a2, LearnDialogueChinese,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
+			else
+				void_Burning.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Burning), tex_a1, tex_a2, LearnDialogue,
 																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}

@@ -18,6 +18,9 @@ namespace voidSigils
 			const string rulebookName = "Box";
 			const string rulebookDescription = "[creature] will get removed from your deck on death, and a new creature contained within will be added to it.";
 			const string LearnDialogue = "What is contained within?";
+			//const string rulebookNameChinese = "箱子的禁锢";
+			const string rulebookDescriptionChinese = "[creature]阵亡时，它将从你的牌组中移除，被封在里面的造物会取代它的位置。";
+			const string LearnDialogueChinese = "箱子里面会是什么呢？";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Box);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);
 			int powerlevel = 0;
@@ -26,7 +29,11 @@ namespace voidSigils
 			bool canStack = false;
 
 			// set ability to behaviour class
-			void_Box.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Box), tex_a1, tex_a2, LearnDialogue,
+			if (Localization.CurrentLanguage == Language.ChineseSimplified)
+				void_Box.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescriptionChinese, typeof(void_Box), tex_a1, tex_a2, LearnDialogueChinese,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
+			else
+				void_Box.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_Box), tex_a1, tex_a2, LearnDialogue,
 																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}

@@ -15,6 +15,9 @@ namespace voidSigils
 			const string rulebookName = "Bone Picker";
 			const string rulebookDescription = "[creature] kills a creature, it will generate 1 Bone.";
 			const string LearnDialogue = "My creature's bones, You thief!";
+			//const string rulebookNameChinese = "拾骨者";
+			const string rulebookDescriptionChinese = "[creature]击杀造物时，会产生1根骨头。";
+			const string LearnDialogueChinese = "明明是我的造物的骨头，你不讲武德！";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_BonePicker);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_BonePicker_a2);
 			int powerlevel = 1;
@@ -23,7 +26,11 @@ namespace voidSigils
 			bool canStack = true;
 
 			// set ability to behaviour class
-			void_BonePicker.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_BonePicker), tex_a1, tex_a2, LearnDialogue,
+			if (Localization.CurrentLanguage == Language.ChineseSimplified)
+				void_BonePicker.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescriptionChinese, typeof(void_BonePicker), tex_a1, tex_a2, LearnDialogueChinese,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
+			else
+				void_BonePicker.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_BonePicker), tex_a1, tex_a2, LearnDialogue,
 																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}

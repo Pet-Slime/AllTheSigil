@@ -18,6 +18,9 @@ namespace voidSigils
 			const string rulebookName = "Bone Shard";
 			const string rulebookDescription = "[creature] will generate 1 bone when hit, if it lives through the attack.";
 			const string LearnDialogue = "A splinter of bone.";
+			//const string rulebookNameChinese = "骨质鳞片";
+			const string rulebookDescriptionChinese = "[creature]撑过攻击后会产生1根骨头。";
+			const string LearnDialogueChinese = "一些骨头的碎片。";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_BoneShard);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_BoneShard_a2);
 			int powerlevel = 0;
@@ -26,7 +29,11 @@ namespace voidSigils
 			bool canStack = true;
 
 			// set ability to behaviour class
-			void_BoneShard.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_BoneShard), tex_a1, tex_a2, LearnDialogue,
+			if (Localization.CurrentLanguage == Language.ChineseSimplified)
+				void_BoneShard.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescriptionChinese, typeof(void_BoneShard), tex_a1, tex_a2, LearnDialogueChinese,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
+			else
+				void_BoneShard.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(void_BoneShard), tex_a1, tex_a2, LearnDialogue,
 																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
