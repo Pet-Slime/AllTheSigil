@@ -158,11 +158,17 @@ namespace voidSigils
 					break;
             }
 			base.Card.RenderCard();
+
+
+			Plugin.Log.LogMessage(num);
+			Plugin.Log.LogMessage(this.numTurnsInPlay);
+			Plugin.Log.LogMessage(this.numTurnsInPlay >= num);
 			if (this.numTurnsInPlay >= num)
 			{
+				Plugin.Log.LogMessage("did my check fire?");
 				yield return base.PreSuccessfulTriggerSequence();
 				base.Card.Anim.LightNegationEffect();
-				base.Card.Die(false, null, true);
+				yield return base.Card.Die(false, null, true);
 				yield return base.LearnAbility(0.5f);
 
 			}

@@ -21,7 +21,12 @@ namespace voidSigils
 				specialSequencer = Singleton<TurnManager>.Instance.SpecialSequencer;
 			}
 			List<CardSlot> attackingSlots = attacker;
-			attackingSlots.RemoveAll((CardSlot x) => x.Card == null || x.Card.Attack <= 0);
+			attackingSlots.RemoveAll((CardSlot x) => x.Card == null || x.Card.Attack < 1);
+			if (attackingSlots.Count > 0)
+            {
+				///break out of this if there are no cards with greater than 0 attack
+				yield break;
+			}
 			bool atLeastOneAttacker = attackingSlots.Count > 0;
 			yield return holder.InitializePhase(attackingSlots, playerIsAttacker);
 			if (specialSequencer != null)

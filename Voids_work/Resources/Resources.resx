@@ -124,6 +124,9 @@
   <data name="ability_BloodGuzzler_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\ability_BloodGuzzler_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="ability_Nutritious_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\ability_nutritious_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="ability_regen_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\ability_regen_1.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -214,6 +217,9 @@
   <data name="void_ambush_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_ambush_9.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="void_Ambush_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_ambush_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="void_Antler" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_antler.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -225,6 +231,9 @@
   </data>
   <data name="void_Blind" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_Blind.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_BlindingStrike" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Artwork\void_BlindingStrike.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="void_Blind_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Artwork\void_Blind_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

@@ -16,7 +16,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Stampede";
-			const string rulebookDescription = "[creature] will cause adjacent creatures to attack when played on the board.";
+			const string rulebookDescription = "[creature] will cause adjacent creatures to attack when played on the board if played not during combat.";
 			const string LearnDialogue = "Power in Numbers";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Stampede);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Stampede_a2);
@@ -55,13 +55,6 @@ namespace voidSigils
 				if (Plugin.voidCombatPhase == false)
 				{
 					yield return FakeCombat.FakeCombatPhase(base.Card.slot.IsPlayerSlot, null, attackingSlots);
-				}
-				else
-				{
-					foreach (CardSlot attacker in attackingSlots)
-                    {
-						yield return Singleton<CombatPhaseManager>.Instance.SlotAttackSequence(attacker);
-					}
 				}
 			}
 			yield return base.LearnAbility(0.25f);

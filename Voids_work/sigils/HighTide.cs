@@ -62,6 +62,7 @@ namespace voidSigils
 					CardInfo targetCardInfo = otherCard.Info.Clone() as CardInfo;
 					//Add the modifincations to the cloned info
 					targetCardInfo.Mods.Add(cardModificationInfo);
+					targetCardInfo.Mods.AddRange(otherCard.Info.Mods);
 					//Set the target's info to the clone'd info
 					otherCard.SetInfo(targetCardInfo);
 					otherCard.Anim.PlayTransformAnimation();

@@ -53,6 +53,7 @@ namespace voidSigils
 			CardInfo OpponentCardInfo = otherCard.Info.Clone() as CardInfo;
 			//Add the modifincations
 			OpponentCardInfo.Mods.Add(negateMod);
+			OpponentCardInfo.Mods.AddRange(otherCard.Info.Mods);
 			//Update the opponant card info
 			otherCard.Anim.PlayTransformAnimation();
 			otherCard.SetInfo(OpponentCardInfo);

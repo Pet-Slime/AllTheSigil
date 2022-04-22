@@ -16,7 +16,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Haste";
-			const string rulebookDescription = "[creature] will attack as soon as it gets played on the board.";
+			const string rulebookDescription = "[creature] will attack as soon as it gets played on the board if played not during combat.";
 			const string LearnDialogue = "Speed";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_Haste);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Haste_a2);
@@ -53,9 +53,6 @@ namespace voidSigils
 				var list = new List<CardSlot>();
 				list.Add(base.Card.slot);
 				yield return FakeCombat.FakeCombatPhase(base.Card.slot.IsPlayerSlot, null, list);
-			} else
-            {
-				yield return Singleton<CombatPhaseManager>.Instance.SlotAttackSequence(base.Card.slot);
 			}
 			yield return new WaitForSeconds(0.1f);
 			yield return base.LearnAbility(0.25f);

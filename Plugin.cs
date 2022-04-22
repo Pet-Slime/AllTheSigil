@@ -3,6 +3,7 @@ using BepInEx.Logging;
 using HarmonyLib;
 using DiskCardGame;
 using BepInEx.Configuration;
+using InscryptionAPI.Card;
 
 namespace voidSigils
 {
@@ -101,8 +102,8 @@ namespace voidSigils
 			AddAntler();
 			AddAgile();
 			AddAmbush();
-			AddAppetizing();
 			AddBlight();
+			AddBlindingStrike();
 			AddBloodGrowth();
 			AddBloodGuzzler();
 			AddBodyguard();
@@ -117,7 +118,7 @@ namespace voidSigils
 			addCoinFinder();
 			AddConsumer();
 			AddCoward();
-			AddDeadlyWaters();
+///			AddDeadlyWaters();
 			AddDeathburst();
 			AddDesperation();
 			AddDiseaseAbsorbtion();
@@ -145,6 +146,7 @@ namespace voidSigils
 			AddHasteful();
 			AddHerd();
 			AddHighTide();
+			AddInjured();
 			AddHourglass();
 			AddLeech();
 			AddLeadBones();
@@ -215,6 +217,13 @@ namespace voidSigils
 			//Add Card
 			Voids_work.Cards.Acid_Puddle.AddCard();
 			Voids_work.Cards.Jackalope.AddCard();
+
+			
+
 		}
+
+		void Start()
+        {
+        }
 	}
 }

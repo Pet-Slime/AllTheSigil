@@ -15,7 +15,7 @@ namespace voidSigils
 		{
 			// setup ability
 			const string rulebookName = "Draw Card";
-			const string rulebookDescription = "When [creature] is played, a card relating to it's ice cube parameter (default Opossum) is created in your hand.";
+			const string rulebookDescription = "When [creature] is played, a card relating to it's ice cube parameter (default Stoat) is created in your hand.";
 			const string LearnDialogue = "What will it release on death?";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_DrawIce);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_DrawIce_a2);
@@ -40,13 +40,12 @@ namespace voidSigils
 		{
 			get
 			{
-				string creatureWithinId = "Stoat";
-				bool flag = base.Card.Info.iceCubeParams != null && base.Card.Info.iceCubeParams.creatureWithin != null;
-				if (flag)
+				string name = "Stoat";
+				if (base.Card.Info.iceCubeParams != null && base.Card.Info.iceCubeParams.creatureWithin != null)
 				{
-					creatureWithinId = base.Card.Info.iceCubeParams.creatureWithin.name;
+					name = base.Card.Info.iceCubeParams.creatureWithin.name;
 				}
-				return CardLoader.GetCardByName(creatureWithinId);
+				return CardLoader.GetCardByName(name);
 			}
 		}
 

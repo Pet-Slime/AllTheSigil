@@ -58,36 +58,21 @@ namespace voidSigils
 			{
 				if (cardSlots[index].Card == otherCard)
 				{
-					if (otherCard.HasAbility(Ability.Submerge))
+					if (otherCard.HasAbility(Ability.Submerge) || otherCard.HasAbility(Ability.SubmergeSquid))
 					{
-						CardModificationInfo negateMod = new CardModificationInfo();
-						//go through each of the cards default abilities and add them to the modifincation info
-						negateMod.negateAbilities.Add(Ability.Submerge);
-						//Clone the main card info so we don't touch the main card set
+						yield return new WaitForSeconds(0.3f);
+						CardModificationInfo negateSubmergeMod = new CardModificationInfo();
+						negateSubmergeMod.singletonId = "void_negate_abilities";
+						negateSubmergeMod.negateAbilities.Add(Ability.Submerge);
+						negateSubmergeMod.negateAbilities.Add(Ability.SubmergeSquid);
 						CardInfo OpponentCardInfo = otherCard.Info.Clone() as CardInfo;
-						//Add the modifincations
-						OpponentCardInfo.Mods.Add(negateMod);
-						//Update the opponant card info
+						OpponentCardInfo.Mods.Add(negateSubmergeMod);
+						OpponentCardInfo.Mods.AddRange(otherCard.Info.Mods);
 						otherCard.SetInfo(OpponentCardInfo);
 						otherCard.Anim.PlayTransformAnimation();
 						yield return new WaitForSeconds(0.3f);
 						yield return base.LearnAbility(0.25f);
-					}
-					if (otherCard.HasAbility(Ability.SubmergeSquid))
-					{
-						CardModificationInfo negateMod = new CardModificationInfo();
-						//go through each of the cards default abilities and add them to the modifincation info
-						negateMod.negateAbilities.Add(Ability.SubmergeSquid);
-						//Clone the main card info so we don't touch the main card set
-						CardInfo OpponentCardInfo = otherCard.Info.Clone() as CardInfo;
-						//Add the modifincations
-						OpponentCardInfo.Mods.Add(negateMod);
-						//Update the opponant card info
-						otherCard.SetInfo(OpponentCardInfo);
-						otherCard.Anim.PlayTransformAnimation();
-
 						yield return new WaitForSeconds(0.3f);
-						yield return base.LearnAbility(0.25f);
 					}
 				}
 			}

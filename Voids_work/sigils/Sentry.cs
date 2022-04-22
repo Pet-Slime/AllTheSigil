@@ -19,7 +19,7 @@ namespace voidSigils
 			const string rulebookDescription = "When a creature moves into the space opposing a card bearing this sigil, they are dealt 1 damage.";
 			const string LearnDialogue = "Out of the shadows, they strike";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Artwork.void_ambush);
-			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.no_a2);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Artwork.void_Ambush_a2);
 			int powerlevel = 3;
 			bool LeshyUsable = true;
 			bool part1Shops = true;
@@ -38,7 +38,7 @@ namespace voidSigils
 		[HarmonyPostfix]
 		public static void Postfix(ref Texture __result, ref CardInfo info, ref AbilityInfo ability)
 		{
-			if (ability.ability == void_Ambush.ability)
+			if (ability.ability == void_Ambush.ability && !SaveManager.SaveFile.IsPart2)
 			{
 				if (info != null)
                 {
